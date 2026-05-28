@@ -1,0 +1,1398 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>产品中心 - 思辰微智能</title>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+
+body{
+  font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;
+  background:
+    radial-gradient(circle at 50% 16%,rgba(34,211,238,.16),transparent 30%),
+    radial-gradient(circle at 12% 62%,rgba(37,99,235,.18),transparent 34%),
+    linear-gradient(180deg,#020617,#06111f 48%,#020617);
+  color:#fff;
+  min-height:100vh;
+  overflow-x:hidden;
+}
+
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  background:
+    linear-gradient(120deg,transparent 20%,rgba(59,130,246,.12),transparent 45%),
+    linear-gradient(60deg,transparent 35%,rgba(103,232,249,.07),transparent 70%);
+}
+
+
+.nav{
+  position:sticky;
+  top:0;
+  z-index:50;
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  padding:18px 5vw;
+
+  background:transparent;
+  border-bottom:none;
+  backdrop-filter:none;
+
+  gap:20px;
+}
+
+.logo{
+  display:inline-flex;
+  align-items:center;
+  gap:9px;
+
+  padding:12px 20px;
+  border-radius:999px;
+
+  border:1px solid rgba(125,211,252,.25);
+  background:rgba(255,255,255,.06);
+
+  box-shadow:0 0 30px rgba(14,165,233,.10);
+
+  color:#e0faff;
+  font-size:18px;
+  font-weight:800;
+}
+
+.nav-links{
+  display:flex;
+  gap:72px;
+
+  color:#e5eefb;
+  font-weight:700;
+  font-size:18px;
+
+  letter-spacing:.5px;
+  white-space:nowrap;
+}
+
+.nav-links a{
+  text-decoration:none;
+  color:inherit;
+  transition:.25s;
+}
+
+.nav-links a:hover{
+  color:#67e8f9;
+}
+
+.nav-links a.active{
+  color:#22d3ee;
+}
+
+.contact{
+  text-decoration:none;
+  padding:14px 30px;
+  border-radius:999px;
+
+  background:linear-gradient(135deg,#2563eb,#22d3ee);
+
+  color:#fff;
+  font-weight:900;
+
+  box-shadow:0 0 28px rgba(34,211,238,.28);
+}
+
+
+.tabs{
+  width:min(1500px,92%);
+  margin:34px auto 0;
+  display:grid;
+  grid-template-columns:repeat(6,1fr);
+  border:1px solid rgba(96,165,250,.25);
+  border-radius:10px;
+  overflow:hidden;
+  background:rgba(15,23,42,.58);
+  box-shadow:0 0 50px rgba(37,99,235,.12);
+}
+
+.tab{
+  min-height:70px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  font-size:18px;
+  color:#cbd5e1;
+  border-right:1px solid rgba(148,163,184,.18);
+  cursor:pointer;
+  transition:.3s;
+  user-select:none;
+}
+
+.tab:last-child{border-right:none}
+
+.tab:hover{
+  background:rgba(14,165,233,.16);
+  color:#67e8f9;
+}
+
+.tab.active{
+  color:#fff;
+  font-weight:900;
+  background:linear-gradient(135deg,rgba(37,99,235,.75),rgba(14,165,233,.3));
+  box-shadow:inset 0 -3px 0 #22d3ee,0 0 28px rgba(34,211,238,.35);
+}
+
+.series{display:none}
+.series.active{display:block}
+
+.hero{
+  text-align:center;
+  padding:56px 5vw 30px;
+  position:relative;
+}
+
+.hero::before,.hero::after{
+  content:"";
+  position:absolute;
+  top:30px;
+  width:48%;
+  height:1px;
+  background:linear-gradient(90deg,transparent,#3b82f6,transparent);
+}
+
+.hero::before{left:-5%;transform:rotate(28deg)}
+.hero::after{right:-5%;transform:rotate(-28deg)}
+
+.hero h1{
+  font-size:clamp(48px,7vw,84px);
+  line-height:1;
+  letter-spacing:10px;
+  background:linear-gradient(180deg,#fff,#67e8f9);
+  -webkit-background-clip:text;
+  color:transparent;
+  text-shadow:0 0 40px rgba(34,211,238,.25);
+}
+
+.hero p{
+  margin-top:20px;
+  font-size:24px;
+  color:#e2e8f0;
+  letter-spacing:4px;
+}
+
+/* 网关 */
+.gateway-products{
+  width:min(1500px,92%);
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:24px;
+}
+
+.gateway-card{
+  position:relative;
+  display:grid;
+  grid-template-columns:1.05fr .95fr;
+  gap:26px;
+  align-items:center;
+  min-height:430px;
+  padding:34px;
+  border-radius:24px;
+  background:
+    radial-gradient(circle at 20% 20%,rgba(14,165,233,.18),transparent 35%),
+    linear-gradient(135deg,rgba(15,23,42,.86),rgba(8,47,73,.42));
+  border:1px solid rgba(59,130,246,.55);
+  box-shadow:0 24px 80px rgba(0,0,0,.35), inset 0 0 60px rgba(14,165,233,.05);
+  overflow:hidden;
+}
+
+.image-wrap{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.image-wrap img{
+  max-width:100%;
+  max-height:330px;
+  object-fit:contain;
+  filter:drop-shadow(0 24px 35px rgba(0,0,0,.45));
+}
+
+.info h2{
+  font-size:34px;
+  margin-bottom:12px;
+  letter-spacing:1px;
+}
+
+.line{
+  width:42px;
+  height:2px;
+  background:#22d3ee;
+  margin-bottom:24px;
+}
+
+.info ul{
+  list-style:none;
+  color:#dbeafe;
+  font-size:19px;
+}
+
+.info li{
+  margin:12px 0;
+  position:relative;
+  padding-left:20px;
+}
+
+.info li::before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:13px;
+  width:6px;
+  height:6px;
+  border-radius:50%;
+  background:#38bdf8;
+  box-shadow:0 0 10px #38bdf8;
+}
+
+.badges{
+  grid-column:1 / -1;
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:12px;
+  margin-top:10px;
+}
+
+.badge{
+  padding:15px 10px;
+  border-radius:12px;
+  text-align:center;
+  color:#e0f2fe;
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(148,163,184,.18);
+  backdrop-filter:blur(8px);
+}
+
+/* 面板 */
+.panel-products{
+  width:min(1500px,92%);
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:26px;
+}
+
+.panel-card{
+  position:relative;
+  min-height:520px;
+  padding:28px 26px;
+  border-radius:18px;
+  background:
+    radial-gradient(circle at 30% 20%,rgba(14,165,233,.18),transparent 36%),
+    linear-gradient(135deg,rgba(15,23,42,.86),rgba(8,47,73,.42));
+  border:1px solid rgba(59,130,246,.55);
+  box-shadow:0 24px 70px rgba(0,0,0,.35), inset 0 0 55px rgba(14,165,233,.05);
+  overflow:hidden;
+  transition:.35s;
+}
+
+.panel-card:hover{
+  transform:translateY(-8px);
+  box-shadow:0 30px 90px rgba(0,0,0,.45),0 0 35px rgba(34,211,238,.22);
+}
+
+.panel-card .image-wrap{
+  height:245px;
+  margin-bottom:24px;
+}
+
+.panel-card .image-wrap img{
+  max-height:240px;
+  border-radius:8px;
+}
+
+.panel-card h2{
+  font-size:28px;
+  margin-bottom:10px;
+}
+
+.panel-card p{
+  color:#dbeafe;
+  font-size:17px;
+  margin-bottom:22px;
+}
+
+.features-mini{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:10px;
+  padding-top:20px;
+  border-top:1px solid rgba(148,163,184,.28);
+}
+
+.feature-mini{
+  text-align:center;
+  color:#cbd5e1;
+  font-size:14px;
+}
+
+.feature-mini span{
+  display:block;
+  color:#38bdf8;
+  font-size:26px;
+  margin-bottom:6px;
+  text-shadow:0 0 16px rgba(56,189,248,.45);
+}
+
+.bottom-features{
+  width:min(1420px,88%);
+  margin:32px auto 70px;
+  display:grid;
+  gap:18px;
+  padding:26px;
+  border-radius:18px;
+  border:1px solid rgba(59,130,246,.3);
+  background:rgba(15,23,42,.55);
+}
+
+.gateway-bottom{grid-template-columns:repeat(4,1fr)}
+.panel-bottom{grid-template-columns:repeat(5,1fr)}
+
+.bottom-item{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:14px;
+}
+
+.bottom-icon{
+  width:46px;
+  height:46px;
+  border-radius:14px;
+  border:2px solid #22d3ee;
+  color:#67e8f9;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:24px;
+}
+
+.bottom-item h3{font-size:18px}
+.bottom-item p{color:#94a3b8;font-size:13px}
+
+.placeholder{
+  width:min(1300px,92%);
+  margin:0 auto 70px;
+  padding:90px 30px;
+  text-align:center;
+  border-radius:26px;
+  background:rgba(255,255,255,.04);
+  border:1px dashed rgba(148,163,184,.35);
+  color:#cbd5e1;
+}
+
+@media(max-width:1200px){
+  .gateway-products{grid-template-columns:1fr}
+  .panel-products{grid-template-columns:repeat(2,1fr)}
+  .gateway-bottom,.panel-bottom{grid-template-columns:repeat(2,1fr)}
+}
+
+@media(max-width:900px){
+  .tabs{grid-template-columns:repeat(3,1fr)}
+}
+
+@media(max-width:680px){
+  
+.nav{
+  position:sticky;
+  top:0;
+  z-index:50;
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  padding:18px 5vw;
+
+  background:transparent;
+  border-bottom:none;
+  backdrop-filter:none;
+
+  gap:20px;
+}
+
+.logo{
+  display:inline-flex;
+  align-items:center;
+  gap:9px;
+
+  padding:12px 20px;
+  border-radius:999px;
+
+  border:1px solid rgba(125,211,252,.25);
+  background:rgba(255,255,255,.06);
+
+  box-shadow:0 0 30px rgba(14,165,233,.10);
+
+  color:#e0faff;
+  font-size:18px;
+  font-weight:800;
+}
+
+.nav-links{
+  display:flex;
+  gap:72px;
+
+  color:#e5eefb;
+  font-weight:700;
+  font-size:18px;
+
+  letter-spacing:.5px;
+  white-space:nowrap;
+}
+
+.nav-links a{
+  text-decoration:none;
+  color:inherit;
+  transition:.25s;
+}
+
+.nav-links a:hover{
+  color:#67e8f9;
+}
+
+.nav-links a.active{
+  color:#22d3ee;
+}
+
+.contact{
+  text-decoration:none;
+  padding:14px 30px;
+  border-radius:999px;
+
+  background:linear-gradient(135deg,#2563eb,#22d3ee);
+
+  color:#fff;
+  font-weight:900;
+
+  box-shadow:0 0 28px rgba(34,211,238,.28);
+}
+
+  .tabs{grid-template-columns:repeat(2,1fr)}
+  .tab{font-size:15px;min-height:58px}
+  .hero h1{letter-spacing:4px}
+  .hero p{font-size:16px;letter-spacing:1px}
+  .gateway-card{grid-template-columns:1fr;padding:24px}
+  .panel-products{grid-template-columns:1fr}
+  .badges{grid-template-columns:repeat(2,1fr)}
+  .gateway-bottom,.panel-bottom{grid-template-columns:1fr}
+}
+
+/* 温控 */
+.temp-products{
+  width:min(1500px,92%);
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:26px;
+}
+
+.temp-card{
+  position:relative;
+  min-height:560px;
+  padding:30px 26px;
+  border-radius:20px;
+  background:
+    radial-gradient(circle at 30% 20%,rgba(14,165,233,.18),transparent 36%),
+    linear-gradient(135deg,rgba(15,23,42,.86),rgba(8,47,73,.42));
+  border:1px solid rgba(59,130,246,.55);
+  box-shadow:0 24px 70px rgba(0,0,0,.35), inset 0 0 55px rgba(14,165,233,.05);
+  overflow:hidden;
+  transition:.35s;
+}
+
+.temp-card:hover{
+  transform:translateY(-8px);
+  box-shadow:0 30px 90px rgba(0,0,0,.45),0 0 35px rgba(34,211,238,.22);
+}
+
+.temp-card .image-wrap{
+  height:300px;
+  margin-bottom:24px;
+}
+
+.temp-card .image-wrap img{
+  max-height:290px;
+  border-radius:10px;
+}
+
+.temp-card h2{
+  font-size:28px;
+  margin-bottom:10px;
+}
+
+.temp-card p{
+  color:#dbeafe;
+  font-size:17px;
+  margin-bottom:22px;
+}
+
+.temp-bottom{
+  grid-template-columns:repeat(5,1fr);
+}
+
+@media(max-width:1200px){
+  .temp-products{grid-template-columns:repeat(2,1fr)}
+  .temp-bottom{grid-template-columns:repeat(2,1fr)}
+}
+
+@media(max-width:680px){
+  .temp-products{grid-template-columns:1fr}
+  .temp-bottom{grid-template-columns:1fr}
+}
+
+
+/* 语音系列 */
+.voice-products{
+  width:min(1500px,92%);
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:26px;
+}
+
+.voice-card{
+  position:relative;
+  min-height:520px;
+  padding:26px;
+  border-radius:20px;
+  background:
+    radial-gradient(circle at 28% 18%,rgba(14,165,233,.18),transparent 36%),
+    linear-gradient(135deg,rgba(15,23,42,.88),rgba(8,47,73,.42));
+  border:1px solid rgba(59,130,246,.55);
+  box-shadow:0 24px 80px rgba(0,0,0,.35), inset 0 0 55px rgba(14,165,233,.05);
+  overflow:hidden;
+}
+
+.voice-card h2{
+  font-size:28px;
+  margin-bottom:12px;
+}
+
+.voice-main{
+  display:grid;
+  grid-template-columns:1.1fr .95fr;
+  gap:28px;
+  align-items:center;
+}
+
+.voice-img{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.voice-img img{
+  width:100%;
+  max-height:310px;
+  object-fit:contain;
+  border-radius:8px;
+  filter:drop-shadow(0 22px 30px rgba(0,0,0,.42));
+}
+
+.voice-list{
+  display:grid;
+  gap:22px;
+}
+
+.voice-feature{
+  display:grid;
+  grid-template-columns:42px 1fr;
+  gap:12px;
+  align-items:flex-start;
+}
+
+.voice-feature .vicon{
+  width:34px;
+  height:34px;
+  border-radius:50%;
+  border:2px solid #0ea5e9;
+  color:#38bdf8;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:18px;
+  box-shadow:0 0 16px rgba(56,189,248,.35);
+}
+
+.voice-feature h3{
+  font-size:18px;
+  margin-bottom:4px;
+}
+
+.voice-feature p{
+  color:#94a3b8;
+  font-size:14px;
+  line-height:1.5;
+}
+
+.voice-card-bottom{
+  margin-top:28px;
+  padding-top:22px;
+  border-top:1px solid rgba(148,163,184,.22);
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:14px;
+}
+
+.voice-mini{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  color:#dbeafe;
+}
+
+.voice-mini .mini-icon{
+  width:34px;
+  height:34px;
+  color:#38bdf8;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:24px;
+  text-shadow:0 0 14px rgba(56,189,248,.45);
+}
+
+.voice-mini h4{
+  font-size:15px;
+  margin-bottom:2px;
+}
+
+.voice-mini p{
+  color:#94a3b8;
+  font-size:12px;
+}
+
+.voice-bottom{
+  grid-template-columns:repeat(5,1fr);
+}
+
+@media(max-width:1200px){
+  .voice-products{grid-template-columns:1fr}
+  .voice-bottom{grid-template-columns:repeat(2,1fr)}
+}
+
+@media(max-width:760px){
+  .voice-main{grid-template-columns:1fr}
+  .voice-card-bottom{grid-template-columns:repeat(2,1fr)}
+  .voice-bottom{grid-template-columns:1fr}
+}
+
+
+/* 插座系列 */
+.socket-products{
+  width:min(1500px,92%);
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:26px;
+}
+
+.socket-card{
+  position:relative;
+  min-height:560px;
+  padding:30px 26px;
+  border-radius:20px;
+  background:
+    radial-gradient(circle at 30% 20%,rgba(14,165,233,.18),transparent 36%),
+    linear-gradient(135deg,rgba(15,23,42,.88),rgba(8,47,73,.42));
+  border:1px solid rgba(59,130,246,.55);
+  box-shadow:0 24px 70px rgba(0,0,0,.35), inset 0 0 55px rgba(14,165,233,.05);
+  overflow:hidden;
+  transition:.35s;
+}
+
+.socket-card:hover{
+  transform:translateY(-8px);
+  box-shadow:0 30px 90px rgba(0,0,0,.45),0 0 35px rgba(34,211,238,.22);
+}
+
+.socket-card h2{
+  font-size:28px;
+  margin-bottom:10px;
+}
+
+.socket-card .image-wrap{
+  height:310px;
+  margin-bottom:24px;
+}
+
+.socket-card .image-wrap img{
+  max-height:300px;
+  border-radius:10px;
+}
+
+.socket-card-bottom{
+  margin-top:24px;
+  padding-top:22px;
+  border-top:1px solid rgba(148,163,184,.24);
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:12px;
+}
+
+.socket-mini{
+  text-align:center;
+  color:#dbeafe;
+}
+
+.socket-mini .mini-icon{
+  color:#38bdf8;
+  font-size:28px;
+  margin-bottom:6px;
+  text-shadow:0 0 14px rgba(56,189,248,.45);
+}
+
+.socket-mini h4{
+  font-size:15px;
+  margin-bottom:3px;
+}
+
+.socket-mini p{
+  color:#94a3b8;
+  font-size:12px;
+  line-height:1.35;
+}
+
+.socket-bottom{
+  grid-template-columns:repeat(5,1fr);
+}
+
+@media(max-width:1200px){
+  .socket-products{grid-template-columns:repeat(2,1fr)}
+  .socket-bottom{grid-template-columns:repeat(2,1fr)}
+}
+
+@media(max-width:760px){
+  .socket-products{grid-template-columns:1fr}
+  .socket-card-bottom{grid-template-columns:repeat(2,1fr)}
+  .socket-bottom{grid-template-columns:1fr}
+}
+
+
+/* 其他系列 */
+.other-products{
+  width:min(1500px,92%);
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:26px;
+}
+
+.other-card{
+  position:relative;
+  min-height:560px;
+  padding:30px 26px;
+  border-radius:20px;
+  background:
+    radial-gradient(circle at 30% 20%,rgba(14,165,233,.18),transparent 36%),
+    linear-gradient(135deg,rgba(15,23,42,.88),rgba(8,47,73,.42));
+  border:1px solid rgba(59,130,246,.55);
+  box-shadow:0 24px 70px rgba(0,0,0,.35), inset 0 0 55px rgba(14,165,233,.05);
+  overflow:hidden;
+}
+
+.other-card h2{
+  font-size:28px;
+  margin-bottom:10px;
+}
+
+.other-card .image-wrap{
+  height:320px;
+  margin-bottom:24px;
+}
+
+.other-card .image-wrap img{
+  max-height:310px;
+  border-radius:10px;
+  object-fit:contain;
+}
+
+.other-card-bottom{
+  margin-top:24px;
+  padding-top:22px;
+  border-top:1px solid rgba(148,163,184,.24);
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:12px;
+}
+
+.other-mini{
+  text-align:center;
+  color:#dbeafe;
+}
+
+.other-mini .mini-icon{
+  color:#38bdf8;
+  font-size:28px;
+  margin-bottom:6px;
+  text-shadow:0 0 14px rgba(56,189,248,.45);
+}
+
+.other-mini h4{
+  font-size:15px;
+  margin-bottom:3px;
+}
+
+.other-mini p{
+  color:#94a3b8;
+  font-size:12px;
+  line-height:1.35;
+}
+
+.other-bottom{
+  grid-template-columns:repeat(5,1fr);
+}
+
+@media(max-width:1200px){
+  .other-products{grid-template-columns:repeat(2,1fr)}
+  .other-bottom{grid-template-columns:repeat(2,1fr)}
+}
+
+@media(max-width:760px){
+  .other-products{grid-template-columns:1fr}
+  .other-card-bottom{grid-template-columns:repeat(2,1fr)}
+  .other-bottom{grid-template-columns:1fr}
+}
+
+</style>
+
+<!-- 图片加载优化：优先加载首屏关键图片 -->
+<link rel="preload" as="image" href="1.png">
+<link rel="preload" as="image" href="10.png">
+<link rel="preload" as="image" href="11.png">
+<link rel="preload" as="image" href="12.png">
+<meta http-equiv="Cache-Control" content="public, max-age=604800">
+
+</head>
+
+<body>
+
+
+<nav class="nav">
+  <div class="logo">☁ 思辰微智能</div>
+
+  <div class="nav-links">
+    <a href="index.html">首页</a>
+    <a class="active" href="products.html">产品中心</a>
+    <a href="#">解决方案</a>
+    <a href="#">智慧场景</a>
+    <a href="#">支持服务</a>
+    <a href="#">关于我们</a>
+  </div>
+
+  <a class="contact" href="#">联系我们</a>
+</nav>
+
+
+<nav class="tabs">
+  <div class="tab active" onclick="showSeries('gateway',this)">▣ 网关系列</div>
+  <div class="tab" onclick="showSeries('panel',this)">▥ 面板系列</div>
+  <div class="tab" onclick="showSeries('temp',this)">◴ 旋钮温控系列</div>
+  <div class="tab" onclick="showSeries('voice',this)">◉ 语音系列</div>
+  <div class="tab" onclick="showSeries('socket',this)">▧ 插座系列</div>
+  <div class="tab" onclick="showSeries('other',this)">▦ 其他系列</div>
+</nav>
+
+<section id="gateway" class="series active">
+  <div class="hero">
+    <h1>网关系列</h1>
+    <p>稳定连接，高效协同，打造全屋智能设备的核心枢纽</p>
+  </div>
+
+  <main class="gateway-products">
+    <article class="gateway-card">
+      <div class="image-wrap"><img src="17.png" alt="CS4 网关中控屏" decoding="async" loading="lazy"></div>
+      <div class="info">
+        <h2>CS4 网关中控屏</h2>
+        <div class="line"></div>
+        <ul>
+          <li>4寸高清触控屏</li>
+          <li>Zigbee 3.0 / WiFi 双模</li>
+          <li>全屋设备集中控制</li>
+          <li>场景联动 / 语音控制</li>
+          <li>支持 OTA 在线升级</li>
+        </ul>
+      </div>
+      <div class="badges">
+        <div class="badge">4寸触控屏</div>
+        <div class="badge">Zigbee 3.0</div>
+        <div class="badge">WiFi</div>
+        <div class="badge">OTA升级</div>
+      </div>
+    </article>
+
+    <article class="gateway-card">
+      <div class="image-wrap"><img src="18.png" alt="CS4 SE 网关" decoding="async" loading="lazy"></div>
+      <div class="info">
+        <h2>CS4 SE 网关</h2>
+        <div class="line"></div>
+        <ul>
+          <li>小巧简约，稳定可靠</li>
+          <li>Zigbee 3.0 网关</li>
+          <li>快速配网，轻松管理</li>
+          <li>支持本地与云端联动</li>
+          <li>低功耗，7×24h 稳定运行</li>
+        </ul>
+      </div>
+      <div class="badges">
+        <div class="badge">Zigbee 3.0</div>
+        <div class="badge">稳定可靠</div>
+        <div class="badge">快速配网</div>
+        <div class="badge">低功耗</div>
+      </div>
+    </article>
+  </main>
+
+  <section class="bottom-features gateway-bottom">
+    <div class="bottom-item"><div class="bottom-icon">⌘</div><div><h3>全屋互联</h3><p>稳定连接各类智能设备</p></div></div>
+    <div class="bottom-item"><div class="bottom-icon">✓</div><div><h3>安全稳定</h3><p>多重加密，数据更安全</p></div></div>
+    <div class="bottom-item"><div class="bottom-icon">□</div><div><h3>开放兼容</h3><p>兼容多品牌智能设备</p></div></div>
+    <div class="bottom-item"><div class="bottom-icon">☁</div><div><h3>云端同步</h3><p>云端备份与远程管理</p></div></div>
+  </section>
+</section>
+
+<section id="panel" class="series">
+  <div class="hero">
+    <h1>面板系列</h1>
+    <p>极简设计，匠心工艺，打造高品质智能生活体验</p>
+  </div>
+
+  <main class="panel-products">
+    <article class="panel-card">
+      <div class="image-wrap"><img src="1.png" alt="单开关面板" decoding="async" loading="eager" fetchpriority="high"></div>
+      <h2>单开关面板</h2>
+      <div class="line"></div>
+      <p>经典单键，简约百搭，适合卧室、客厅、走廊等基础照明控制。</p>
+      <div class="features-mini">
+        <div class="feature-mini"><span>◇</span>钢化玻璃</div>
+        <div class="feature-mini"><span>☝</span>轻触操控</div>
+        <div class="feature-mini"><span>♨</span>阻燃材质</div>
+      </div>
+    </article>
+
+    <article class="panel-card">
+      <div class="image-wrap"><img src="2.png" alt="二开关面板" decoding="async" loading="lazy"></div>
+      <h2>二开关面板</h2>
+      <div class="line"></div>
+      <p>双键独立控制，灵活便捷，可满足多灯位、多区域控制需求。</p>
+      <div class="features-mini">
+        <div class="feature-mini"><span>✓</span>安全稳定</div>
+        <div class="feature-mini"><span>⚙</span>精工工艺</div>
+        <div class="feature-mini"><span>◷</span>长久耐用</div>
+      </div>
+    </article>
+
+    <article class="panel-card">
+      <div class="image-wrap"><img src="3.png" alt="三开关面板" decoding="async" loading="lazy"></div>
+      <h2>三开关面板</h2>
+      <div class="line"></div>
+      <p>场景联动，一键智控，适合客餐厅、套房、办公等复合空间。</p>
+      <div class="features-mini">
+        <div class="feature-mini"><span>🔗</span>联动控制</div>
+        <div class="feature-mini"><span>☼</span>场景模式</div>
+        <div class="feature-mini"><span>▣</span>无缝贴合</div>
+      </div>
+    </article>
+
+    <article class="panel-card">
+      <div class="image-wrap"><img src="4.png" alt="四开关面板" decoding="async" loading="lazy"></div>
+      <h2>四开关面板</h2>
+      <div class="line"></div>
+      <p>四控合一，全面掌控，减少墙面开关数量，空间更整洁统一。</p>
+      <div class="features-mini">
+        <div class="feature-mini"><span>▦</span>多控合一</div>
+        <div class="feature-mini"><span>♧</span>低功耗</div>
+        <div class="feature-mini"><span>◌</span>多色可选</div>
+      </div>
+    </article>
+  </main>
+
+  <section class="bottom-features panel-bottom">
+    <div class="bottom-item"><div class="bottom-icon">✓</div><div><h3>安全可靠</h3><p>多重保护机制，使用更安心</p></div></div>
+    <div class="bottom-item"><div class="bottom-icon">◇</div><div><h3>高端材质</h3><p>优选材料，质感细腻</p></div></div>
+    <div class="bottom-item"><div class="bottom-icon">⚙</div><div><h3>精工制造</h3><p>严苛工艺，品质如一</p></div></div>
+    <div class="bottom-item"><div class="bottom-icon">🛠</div><div><h3>轻松安装</h3><p>标准86底盒，快速安装</p></div></div>
+    <div class="bottom-item"><div class="bottom-icon">♛</div><div><h3>多样组合</h3><p>支持连体组合，个性定制</p></div></div>
+  </section>
+</section>
+
+<section id="temp" class="series">
+  <div class="hero">
+    <h1>旋钮温控系列</h1>
+    <p>精准控温，智享舒适生活</p>
+  </div>
+
+  <main class="temp-products">
+    <article class="temp-card">
+      <div class="image-wrap"><img src="6.png" alt="旋钮温控器经典款" decoding="async" loading="lazy"></div>
+      <h2>旋钮温控器（经典款）</h2>
+      <div class="line"></div>
+      <p>经典旋钮设计，支持空调、风速、模式切换，适合酒店、公寓及住宅空间。</p>
+      <div class="features-mini">
+        <div class="feature-mini"><span>◉</span>旋钮控制</div>
+        <div class="feature-mini"><span>❄</span>制冷模式</div>
+        <div class="feature-mini"><span>♨</span>舒适控温</div>
+      </div>
+    </article>
+
+    <article class="temp-card">
+      <div class="image-wrap"><img src="7.png" alt="旋钮温控器彩屏款" decoding="async" loading="lazy"></div>
+      <h2>旋钮温控器（彩屏款）</h2>
+      <div class="line"></div>
+      <p>高清彩屏显示，旋钮调节更直观，支持定时关机、自动模式与多档风速。</p>
+      <div class="features-mini">
+        <div class="feature-mini"><span>◷</span>定时关机</div>
+        <div class="feature-mini"><span>◎</span>旋钮调节</div>
+        <div class="feature-mini"><span>☼</span>智能模式</div>
+      </div>
+    </article>
+
+    <article class="temp-card">
+      <div class="image-wrap"><img src="8.png" alt="触控温控器黑晶款" decoding="async" loading="lazy"></div>
+      <h2>触控温控器（黑晶款）</h2>
+      <div class="line"></div>
+      <p>黑晶玻璃触控面板，大屏温度显示，操作灵敏，适合现代高端空间。</p>
+      <div class="features-mini">
+        <div class="feature-mini"><span>☝</span>触控操作</div>
+        <div class="feature-mini"><span>▣</span>高清显示</div>
+        <div class="feature-mini"><span>✓</span>稳定耐用</div>
+      </div>
+    </article>
+  </main>
+
+  <section class="bottom-features temp-bottom">
+    <div class="bottom-item"><div class="bottom-icon">℃</div><div><h3>精准控温</h3><p>温度控制精确到0.5℃</p></div></div>
+    <div class="bottom-item"><div class="bottom-icon">♧</div><div><h3>节能环保</h3><p>智能节能，绿色低碳</p></div></div>
+    <div class="bottom-item"><div class="bottom-icon">▣</div><div><h3>智能芯片</h3><p>高性能芯片，稳定可靠</p></div></div>
+    <div class="bottom-item"><div class="bottom-icon">🛠</div><div><h3>安装便捷</h3><p>标准86底盒，快速安装</p></div></div>
+    <div class="bottom-item"><div class="bottom-icon">✓</div><div><h3>多重保护</h3><p>多重安全防护，使用安心</p></div></div>
+  </section>
+</section>
+
+
+<section id="voice" class="series">
+  <div class="hero">
+    <h1>语音系列</h1>
+    <p>智能语音交互，解放双手，畅享便捷生活</p>
+  </div>
+
+  <main class="voice-products">
+    <article class="voice-card">
+      <h2>语音呼叫面板（呼叫/前台）</h2>
+      <div class="line"></div>
+
+      <div class="voice-main">
+        <div class="voice-img">
+          <img src="10.png" alt="语音呼叫面板" decoding="async" loading="eager" fetchpriority="high">
+        </div>
+
+        <div class="voice-list">
+          <div class="voice-feature">
+            <div class="vicon">⚙</div>
+            <div>
+              <h3>语音呼叫</h3>
+              <p>一键呼叫前台，语音沟通更便捷</p>
+            </div>
+          </div>
+
+          <div class="voice-feature">
+            <div class="vicon">🔊</div>
+            <div>
+              <h3>高清音质</h3>
+              <p>内置高品质扬声器，声音清晰洪亮</p>
+            </div>
+          </div>
+
+          <div class="voice-feature">
+            <div class="vicon">▣</div>
+            <div>
+              <h3>简约设计</h3>
+              <p>简约面板设计，适配多种装修风格</p>
+            </div>
+          </div>
+
+          <div class="voice-feature">
+            <div class="vicon">✿</div>
+            <div>
+              <h3>安装便捷</h3>
+              <p>标准86底盒，快速安装，稳定可靠</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="voice-card-bottom">
+        <div class="voice-mini"><div class="mini-icon">☎</div><div><h4>语音呼叫</h4><p>一键直呼</p></div></div>
+        <div class="voice-mini"><div class="mini-icon">◷</div><div><h4>状态指示</h4><p>呼叫状态提示</p></div></div>
+        <div class="voice-mini"><div class="mini-icon">✿</div><div><h4>稳定可靠</h4><p>7×24小时运行</p></div></div>
+        <div class="voice-mini"><div class="mini-icon">♧</div><div><h4>节能环保</h4><p>低功耗设计</p></div></div>
+      </div>
+    </article>
+
+    <article class="voice-card">
+      <h2>语音播报面板（WiFi连接）</h2>
+      <div class="line"></div>
+
+      <div class="voice-main">
+        <div class="voice-img">
+          <img src="11.png" alt="语音播报面板" decoding="async" loading="eager" fetchpriority="high">
+        </div>
+
+        <div class="voice-list">
+          <div class="voice-feature">
+            <div class="vicon">⌁</div>
+            <div>
+              <h3>WiFi连接</h3>
+              <p>支持WiFi联网，远程语音播报</p>
+            </div>
+          </div>
+
+          <div class="voice-feature">
+            <div class="vicon">◉</div>
+            <div>
+              <h3>语音播报</h3>
+              <p>可自定义语音内容，定时播放</p>
+            </div>
+          </div>
+
+          <div class="voice-feature">
+            <div class="vicon">🔊</div>
+            <div>
+              <h3>高保真音质</h3>
+              <p>高保真扬声器，声音饱满清晰</p>
+            </div>
+          </div>
+
+          <div class="voice-feature">
+            <div class="vicon">⚙</div>
+            <div>
+              <h3>简易配置</h3>
+              <p>手机APP配置，操作简单易用</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="voice-card-bottom">
+        <div class="voice-mini"><div class="mini-icon">⌁</div><div><h4>WiFi连接</h4><p>稳定联网</p></div></div>
+        <div class="voice-mini"><div class="mini-icon">🔊</div><div><h4>语音播报</h4><p>定时/实时播放</p></div></div>
+        <div class="voice-mini"><div class="mini-icon">⌂</div><div><h4>远程管理</h4><p>APP远程控制</p></div></div>
+        <div class="voice-mini"><div class="mini-icon">♧</div><div><h4>节能环保</h4><p>低功耗设计</p></div></div>
+      </div>
+    </article>
+  </main>
+
+  <section class="bottom-features voice-bottom">
+    <div class="bottom-item"><div class="bottom-icon">⚙</div><div><h3>智能交互</h3><p>语音交互，解放双手</p></div></div>
+    <div class="bottom-item"><div class="bottom-icon">🔗</div><div><h3>高效便捷</h3><p>提升生活效率，操作更便捷</p></div></div>
+    <div class="bottom-item"><div class="bottom-icon">✿</div><div><h3>稳定可靠</h3><p>优质硬件，稳定运行</p></div></div>
+    <div class="bottom-item"><div class="bottom-icon">🛡</div><div><h3>安全保护</h3><p>多重防护，隐私安全</p></div></div>
+    <div class="bottom-item"><div class="bottom-icon">▣</div><div><h3>广泛适配</h3><p>适配多种场景，灵活应用</p></div></div>
+  </section>
+</section>
+
+
+
+<section id="socket" class="series">
+  <div class="hero">
+    <h1>插座系列</h1>
+    <p>安全用电，智能便捷，打造舒适生活</p>
+  </div>
+
+  <main class="socket-products">
+    <article class="socket-card">
+      <h2>三孔插座（10A）</h2>
+      <div class="line"></div>
+      <div class="image-wrap"><img src="12.png" alt="三孔插座10A" decoding="async" loading="eager" fetchpriority="high"></div>
+
+      <div class="socket-card-bottom">
+        <div class="socket-mini"><div class="mini-icon">🛡</div><h4>安全防护</h4><p>多重保护</p></div>
+        <div class="socket-mini"><div class="mini-icon">♨</div><h4>阻燃材料</h4><p>高温阻燃</p></div>
+        <div class="socket-mini"><div class="mini-icon">🔌</div><h4>标准孔距</h4><p>国标设计</p></div>
+        <div class="socket-mini"><div class="mini-icon">🛠</div><h4>安装便捷</h4><p>快速接线</p></div>
+      </div>
+    </article>
+
+    <article class="socket-card">
+      <h2>五孔插座（10A）</h2>
+      <div class="line"></div>
+      <div class="image-wrap"><img src="13.png" alt="五孔插座10A" decoding="async" loading="lazy"></div>
+
+      <div class="socket-card-bottom">
+        <div class="socket-mini"><div class="mini-icon">🛡</div><h4>安全防护</h4><p>安全用电</p></div>
+        <div class="socket-mini"><div class="mini-icon">♨</div><h4>阻燃材料</h4><p>安心可靠</p></div>
+        <div class="socket-mini"><div class="mini-icon">🔌</div><h4>标准孔距</h4><p>兼容性强</p></div>
+        <div class="socket-mini"><div class="mini-icon">🛠</div><h4>安装便捷</h4><p>轻松安装</p></div>
+      </div>
+    </article>
+
+    <article class="socket-card">
+      <h2>五孔带USB插座（10A）</h2>
+      <div class="line"></div>
+      <div class="image-wrap"><img src="14.png" alt="五孔带USB插座10A" decoding="async" loading="lazy"></div>
+
+      <div class="socket-card-bottom">
+        <div class="socket-mini"><div class="mini-icon">🛡</div><h4>安全防护</h4><p>多重保护</p></div>
+        <div class="socket-mini"><div class="mini-icon">🔗</div><h4>双USB接口</h4><p>5V DC 2.4A</p></div>
+        <div class="socket-mini"><div class="mini-icon">♨</div><h4>阻燃材料</h4><p>高温阻燃</p></div>
+        <div class="socket-mini"><div class="mini-icon">🛠</div><h4>安装便捷</h4><p>快速接线</p></div>
+      </div>
+    </article>
+  </main>
+
+  <section class="bottom-features socket-bottom">
+    <div class="bottom-item"><div class="bottom-icon">✓</div><div><h3>安全可靠</h3><p>多重防护，使用更安心</p></div></div>
+    <div class="bottom-item"><div class="bottom-icon">♧</div><div><h3>节能环保</h3><p>低能耗设计，绿色节能</p></div></div>
+    <div class="bottom-item"><div class="bottom-icon">▥</div><div><h3>稳定耐用</h3><p>优质材料，持久耐用</p></div></div>
+    <div class="bottom-item"><div class="bottom-icon">🛠</div><div><h3>安装便捷</h3><p>标准86底盒，轻松安装</p></div></div>
+    <div class="bottom-item"><div class="bottom-icon">🛡</div><div><h3>品质保证</h3><p>严格质检，品质保障</p></div></div>
+  </section>
+</section>
+
+
+
+<section id="other" class="series">
+  <div class="hero">
+    <h1>其他系列</h1>
+    <p>多样化智能配件，满足不同场景需求</p>
+  </div>
+
+  <main class="other-products">
+    <article class="other-card">
+      <h2>紧急呼叫面板</h2>
+      <div class="line"></div>
+      <div class="image-wrap"><img src="9.png" alt="紧急呼叫面板" decoding="async" loading="lazy"></div>
+      <div class="other-card-bottom">
+        <div class="other-mini"><div class="mini-icon">🔔</div><h4>紧急呼叫</h4><p>一键呼叫求助</p></div>
+        <div class="other-mini"><div class="mini-icon">🛡</div><h4>安全可靠</h4><p>稳定耐用</p></div>
+        <div class="other-mini"><div class="mini-icon">✿</div><h4>简约设计</h4><p>美观大方</p></div>
+        <div class="other-mini"><div class="mini-icon">♧</div><h4>低功耗</h4><p>节能环保</p></div>
+      </div>
+    </article>
+
+    <article class="other-card">
+      <h2>酒店插卡取电开关</h2>
+      <div class="line"></div>
+      <div class="image-wrap"><img src="16.png" alt="酒店插卡取电开关" decoding="async" loading="lazy"></div>
+      <div class="other-card-bottom">
+        <div class="other-mini"><div class="mini-icon">💳</div><h4>插卡取电</h4><p>插卡通电</p></div>
+        <div class="other-mini"><div class="mini-icon">🛡</div><h4>安全节能</h4><p>节能环保</p></div>
+        <div class="other-mini"><div class="mini-icon">◷</div><h4>延时断电</h4><p>延时设计</p></div>
+        <div class="other-mini"><div class="mini-icon">♨</div><h4>阻燃材料</h4><p>防火阻燃</p></div>
+      </div>
+    </article>
+
+    <article class="other-card">
+      <h2>弱电信息插座（网口）</h2>
+      <div class="line"></div>
+      <div class="image-wrap"><img src="15.png" alt="弱电信息插座" decoding="async" loading="lazy"></div>
+      <div class="other-card-bottom">
+        <div class="other-mini"><div class="mini-icon">⌘</div><h4>网络接口</h4><p>稳定传输</p></div>
+        <div class="other-mini"><div class="mini-icon">📶</div><h4>高速传输</h4><p>性能稳定</p></div>
+        <div class="other-mini"><div class="mini-icon">🛡</div><h4>安全防护</h4><p>防尘防护</p></div>
+        <div class="other-mini"><div class="mini-icon">🛠</div><h4>安装便捷</h4><p>标准86底盒</p></div>
+      </div>
+    </article>
+  </main>
+
+  <section class="bottom-features other-bottom">
+    <div class="bottom-item"><div class="bottom-icon">✓</div><div><h3>安全可靠</h3><p>多重防护，使用更安心</p></div></div>
+    <div class="bottom-item"><div class="bottom-icon">♧</div><div><h3>节能环保</h3><p>低能耗设计，绿色节能</p></div></div>
+    <div class="bottom-item"><div class="bottom-icon">▥</div><div><h3>稳定耐用</h3><p>优质材料，持久耐用</p></div></div>
+    <div class="bottom-item"><div class="bottom-icon">🛠</div><div><h3>安装便捷</h3><p>标准86底盒，轻松安装</p></div></div>
+    <div class="bottom-item"><div class="bottom-icon">🛡</div><div><h3>品质保证</h3><p>严格质检，品质保障</p></div></div>
+  </section>
+</section>
+
+
+<script>
+function showSeries(id,el){
+  document.querySelectorAll('.series').forEach(item=>item.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  document.querySelectorAll('.tab').forEach(tab=>tab.classList.remove('active'));
+  el.classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+</script>
+
+
+<script>
+/* 图片缓存优化：首次访问后缓存静态资源，二次访问更快 */
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function () {
+    const swCode = `
+      const CACHE_NAME = 'scw-static-cache-v1';
+      const ASSETS = [
+        './',
+        './index.html',
+        './products.html',
+        './1.png','./2.png','./3.png','./4.png','./5.png','./6.png',
+        './7.png','./8.png','./9.png','./10.png','./11.png','./12.png',
+        './13.png','./14.png','./15.png','./16.png','./17.png','./18.png'
+      ];
+
+      self.addEventListener('install', event => {
+        event.waitUntil(
+          caches.open(CACHE_NAME).then(cache => cache.addAll(ASSETS).catch(() => null))
+        );
+        self.skipWaiting();
+      });
+
+      self.addEventListener('activate', event => {
+        event.waitUntil(
+          caches.keys().then(keys =>
+            Promise.all(keys.filter(key => key !== CACHE_NAME).map(key => caches.delete(key)))
+          )
+        );
+        self.clients.claim();
+      });
+
+      self.addEventListener('fetch', event => {
+        const request = event.request;
+        if (request.method !== 'GET') return;
+
+        event.respondWith(
+          caches.match(request).then(cached => {
+            if (cached) return cached;
+
+            return fetch(request).then(response => {
+              const copy = response.clone();
+              const url = new URL(request.url);
+              if (
+                response.ok &&
+                (url.pathname.match(/\\.(png|jpg|jpeg|webp|gif|svg|html|css|js)$/i) || url.pathname.endsWith('/'))
+              ) {
+                caches.open(CACHE_NAME).then(cache => cache.put(request, copy));
+              }
+              return response;
+            }).catch(() => cached);
+          })
+        );
+      });
+    `;
+
+    const blob = new Blob([swCode], { type: 'text/javascript' });
+    const swUrl = URL.createObjectURL(blob);
+    navigator.serviceWorker.register(swUrl).catch(function(){});
+  });
+}
+</script>
+
+</body>
+</html>

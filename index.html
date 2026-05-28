@@ -4,292 +4,809 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>SCW Smart Life - 产品展示</title>
+
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
 body{
   font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",Arial,sans-serif;
-  background:#020817;color:#fff;overflow-x:hidden;
+  background:#020817;
+  color:#fff;
+  overflow-x:hidden;
 }
-a{text-decoration:none;color:inherit}
+
+a{
+  text-decoration:none;
+  color:inherit;
+}
+
 .hero{
   min-height:100vh;
-  padding:24px 4vw 24px;
-  position:relative;overflow:hidden;
+  padding:18px 3vw 20px;
+  position:relative;
+  overflow:hidden;
+
   background:
     radial-gradient(circle at 20% 25%,rgba(56,189,248,.24),transparent 30%),
     radial-gradient(circle at 82% 32%,rgba(37,99,235,.25),transparent 36%),
     linear-gradient(135deg,#041225 0%,#061327 45%,#020617 100%);
 }
+
 .hero:before{
-  content:"";position:absolute;inset:auto -10% -22% -10%;height:230px;
-  background:linear-gradient(180deg,rgba(14,165,233,.18),rgba(2,6,23,0));
+  content:"";
+  position:absolute;
+  inset:auto -10% -22% -10%;
+  height:220px;
+
+  background:linear-gradient(
+    180deg,
+    rgba(14,165,233,.16),
+    rgba(2,6,23,0)
+  );
+
   filter:blur(22px);
 }
+
 .nav{
-  position:relative;z-index:5;display:flex;align-items:center;justify-content:space-between;
-  max-width:1500px;margin:0 auto 28px;
+  position:relative;
+  z-index:5;
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  max-width:1600px;
+  margin:0 auto 18px;
+
+  gap:20px;
 }
+
 .logo{
-  display:inline-flex;align-items:center;gap:9px;padding:12px 20px;border-radius:999px;
-  border:1px solid rgba(125,211,252,.25);background:rgba(255,255,255,.06);
-  box-shadow:0 0 30px rgba(14,165,233,.10);color:#e0faff;font-weight:700;
+  display:inline-flex;
+  align-items:center;
+  gap:9px;
+
+  padding:12px 20px;
+  border-radius:999px;
+
+  border:1px solid rgba(125,211,252,.25);
+  background:rgba(255,255,255,.06);
+
+  box-shadow:0 0 30px rgba(14,165,233,.10);
+
+  color:#e0faff;
+  font-weight:800;
 }
-.nav-links{display:flex;gap:54px;color:#e5eefb;font-weight:600}
-.nav-links a.active{color:#22d3ee}
+
+.nav-links{
+  display:flex;
+  gap:72px;
+
+  color:#e5eefb;
+  font-weight:700;
+  font-size:18px;
+
+  letter-spacing:.5px;
+  white-space:nowrap;
+}
+
+.nav-links a.active{
+  color:#22d3ee;
+}
+
 .contact{
-  padding:13px 28px;border-radius:999px;background:linear-gradient(135deg,#2563eb,#22d3ee);
-  font-weight:800;box-shadow:0 0 28px rgba(34,211,238,.28)
+  padding:14px 30px;
+  border-radius:999px;
+
+  background:linear-gradient(135deg,#2563eb,#22d3ee);
+
+  font-weight:900;
+
+  box-shadow:0 0 28px rgba(34,211,238,.28);
 }
+
 .layout{
-  position:relative;z-index:2;max-width:1720px;margin:auto;
-  display:grid;grid-template-columns:.9fr 1.1fr;gap:72px;align-items:center;
+  position:relative;
+  z-index:2;
+
+  max-width:1700px;
+  margin:0 auto;
+
+  display:grid;
+
+  grid-template-columns:
+    minmax(620px,720px)
+    minmax(760px,860px);
+
+  justify-content:center;
+
+  gap:72px;
+
+  align-items:center;
+
+  min-height:calc(100vh - 190px);
 }
+
+/* 左侧 */
+
+.copy{
+  max-width:720px;
+
+  padding-top:0;
+
+  justify-self:end;
+
+  padding-right:0;
+
+  transform:none;
+}
+
 .copy h1{
-  font-size:clamp(60px,6vw,96px);line-height:1.04;letter-spacing:-.05em;
+  font-size:clamp(54px,5vw,84px);
+
+  line-height:1.08;
+
+  letter-spacing:-.04em;
+
   text-shadow:0 18px 55px rgba(0,0,0,.45);
 }
+
 .copy h1 span{
-  display:block;background:linear-gradient(90deg,#67e8f9,#38bdf8,#dbeafe);
-  -webkit-background-clip:text;background-clip:text;color:transparent;
+  display:block;
+
+  margin-top:6px;
+
+  padding-left:.65em;
+
+  background:linear-gradient(
+    90deg,
+    #67e8f9,
+    #38bdf8,
+    #dbeafe
+  );
+
+  -webkit-background-clip:text;
+  background-clip:text;
+
+  color:transparent;
 }
+
 .copy p{
-  margin-top:20px;max-width:760px;font-size:22px;line-height:1.85;color:#dbeafe;
+  margin-top:18px;
+
+  max-width:680px;
+
+  font-size:20px;
+  line-height:1.8;
+
+  color:#dbeafe;
 }
-.buttons{display:flex;gap:18px;margin-top:28px}
+
+.buttons{
+  display:flex;
+  gap:16px;
+
+  margin-top:26px;
+
+  flex-wrap:wrap;
+}
+
 .btn{
-  display:inline-flex;align-items:center;justify-content:center;padding:24px 48px;border-radius:999px;
-  font-size:18px;font-weight:800;border:1px solid rgba(255,255,255,.16)
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+
+  padding:22px 40px;
+
+  border-radius:999px;
+
+  font-size:17px;
+  font-weight:800;
+
+  border:1px solid rgba(255,255,255,.16);
 }
-.btn.primary{background:linear-gradient(135deg,#67e8f9,#2563eb);color:#02111f;border:none}
-.btn.ghost{background:rgba(255,255,255,.04);color:#fff}
+
+.btn.primary{
+  background:linear-gradient(135deg,#67e8f9,#2563eb);
+  color:#02111f;
+  border:none;
+}
+
+.btn.ghost{
+  background:rgba(255,255,255,.04);
+  color:#fff;
+}
+
+/* 功能卡 */
 
 .features{
-  margin-top:32px;display:grid;grid-template-columns:repeat(2,1fr);gap:14px;max-width:720px;
+  margin-top:28px;
+
+  display:grid;
+
+  grid-template-columns:repeat(2,minmax(0,1fr));
+
+  gap:14px;
+
+  max-width:690px;
 }
+
 .feature{
-  min-height:130px;padding:22px 18px;border-radius:24px;background:rgba(15,23,42,.48);
-  border:1px solid rgba(125,211,252,.12);backdrop-filter:blur(12px);
+  min-height:122px;
+
+  padding:20px 18px;
+
+  border-radius:24px;
+
+  background:rgba(15,23,42,.52);
+
+  border:1px solid rgba(125,211,252,.12);
+
+  backdrop-filter:blur(12px);
 }
-.feature .ico{font-size:26px;color:#38bdf8}
-.feature h3{margin-top:10px;font-size:20px}
-.feature small{display:block;margin-top:8px;color:#b6c7df;line-height:1.45}
+
+.feature .ico{
+  font-size:26px;
+  color:#38bdf8;
+}
+
+.feature h3{
+  margin-top:10px;
+  font-size:20px;
+}
+
+.feature small{
+  display:block;
+
+  margin-top:6px;
+
+  color:#b6c7df;
+
+  line-height:1.42;
+}
+
+/* 右侧展示 */
 
 .showcase{
-  position:relative;border-radius:38px;padding:12px;
-  background:linear-gradient(145deg,rgba(255,255,255,.16),rgba(255,255,255,.04));
+  justify-self:start;
+
+  transform:none;
+
+  position:relative;
+
+  border-radius:42px;
+
+  padding:14px;
+
+  width:100%;
+  max-width:860px;
+
+  background:linear-gradient(
+    145deg,
+    rgba(255,255,255,.16),
+    rgba(255,255,255,.04)
+  );
+
   border:1px solid rgba(255,255,255,.15);
-  box-shadow:0 40px 100px rgba(0,0,0,.42), inset 0 0 0 1px rgba(255,255,255,.05);
+
+  box-shadow:
+    0 40px 100px rgba(0,0,0,.42),
+    inset 0 0 0 1px rgba(255,255,255,.05);
 }
+
 .panel{
-  position:relative;min-height:760px;border-radius:34px;overflow:hidden;
-  background:radial-gradient(circle at 50% 42%,rgba(14,165,233,.10),transparent 46%),transparent;
+  position:relative;
+
+  min-height:720px;
+
+  border-radius:36px;
+
+  overflow:hidden;
+
+  background:
+    radial-gradient(circle at 50% 42%,rgba(14,165,233,.12),transparent 46%),
+    rgba(2,6,23,.55);
+
   padding:20px 20px 24px;
 }
+
 .status{
-  display:flex;justify-content:center;align-items:center;color:#e5efff;font-size:18px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  color:#e5efff;
+  font-size:18px;
 }
+
 .product-title{
-  position:absolute;top:34px;left:50%;transform:translateX(-50%);
-  font-size:30px;font-weight:900;letter-spacing:.04em;color:#fff;
+  position:absolute;
+
+  top:30px;
+  left:50%;
+
+  transform:translateX(-50%);
+
+  font-size:28px;
+  font-weight:900;
+
+  letter-spacing:.08em;
+
+  color:#fff;
+
+  white-space:nowrap;
 }
-.product-title:before,.product-title:after{
-  content:"";display:inline-block;width:28px;height:1px;background:linear-gradient(90deg,transparent,#0ea5e9);vertical-align:middle;margin:0 14px;
-}
-.product-title:after{background:linear-gradient(90deg,#0ea5e9,transparent)}
+
 .carousel{
-  position:relative;height:700px;margin-top:22px;perspective:1100px;
+  position:relative;
+
+  height:650px;
+
+  margin-top:38px;
+
+  perspective:1100px;
 }
+
 .card{
-  position:absolute;top:0;left:50%;width:460px;height:620px;transform-style:preserve-3d;
-  border-radius:0;overflow:visible;background:transparent;
-  border:none;box-shadow:none;
-  opacity:.26;transition:all 1.6s ease-in-out;
+  position:absolute;
+
+  top:0;
+  left:50%;
+
+  width:430px;
+  height:580px;
+
+  transform-style:preserve-3d;
+
+  border-radius:0;
+
+  overflow:visible;
+
+  background:transparent;
+
+  border:none;
+
+  box-shadow:none;
+
+  opacity:.26;
+
+  transition:all 1.6s ease-in-out;
 }
-.card img{width:100%;height:100%;object-fit:contain;display:block;background:transparent;padding:0}
+
+.card img{
+  width:100%;
+  height:100%;
+
+  object-fit:contain;
+
+  display:block;
+
+  background:transparent;
+}
+
+/* 中间主卡 */
+
 .card.main{
-  opacity:1;z-index:8;transform:translateX(-50%) scale(1.18);
-  border-color:transparent;box-shadow:none;
+  opacity:1;
+
+  z-index:8;
+
+  transform:
+    translateX(-50%)
+    scale(1.12);
 }
-.card.left1{z-index:5;transform:translateX(-94%) scale(.82) rotateY(8deg)}
-.card.left2{z-index:4;transform:translateX(-142%) scale(.66) rotateY(12deg)}
-.card.right1{z-index:5;transform:translateX(-6%) scale(.82) rotateY(-8deg)}
-.card.right2{z-index:4;transform:translateX(38%) scale(.68) rotateY(-10deg)}
-.card.hide-left{z-index:1;transform:translateX(-220%) scale(.62);opacity:0}
-.card.hide-right{z-index:1;transform:translateX(120%) scale(.62);opacity:0}
+
+/* 左侧 */
+
+.card.left1{
+  z-index:5;
+
+  transform:
+    translateX(-98%)
+    scale(.82)
+    rotateY(8deg);
+}
+
+.card.left2{
+  z-index:4;
+
+  transform:
+    translateX(-148%)
+    scale(.66)
+    rotateY(12deg);
+}
+
+/* 右侧 */
+
+.card.right1{
+  z-index:5;
+
+  transform:
+    translateX(-2%)
+    scale(.82)
+    rotateY(-8deg);
+}
+
+.card.right2{
+  z-index:4;
+
+  transform:
+    translateX(46%)
+    scale(.66)
+    rotateY(-10deg);
+}
+
+.card.hide-left{
+  z-index:1;
+
+  transform:
+    translateX(-190%)
+    scale(.58);
+
+  opacity:0;
+}
+
+.card.hide-right{
+  z-index:1;
+
+  transform:
+    translateX(95%)
+    scale(.58);
+
+  opacity:0;
+}
 
 .name-badge{
-  position:absolute;left:50%;bottom:18px;transform:translateX(-50%);
-  padding:14px 30px;border-radius:999px;background:linear-gradient(135deg,#1d4ed8,#22d3ee);
-  font-weight:900;white-space:nowrap;box-shadow:0 0 25px rgba(34,211,238,.35);z-index:20;
+  position:absolute;
+
+  left:50%;
+  bottom:4px;
+
+  transform:translateX(-50%);
+
+  padding:10px 22px;
+
+  border-radius:999px;
+
+  background:linear-gradient(
+    135deg,
+    #1d4ed8,
+    #22d3ee
+  );
+
+  font-size:15px;
+  font-weight:900;
+
+  white-space:nowrap;
+
+  box-shadow:0 0 20px rgba(34,211,238,.30);
+
+  z-index:20;
 }
-.dots{position:absolute;left:50%;bottom:24px;transform:translateX(-50%);display:flex;gap:10px}
-.dot{width:10px;height:10px;border-radius:99px;background:rgba(255,255,255,.28);transition:.8s}
-.dot.active{width:30px;background:#22d3ee}
-.counter{
-  position:absolute;right:36px;bottom:20px;padding:10px 18px;border-radius:999px;
-  background:rgba(2,6,23,.65);border:1px solid rgba(255,255,255,.14);color:#e0f2fe;
-}
+
 .arrow{
-  position:absolute;top:50%;transform:translateY(-50%);width:84px;height:84px;border-radius:50%;
-  display:flex;align-items:center;justify-content:center;
-  background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);
-  font-size:52px;color:#e0f2fe;cursor:pointer;z-index:30;
+  position:absolute;
+
+  top:50%;
+
+  transform:translateY(-50%);
+
+  width:54px;
+  height:54px;
+
+  border-radius:50%;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  background:rgba(255,255,255,.08);
+
+  border:1px solid rgba(255,255,255,.14);
+
+  font-size:36px;
+
+  color:#e0f2fe;
+
+  cursor:pointer;
+
+  z-index:30;
 }
-.arrow.left{left:18px}.arrow.right{right:18px}
+
+.arrow.left{
+  left:14px;
+}
+
+.arrow.right{
+  right:14px;
+}
+
+/* 底部 */
 
 .bottom-bar{
-  max-width:1500px;margin:24px auto 0;padding:16px 24px;border-radius:28px;
-  background:rgba(15,23,42,.42);border:1px solid rgba(255,255,255,.10);
-  display:grid;grid-template-columns:repeat(4,1fr);gap:24px;position:relative;z-index:2;
+  max-width:1600px;
+
+  margin:18px auto 0;
+
+  padding:22px 28px;
+
+  border-radius:30px;
+
+  background:rgba(15,23,42,.52);
+
+  border:1px solid rgba(255,255,255,.10);
+
+  display:grid;
+
+  grid-template-columns:repeat(4,1fr);
+
+  gap:24px;
 }
-.bottom-item{display:flex;align-items:center;gap:18px}
+
+.bottom-item{
+  display:flex;
+  align-items:center;
+  gap:18px;
+}
+
 .bottom-item .icon{
-  width:52px;height:52px;border-radius:18px;background:rgba(255,255,255,.06);
-  border:1px solid rgba(125,211,252,.14);display:flex;align-items:center;justify-content:center;font-size:27px;
+  width:54px;
+  height:54px;
+
+  border-radius:18px;
+
+  background:rgba(255,255,255,.06);
+
+  border:1px solid rgba(125,211,252,.14);
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  font-size:28px;
 }
-.bottom-item h3{font-size:19px}
-.bottom-item p{margin-top:5px;color:#b6c7df}
+
+.bottom-item h3{
+  font-size:18px;
+}
+
+.bottom-item p{
+  margin-top:4px;
+
+  color:#b6c7df;
+
+  font-size:14px;
+}
 
 @media(max-width:1100px){
-  .nav-links{display:none}
-  .layout{grid-template-columns:1fr;text-align:center}
-  .copy p{margin-left:auto;margin-right:auto}
-  .buttons{justify-content:center}
-  .features{margin-left:auto;margin-right:auto}
-  .panel{min-height:500px}
-  .bottom-bar{grid-template-columns:1fr 1fr}
-}
-@media(max-width:760px){
-  .hero{padding:28px 20px}
-  .copy h1{font-size:48px}
-  .copy p{font-size:20px}
-  .features,.bottom-bar{grid-template-columns:1fr}
-  .showcase{padding:12px;border-radius:30px}
-  .panel{padding:28px 16px;min-height:430px;border-radius:24px}
-  .product-title{font-size:18px;top:30px}
-  .carousel{height:300px}
-  .card{width:205px;height:265px}
+
+  .layout{
+    grid-template-columns:1fr;
+    text-align:center;
+  }
+
+  .copy{
+    margin:0 auto;
+  }
+
+  .showcase{
+    margin:0 auto;
+  }
 }
 </style>
+
+<!-- 图片加载优化：优先加载首屏关键图片 -->
+<link rel="preload" as="image" href="1.png">
+<link rel="preload" as="image" href="2.png">
+<link rel="preload" as="image" href="3.png">
+<link rel="preload" as="image" href="4.png">
+<link rel="preload" as="image" href="5.png">
+<meta http-equiv="Cache-Control" content="public, max-age=604800">
+
 </head>
+
 <body>
+
 <section class="hero">
+
   <nav class="nav">
     <div class="logo">☁ 思辰微智能</div>
+
     <div class="nav-links">
       <a class="active" href="#">首页</a>
-      <a href="#">产品中心</a>
+      <a href="products.html">产品中心</a>
       <a href="#">解决方案</a>
       <a href="#">智慧场景</a>
       <a href="#">支持服务</a>
       <a href="#">关于我们</a>
     </div>
+
     <a class="contact" href="#">联系我们</a>
   </nav>
 
   <div class="layout">
+
+    <!-- 左侧 -->
+
     <div class="copy">
-      <h1>&nbsp;&nbsp;&nbsp;让生活更简单<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;使酒店更智能</span></h1>
-      <p>以智能面板、温控、场景联动为核心，打造安全稳定、简约大气、易安装、经久耐用的智慧空间体验。</p>
+
+      <h1>
+        让生活更简单
+        <span>使酒店更智能</span>
+      </h1>
+
+      <p>
+        以智能面板、温控、场景联动为核心，
+        打造安全稳定、简约大气、易安装、
+        经久耐用的智慧空间体验。
+      </p>
+
       <div class="buttons">
         <a class="btn primary" href="#">探索解决方案 →</a>
-        <a class="btn ghost" href="#">查看产品矩阵</a>
+        <a class="btn ghost" href="products.html">查看产品矩阵</a>
       </div>
 
       <div class="features">
-        <div class="feature"><div class="ico">⌘</div><h3>多协议兼容</h3><small>100+设备互联互通</small></div>
-        <div class="feature"><div class="ico">AI</div><h3>AI 智能联动</h3><small>主动感知 智慧决策</small></div>
-        <div class="feature"><div class="ico">盾</div><h3>全方位守护</h3><small>安防监测 安心无忧</small></div>
-        <div class="feature"><div class="ico">叶</div><h3>节能环保</h3><small>智能调节 绿色生活</small></div>
+
+        <div class="feature">
+          <div class="ico">⌘</div>
+          <h3>多协议兼容</h3>
+          <small>100+设备互联互通</small>
+        </div>
+
+        <div class="feature">
+          <div class="ico">AI</div>
+          <h3>AI 智能联动</h3>
+          <small>主动感知 智慧决策</small>
+        </div>
+
+        <div class="feature">
+          <div class="ico">盾</div>
+          <h3>全方位守护</h3>
+          <small>安防监测 安心无忧</small>
+        </div>
+
+        <div class="feature">
+          <div class="ico">叶</div>
+          <h3>节能环保</h3>
+          <small>智能调节 绿色生活</small>
+        </div>
+
       </div>
     </div>
 
-    <div class="showcase">
+    <!-- 右侧 -->
+
+    <div class="showcase" id="products">
+
       <div class="panel">
-        <div class="status"><div class="product-title">产品展示</div></div>
+
+        <div class="status">
+          <div class="product-title">产品展示</div>
+        </div>
 
         <div class="carousel">
-          <div class="card main"><img src="1.png" alt="产品1"><div class="name-badge">一键开关</div></div>
-          <div class="card"><img src="2.png" alt="产品2"><div class="name-badge">二键开关</div></div>
-          <div class="card"><img src="3.png" alt="产品3"><div class="name-badge">三键开关</div></div>
-          <div class="card"><img src="4.png" alt="产品4"><div class="name-badge">四键开关</div></div>
-          <div class="card"><img src="5.png" alt="产品5"><div class="name-badge">调光旋钮</div></div>
-          <div class="card"><img src="6.png" alt="产品6"><div class="name-badge">调温旋钮</div></div>
-          <div class="card"><img src="7.png" alt="产品7"><div class="name-badge">彩屏旋钮</div></div>
-          <div class="card"><img src="8.png" alt="产品8"><div class="name-badge">大屏温控</div></div>
-          <div class="card"><img src="9.png" alt="产品9"><div class="name-badge">紧急报警</div></div>
-          <div class="card"><img src="10.png" alt="产品10"><div class="name-badge">墙装电话</div></div>
-          <div class="card"><img src="11.png" alt="产品11"><div class="name-badge">离线语音</div></div>
-          <div class="card"><img src="12.png" alt="产品12"><div class="name-badge">16A三孔</div></div>
-          <div class="card"><img src="13.png" alt="产品13"><div class="name-badge">五孔插座</div></div>
-          <div class="card"><img src="14.png" alt="产品14"><div class="name-badge">五孔+USB</div></div>
-          <div class="card"><img src="15.png" alt="产品15"><div class="name-badge">AP路由</div></div>
-          <div class="card"><img src="16.png" alt="产品16"><div class="name-badge">插卡取电</div></div>
-          <div class="card"><img src="17.png" alt="产品17"><div class="name-badge">四寸彩屏</div></div>
-          <div class="card"><img src="18.png" alt="产品18"><div class="name-badge">无屏网关</div></div>
+
+          <div class="card main">
+            <img src="1.png" decoding="async" loading="eager" fetchpriority="high">
+            <div class="name-badge">一键开关</div>
+          </div>
+
+          <div class="card">
+            <img src="2.png" decoding="async" loading="eager" fetchpriority="high">
+            <div class="name-badge">二键开关</div>
+          </div>
+
+          <div class="card">
+            <img src="3.png" decoding="async" loading="eager" fetchpriority="high">
+            <div class="name-badge">三键开关</div>
+          </div>
+
+          <div class="card">
+            <img src="4.png" decoding="async" loading="eager" fetchpriority="high">
+            <div class="name-badge">四键开关</div>
+          </div>
+
+          <div class="card">
+            <img src="5.png" decoding="async" loading="eager" fetchpriority="high">
+            <div class="name-badge">调光旋钮</div>
+          </div>
+
         </div>
 
         <div class="arrow left">‹</div>
         <div class="arrow right">›</div>
-        <div class="dots"></div>
-        <div class="counter"><span id="current">1</span> / <span id="total">18</span></div>
+
       </div>
     </div>
+
   </div>
 
   <div class="bottom-bar">
-    <div class="bottom-item"><div class="icon">盾</div><div><h3>安全防护</h3><p>多重保护更安心</p></div></div>
-    <div class="bottom-item"><div class="icon">火</div><div><h3>阻燃材质</h3><p>耐高温更放心</p></div></div>
-    <div class="bottom-item"><div class="icon">🔧</div><div><h3>安装便捷</h3><p>标准86型结构</p></div></div>
-    <div class="bottom-item"><div class="icon">◇</div><div><h3>经久耐用</h3><p>优选材料更耐用</p></div></div>
-  </div>
-</section>
 
+    <div class="bottom-item">
+      <div class="icon">⚡</div>
+      <div>
+        <h3>快速部署</h3>
+        <p>标准化安装 更省施工时间</p>
+      </div>
+    </div>
+
+    <div class="bottom-item">
+      <div class="icon">☁</div>
+      <div>
+        <h3>云端管理</h3>
+        <p>远程运维 实时状态监控</p>
+      </div>
+    </div>
+
+    <div class="bottom-item">
+      <div class="icon">⌂</div>
+      <div>
+        <h3>智慧场景</h3>
+        <p>酒店 公寓 办公全覆盖</p>
+      </div>
+    </div>
+
+    <div class="bottom-item">
+      <div class="icon">🛡</div>
+      <div>
+        <h3>稳定可靠</h3>
+        <p>工业级方案 长期稳定运行</p>
+      </div>
+    </div>
+
+  </div>
+
+
+</section>
 
 <script>
 const cards = Array.from(document.querySelectorAll('.card'));
-const dotsBox = document.querySelector('.dots');
-const currentText = document.getElementById('current');
+
 const leftArrow = document.querySelector('.arrow.left');
 const rightArrow = document.querySelector('.arrow.right');
 
 let index = 0;
-let autoPlay;
-
-cards.forEach((_, i) => {
-  const dot = document.createElement('span');
-  dot.className = 'dot' + (i === 0 ? ' active' : '');
-  dotsBox.appendChild(dot);
-});
-
-const dots = Array.from(document.querySelectorAll('.dot'));
 
 function render(){
 
   cards.forEach((card, i) => {
-    const offset = (i - index + cards.length) % cards.length;
+
+    const offset =
+      (i - index + cards.length) % cards.length;
+
     card.className = 'card';
 
-    if (offset === 0) {
+    if(offset === 0){
       card.classList.add('main');
-    } else if (offset === 1) {
+    }
+    else if(offset === 1){
       card.classList.add('right1');
-    } else if (offset === 2) {
+    }
+    else if(offset === 2){
       card.classList.add('right2');
-    } else if (offset === cards.length - 1) {
+    }
+    else if(offset === cards.length - 1){
       card.classList.add('left1');
-    } else if (offset === cards.length - 2) {
+    }
+    else if(offset === cards.length - 2){
       card.classList.add('left2');
-    } else {
+    }
+    else{
       card.classList.add('hide-right');
     }
+
   });
 
-  dots.forEach((dot, i) => {
-    dot.classList.toggle('active', i === index);
-  });
-
-  currentText.textContent = index + 1;
 }
 
 function next(){
@@ -302,27 +819,75 @@ function prev(){
   render();
 }
 
-rightArrow.addEventListener('click', () => {
-  next();
-  restartAuto();
-});
-
-leftArrow.addEventListener('click', () => {
-  prev();
-  restartAuto();
-});
-
-function startAuto(){
-  autoPlay = setInterval(next, 5000);
-}
-
-function restartAuto(){
-  clearInterval(autoPlay);
-  startAuto();
-}
+rightArrow.addEventListener('click', next);
+leftArrow.addEventListener('click', prev);
 
 render();
-startAuto();
+
+setInterval(next,5000);
+</script>
+
+
+<script>
+/* 图片缓存优化：首次访问后缓存静态资源，二次访问更快 */
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function () {
+    const swCode = `
+      const CACHE_NAME = 'scw-static-cache-v1';
+      const ASSETS = [
+        './',
+        './index.html',
+        './products.html',
+        './1.png','./2.png','./3.png','./4.png','./5.png','./6.png',
+        './7.png','./8.png','./9.png','./10.png','./11.png','./12.png',
+        './13.png','./14.png','./15.png','./16.png','./17.png','./18.png'
+      ];
+
+      self.addEventListener('install', event => {
+        event.waitUntil(
+          caches.open(CACHE_NAME).then(cache => cache.addAll(ASSETS).catch(() => null))
+        );
+        self.skipWaiting();
+      });
+
+      self.addEventListener('activate', event => {
+        event.waitUntil(
+          caches.keys().then(keys =>
+            Promise.all(keys.filter(key => key !== CACHE_NAME).map(key => caches.delete(key)))
+          )
+        );
+        self.clients.claim();
+      });
+
+      self.addEventListener('fetch', event => {
+        const request = event.request;
+        if (request.method !== 'GET') return;
+
+        event.respondWith(
+          caches.match(request).then(cached => {
+            if (cached) return cached;
+
+            return fetch(request).then(response => {
+              const copy = response.clone();
+              const url = new URL(request.url);
+              if (
+                response.ok &&
+                (url.pathname.match(/\\.(png|jpg|jpeg|webp|gif|svg|html|css|js)$/i) || url.pathname.endsWith('/'))
+              ) {
+                caches.open(CACHE_NAME).then(cache => cache.put(request, copy));
+              }
+              return response;
+            }).catch(() => cached);
+          })
+        );
+      });
+    `;
+
+    const blob = new Blob([swCode], { type: 'text/javascript' });
+    const swUrl = URL.createObjectURL(blob);
+    navigator.serviceWorker.register(swUrl).catch(function(){});
+  });
+}
 </script>
 
 </body>
