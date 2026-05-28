@@ -870,34 +870,174 @@ body::before{
   .other-bottom{grid-template-columns:1fr}
 }
 
+
+
+
+/* ===== 最终导航栏统一修复：去掉顶部黑色长条，所有页面保持一致 ===== */
+html{
+  scroll-behavior:auto !important;
+  margin:0 !important;
+  padding:0 !important;
+}
+
+body{
+  margin:0 !important;
+  padding:0 !important;
+  overflow-x:hidden !important;
+}
+
+/* 首页 / 联系我们 使用 .hero 或 .page 承载背景时，背景必须从顶部开始 */
+.hero,
+.page{
+  padding-top:18px !important;
+}
+
+/* 产品页原导航 sticky 会形成顶部黑条，这里强制取消 */
+.nav{
+  position:relative !important;
+  top:auto !important;
+  left:auto !important;
+  right:auto !important;
+  z-index:50 !important;
+
+  width:min(1600px,94vw) !important;
+  max-width:1600px !important;
+  height:58px !important;
+  min-height:58px !important;
+
+  margin:0 auto 18px !important;
+  padding:0 !important;
+
+  display:flex !important;
+  align-items:center !important;
+  justify-content:space-between !important;
+  gap:20px !important;
+
+  background:rgba(2,8,23,.38) !important;
+  border:1px solid rgba(125,211,252,.12) !important;
+  border-radius:999px !important;
+  backdrop-filter:blur(14px) !important;
+  -webkit-backdrop-filter:blur(14px) !important;
+  box-shadow:0 0 38px rgba(14,165,233,.08) !important;
+}
+
+/* 如果旧文件里有黑色伪元素或遮罩，禁止盖在导航背后 */
+.nav::before,
+.nav::after{
+  display:none !important;
+  content:none !important;
+}
+
+.logo{
+  display:inline-flex !important;
+  align-items:center !important;
+  gap:9px !important;
+  height:48px !important;
+  padding:0 26px !important;
+  border-radius:999px !important;
+  border:1px solid rgba(125,211,252,.25) !important;
+  background:rgba(255,255,255,.06) !important;
+  box-shadow:0 0 30px rgba(14,165,233,.10) !important;
+  color:#e0faff !important;
+  font-size:18px !important;
+  font-weight:800 !important;
+  white-space:nowrap !important;
+}
+
+.nav-links{
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  gap:72px !important;
+  color:#e5eefb !important;
+  font-weight:700 !important;
+  font-size:18px !important;
+  letter-spacing:.5px !important;
+  white-space:nowrap !important;
+}
+
+.nav-links a{
+  text-decoration:none !important;
+  color:inherit !important;
+  transition:.25s !important;
+}
+
+.nav-links a:hover{
+  color:#67e8f9 !important;
+}
+
+.nav-links a.active{
+  color:#22d3ee !important;
+}
+
+.contact{
+  display:inline-flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  height:48px !important;
+  padding:0 30px !important;
+  margin-right:6px !important;
+  border-radius:999px !important;
+  background:linear-gradient(135deg,#2563eb,#22d3ee) !important;
+  color:#fff !important;
+  font-weight:900 !important;
+  box-shadow:0 0 28px rgba(34,211,238,.28) !important;
+  text-decoration:none !important;
+  white-space:nowrap !important;
+}
+
+/* 首页顶部不能再单独出现深黑横条 */
+.hero > .nav{
+  margin-top:0 !important;
+}
+
+/* 产品页顶部导航不再 sticky，也不占满整行 */
+body > .nav{
+  margin-top:18px !important;
+}
+
+/* 移动端 */
+@media(max-width:900px){
+  .nav{
+    width:94vw !important;
+    height:auto !important;
+    min-height:auto !important;
+    padding:14px !important;
+    flex-direction:column !important;
+    border-radius:24px !important;
+  }
+  .nav-links{
+    gap:22px !important;
+    flex-wrap:wrap !important;
+  }
+  .contact{
+    margin-right:0 !important;
+  }
+}
+
 </style>
 
 <!-- 图片加载优化：优先加载首屏关键图片 -->
-<link rel="preload" as="image" href="1.png">
-<link rel="preload" as="image" href="10.png">
-<link rel="preload" as="image" href="11.png">
-<link rel="preload" as="image" href="12.png">
+<link rel="preload" as="image" href="1.webp">
+<link rel="preload" as="image" href="10.webp">
+<link rel="preload" as="image" href="11.webp">
+<link rel="preload" as="image" href="12.webp">
 <meta http-equiv="Cache-Control" content="public, max-age=604800">
 
 </head>
 
 <body>
-
-
-<nav class="nav">
-  <div class="logo">☁ 思辰微智能</div>
-
-  <div class="nav-links">
-    <a href="index.html">首页</a>
-    <a class="active" href="products.html">产品中心</a>
-    <a href="solutions.html">解决方案</a>
-    <a href="#">智慧场景</a>
-    <a href="#">支持服务</a>
-    <a href="#">关于我们</a>
-  </div>
-
-  <a class="contact" href="#">联系我们</a>
-</nav>
+  <nav class="nav" aria-label="主导航">
+    <div class="logo">☁ 思辰微智能</div>
+    <div class="nav-links">
+      <a href="index.html">首页</a>
+      <a href="products.html" class="active">产品中心</a>
+      <a href="solutions.html">解决方案</a>
+      <a href="support.html">支持服务</a>
+      <a href="about.html">关于我们</a>
+    </div>
+    <a class="contact" href="contact.html">联系我们</a>
+  </nav>
 
 
 <nav class="tabs">
@@ -917,7 +1057,7 @@ body::before{
 
   <main class="gateway-products">
     <article class="gateway-card">
-      <div class="image-wrap"><img src="17.png" alt="CS4 网关中控屏" decoding="async" loading="lazy"></div>
+      <div class="image-wrap"><img src="17.webp" alt="CS4 网关中控屏" decoding="async" loading="lazy"></div>
       <div class="info">
         <h2>CS4 网关中控屏</h2>
         <div class="line"></div>
@@ -938,7 +1078,7 @@ body::before{
     </article>
 
     <article class="gateway-card">
-      <div class="image-wrap"><img src="18.png" alt="CS4 SE 网关" decoding="async" loading="lazy"></div>
+      <div class="image-wrap"><img src="18.webp" alt="CS4 SE 网关" decoding="async" loading="lazy"></div>
       <div class="info">
         <h2>CS4 SE 网关</h2>
         <div class="line"></div>
@@ -975,7 +1115,7 @@ body::before{
 
   <main class="panel-products">
     <article class="panel-card">
-      <div class="image-wrap"><img src="1.png" alt="单开关面板" decoding="async" loading="eager" fetchpriority="high"></div>
+      <div class="image-wrap"><img src="1.webp" alt="单开关面板" decoding="async" loading="eager" fetchpriority="high"></div>
       <h2>单开关面板</h2>
       <div class="line"></div>
       <p>经典单键，简约百搭，适合卧室、客厅、走廊等基础照明控制。</p>
@@ -987,7 +1127,7 @@ body::before{
     </article>
 
     <article class="panel-card">
-      <div class="image-wrap"><img src="2.png" alt="二开关面板" decoding="async" loading="lazy"></div>
+      <div class="image-wrap"><img src="2.webp" alt="二开关面板" decoding="async" loading="lazy"></div>
       <h2>二开关面板</h2>
       <div class="line"></div>
       <p>双键独立控制，灵活便捷，可满足多灯位、多区域控制需求。</p>
@@ -999,7 +1139,7 @@ body::before{
     </article>
 
     <article class="panel-card">
-      <div class="image-wrap"><img src="3.png" alt="三开关面板" decoding="async" loading="lazy"></div>
+      <div class="image-wrap"><img src="3.webp" alt="三开关面板" decoding="async" loading="lazy"></div>
       <h2>三开关面板</h2>
       <div class="line"></div>
       <p>场景联动，一键智控，适合客餐厅、套房、办公等复合空间。</p>
@@ -1011,7 +1151,7 @@ body::before{
     </article>
 
     <article class="panel-card">
-      <div class="image-wrap"><img src="4.png" alt="四开关面板" decoding="async" loading="lazy"></div>
+      <div class="image-wrap"><img src="4.webp" alt="四开关面板" decoding="async" loading="lazy"></div>
       <h2>四开关面板</h2>
       <div class="line"></div>
       <p>四控合一，全面掌控，减少墙面开关数量，空间更整洁统一。</p>
@@ -1040,7 +1180,7 @@ body::before{
 
   <main class="temp-products">
     <article class="temp-card">
-      <div class="image-wrap"><img src="6.png" alt="旋钮温控器经典款" decoding="async" loading="lazy"></div>
+      <div class="image-wrap"><img src="6.webp" alt="旋钮温控器经典款" decoding="async" loading="lazy"></div>
       <h2>旋钮温控器（经典款）</h2>
       <div class="line"></div>
       <p>经典旋钮设计，支持空调、风速、模式切换，适合酒店、公寓及住宅空间。</p>
@@ -1052,7 +1192,7 @@ body::before{
     </article>
 
     <article class="temp-card">
-      <div class="image-wrap"><img src="7.png" alt="旋钮温控器彩屏款" decoding="async" loading="lazy"></div>
+      <div class="image-wrap"><img src="7.webp" alt="旋钮温控器彩屏款" decoding="async" loading="lazy"></div>
       <h2>旋钮温控器（彩屏款）</h2>
       <div class="line"></div>
       <p>高清彩屏显示，旋钮调节更直观，支持定时关机、自动模式与多档风速。</p>
@@ -1064,7 +1204,7 @@ body::before{
     </article>
 
     <article class="temp-card">
-      <div class="image-wrap"><img src="8.png" alt="触控温控器黑晶款" decoding="async" loading="lazy"></div>
+      <div class="image-wrap"><img src="8.webp" alt="触控温控器黑晶款" decoding="async" loading="lazy"></div>
       <h2>触控温控器（黑晶款）</h2>
       <div class="line"></div>
       <p>黑晶玻璃触控面板，大屏温度显示，操作灵敏，适合现代高端空间。</p>
@@ -1099,7 +1239,7 @@ body::before{
 
       <div class="voice-main">
         <div class="voice-img">
-          <img src="10.png" alt="语音呼叫面板" decoding="async" loading="eager" fetchpriority="high">
+          <img src="10.webp" alt="语音呼叫面板" decoding="async" loading="eager" fetchpriority="high">
         </div>
 
         <div class="voice-list">
@@ -1151,7 +1291,7 @@ body::before{
 
       <div class="voice-main">
         <div class="voice-img">
-          <img src="11.png" alt="语音播报面板" decoding="async" loading="eager" fetchpriority="high">
+          <img src="11.webp" alt="语音播报面板" decoding="async" loading="eager" fetchpriority="high">
         </div>
 
         <div class="voice-list">
@@ -1219,7 +1359,7 @@ body::before{
     <article class="socket-card">
       <h2>三孔插座（10A）</h2>
       <div class="line"></div>
-      <div class="image-wrap"><img src="12.png" alt="三孔插座10A" decoding="async" loading="eager" fetchpriority="high"></div>
+      <div class="image-wrap"><img src="12.webp" alt="三孔插座10A" decoding="async" loading="eager" fetchpriority="high"></div>
 
       <div class="socket-card-bottom">
         <div class="socket-mini"><div class="mini-icon">🛡</div><h4>安全防护</h4><p>多重保护</p></div>
@@ -1232,7 +1372,7 @@ body::before{
     <article class="socket-card">
       <h2>五孔插座（10A）</h2>
       <div class="line"></div>
-      <div class="image-wrap"><img src="13.png" alt="五孔插座10A" decoding="async" loading="lazy"></div>
+      <div class="image-wrap"><img src="13.webp" alt="五孔插座10A" decoding="async" loading="lazy"></div>
 
       <div class="socket-card-bottom">
         <div class="socket-mini"><div class="mini-icon">🛡</div><h4>安全防护</h4><p>安全用电</p></div>
@@ -1245,7 +1385,7 @@ body::before{
     <article class="socket-card">
       <h2>五孔带USB插座（10A）</h2>
       <div class="line"></div>
-      <div class="image-wrap"><img src="14.png" alt="五孔带USB插座10A" decoding="async" loading="lazy"></div>
+      <div class="image-wrap"><img src="14.webp" alt="五孔带USB插座10A" decoding="async" loading="lazy"></div>
 
       <div class="socket-card-bottom">
         <div class="socket-mini"><div class="mini-icon">🛡</div><h4>安全防护</h4><p>多重保护</p></div>
@@ -1277,7 +1417,7 @@ body::before{
     <article class="other-card">
       <h2>紧急呼叫面板</h2>
       <div class="line"></div>
-      <div class="image-wrap"><img src="9.png" alt="紧急呼叫面板" decoding="async" loading="lazy"></div>
+      <div class="image-wrap"><img src="9.webp" alt="紧急呼叫面板" decoding="async" loading="lazy"></div>
       <div class="other-card-bottom">
         <div class="other-mini"><div class="mini-icon">🔔</div><h4>紧急呼叫</h4><p>一键呼叫求助</p></div>
         <div class="other-mini"><div class="mini-icon">🛡</div><h4>安全可靠</h4><p>稳定耐用</p></div>
@@ -1289,7 +1429,7 @@ body::before{
     <article class="other-card">
       <h2>酒店插卡取电开关</h2>
       <div class="line"></div>
-      <div class="image-wrap"><img src="16.png" alt="酒店插卡取电开关" decoding="async" loading="lazy"></div>
+      <div class="image-wrap"><img src="16.webp" alt="酒店插卡取电开关" decoding="async" loading="lazy"></div>
       <div class="other-card-bottom">
         <div class="other-mini"><div class="mini-icon">💳</div><h4>插卡取电</h4><p>插卡通电</p></div>
         <div class="other-mini"><div class="mini-icon">🛡</div><h4>安全节能</h4><p>节能环保</p></div>
@@ -1301,7 +1441,7 @@ body::before{
     <article class="other-card">
       <h2>弱电信息插座（网口）</h2>
       <div class="line"></div>
-      <div class="image-wrap"><img src="15.png" alt="弱电信息插座" decoding="async" loading="lazy"></div>
+      <div class="image-wrap"><img src="15.webp" alt="弱电信息插座" decoding="async" loading="lazy"></div>
       <div class="other-card-bottom">
         <div class="other-mini"><div class="mini-icon">⌘</div><h4>网络接口</h4><p>稳定传输</p></div>
         <div class="other-mini"><div class="mini-icon">📶</div><h4>高速传输</h4><p>性能稳定</p></div>
@@ -1342,9 +1482,9 @@ if ('serviceWorker' in navigator) {
         './',
         './index.html',
         './products.html',
-        './1.png','./2.png','./3.png','./4.png','./5.png','./6.png',
-        './7.png','./8.png','./9.png','./10.png','./11.png','./12.png',
-        './13.png','./14.png','./15.png','./16.png','./17.png','./18.png'
+        './1.webp','./2.webp','./3.webp','./4.webp','./5.webp','./6.webp',
+        './7.webp','./8.webp','./9.webp','./10.webp','./11.webp','./12.webp',
+        './13.webp','./14.webp','./15.webp','./16.webp','./17.webp','./18.webp'
       ];
 
       self.addEventListener('install', event => {
@@ -1394,5 +1534,18 @@ if ('serviceWorker' in navigator) {
 }
 </script>
 
+
+<script>
+(function(){
+  var current=(location.pathname.split('/').pop()||'index.html').replace(/%20/g,' ');
+  document.querySelectorAll('.unified-nav a').forEach(function(a){
+    var href=a.getAttribute('href');
+    if(href===current){a.classList.add('active');}
+    else if(!(current==='contact.html' && a.classList.contains('contact'))){
+      if(!a.classList.contains('contact')) a.classList.remove('active');
+    }
+  });
+})();
+</script>
 </body>
 </html>

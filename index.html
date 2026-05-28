@@ -601,14 +601,186 @@ a{
     margin:0 auto;
   }
 }
+
+
+
+/* ===== 导航栏最终位置锁定：防止支持服务 / 关于我们点击时突然上移 ===== */
+html{
+  scroll-behavior:auto !important;
+  margin:0 !important;
+  padding:0 !important;
+}
+
+body{
+  margin:0 !important;
+  padding:0 !important;
+  overflow-x:hidden !important;
+}
+
+/* 所有页面顶部统一 18px，避免页面切换时导航栏上下跳动 */
+.hero,
+.page,
+.container{
+  padding-top:18px !important;
+}
+
+/* 首页 hero 原本已有 padding，避免重复导致首页下移 */
+.hero{
+  padding-left:3vw !important;
+  padding-right:3vw !important;
+}
+
+/* 联系页 page 原本已有 padding，统一保留左右和底部 */
+.page{
+  padding-left:3vw !important;
+  padding-right:3vw !important;
+}
+
+/* about / support 使用 container 包导航，必须锁定顶部距离 */
+.container{
+  width:min(1680px,96%) !important;
+  margin:auto !important;
+}
+
+/* 统一导航栏，不使用 sticky，避免切换页面时被浏览器重新计算位置 */
+.nav{
+  position:relative !important;
+  top:auto !important;
+  left:auto !important;
+  right:auto !important;
+  z-index:50 !important;
+
+  width:min(1600px,94vw) !important;
+  max-width:1600px !important;
+  height:58px !important;
+  min-height:58px !important;
+
+  margin:0 auto 18px !important;
+  padding:0 !important;
+
+  display:flex !important;
+  align-items:center !important;
+  justify-content:space-between !important;
+  gap:20px !important;
+
+  background:rgba(2,8,23,.38) !important;
+  border:1px solid rgba(125,211,252,.12) !important;
+  border-radius:999px !important;
+  backdrop-filter:blur(14px) !important;
+  -webkit-backdrop-filter:blur(14px) !important;
+  box-shadow:0 0 38px rgba(14,165,233,.08) !important;
+}
+
+.nav::before,
+.nav::after{
+  display:none !important;
+  content:none !important;
+}
+
+.logo{
+  display:inline-flex !important;
+  align-items:center !important;
+  gap:9px !important;
+  height:48px !important;
+  padding:0 26px !important;
+  border-radius:999px !important;
+  border:1px solid rgba(125,211,252,.25) !important;
+  background:rgba(255,255,255,.06) !important;
+  box-shadow:0 0 30px rgba(14,165,233,.10) !important;
+  color:#e0faff !important;
+  font-size:18px !important;
+  font-weight:800 !important;
+  white-space:nowrap !important;
+}
+
+.nav-links{
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  gap:72px !important;
+  color:#e5eefb !important;
+  font-weight:700 !important;
+  font-size:18px !important;
+  letter-spacing:.5px !important;
+  white-space:nowrap !important;
+}
+
+.nav-links a{
+  text-decoration:none !important;
+  color:inherit !important;
+  transition:.25s !important;
+}
+
+.nav-links a:hover{
+  color:#67e8f9 !important;
+}
+
+.nav-links a.active{
+  color:#22d3ee !important;
+}
+
+.contact{
+  display:inline-flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  height:48px !important;
+  padding:0 30px !important;
+  margin-right:6px !important;
+  border-radius:999px !important;
+  background:linear-gradient(135deg,#2563eb,#22d3ee) !important;
+  color:#fff !important;
+  font-weight:900 !important;
+  box-shadow:0 0 28px rgba(34,211,238,.28) !important;
+  text-decoration:none !important;
+  white-space:nowrap !important;
+}
+
+/* about/support 标题区域减少顶部差异，避免看起来导航突然抬高 */
+.page-title,
+.hero{
+  margin-top:0 !important;
+}
+
+@media(max-width:900px){
+  .nav{
+    width:94vw !important;
+    height:auto !important;
+    min-height:auto !important;
+    padding:14px !important;
+    flex-direction:column !important;
+    border-radius:24px !important;
+  }
+
+  .nav-links{
+    gap:22px !important;
+    flex-wrap:wrap !important;
+  }
+
+  .contact{
+    margin-right:0 !important;
+  }
+}
+
 </style>
 
 <!-- 图片加载优化：优先加载首屏关键图片 -->
-<link rel="preload" as="image" href="1.png">
-<link rel="preload" as="image" href="2.png">
-<link rel="preload" as="image" href="3.png">
-<link rel="preload" as="image" href="4.png">
-<link rel="preload" as="image" href="5.png">
+<link rel="preload" as="image" href="1.webp">
+<link rel="preload" as="image" href="2.webp">
+<link rel="preload" as="image" href="3.webp">
+<link rel="preload" as="image" href="4.webp">
+<link rel="preload" as="image" href="5.webp">
+<link rel="preload" as="image" href="6.webp">
+<link rel="preload" as="image" href="7.webp">
+<link rel="preload" as="image" href="8.webp">
+<link rel="preload" as="image" href="9.webp">
+<link rel="preload" as="image" href="10.webp">
+<link rel="preload" as="image" href="11.webp">
+<link rel="preload" as="image" href="12.webp">
+<link rel="preload" as="image" href="13.webp">
+<link rel="preload" as="image" href="14.webp">
+<link rel="preload" as="image" href="15.webp">
+<link rel="preload" as="image" href="16.webp">
+<link rel="preload" as="image" href="17.webp">
 <meta http-equiv="Cache-Control" content="public, max-age=604800">
 
 </head>
@@ -616,20 +788,16 @@ a{
 <body>
 
 <section class="hero">
-
-  <nav class="nav">
+  <nav class="nav" aria-label="主导航">
     <div class="logo">☁ 思辰微智能</div>
-
     <div class="nav-links">
-      <a class="active" href="index.html">首页</a>
+      <a href="index.html" class="active">首页</a>
       <a href="products.html">产品中心</a>
       <a href="solutions.html">解决方案</a>
-      <a href="#">智慧场景</a>
-      <a href="#">支持服务</a>
-      <a href="#">关于我们</a>
+      <a href="support.html">支持服务</a>
+      <a href="about.html">关于我们</a>
     </div>
-
-    <a class="contact" href="#">联系我们</a>
+    <a class="contact" href="contact.html">联系我们</a>
   </nav>
 
   <div class="layout">
@@ -650,7 +818,7 @@ a{
       </p>
 
       <div class="buttons">
-        <a class="btn primary" href="#">探索解决方案 →</a>
+        <a class="btn primary" href="solutions.html">探索解决方案 →</a>
         <a class="btn ghost" href="products.html">查看产品矩阵</a>
       </div>
 
@@ -695,30 +863,93 @@ a{
 
         <div class="carousel">
 
+          
           <div class="card main">
-            <img src="1.png" decoding="async" loading="eager" fetchpriority="high">
+            <img src="1.webp" decoding="async" loading="eager" fetchpriority="high">
             <div class="name-badge">一键开关</div>
           </div>
 
           <div class="card">
-            <img src="2.png" decoding="async" loading="eager" fetchpriority="high">
+            <img src="2.webp" decoding="async" loading="eager" fetchpriority="high">
             <div class="name-badge">二键开关</div>
           </div>
 
           <div class="card">
-            <img src="3.png" decoding="async" loading="eager" fetchpriority="high">
+            <img src="3.webp" decoding="async" loading="eager" fetchpriority="high">
             <div class="name-badge">三键开关</div>
           </div>
 
           <div class="card">
-            <img src="4.png" decoding="async" loading="eager" fetchpriority="high">
+            <img src="4.webp" decoding="async" loading="eager" fetchpriority="high">
             <div class="name-badge">四键开关</div>
           </div>
 
           <div class="card">
-            <img src="5.png" decoding="async" loading="eager" fetchpriority="high">
+            <img src="5.webp" decoding="async" loading="eager" fetchpriority="high">
             <div class="name-badge">调光旋钮</div>
           </div>
+
+          <div class="card">
+            <img src="6.webp" decoding="async" loading="lazy">
+            <div class="name-badge">温控面板</div>
+          </div>
+
+          <div class="card">
+            <img src="7.webp" decoding="async" loading="lazy">
+            <div class="name-badge">彩屏温控</div>
+          </div>
+
+          <div class="card">
+            <img src="8.webp" decoding="async" loading="lazy">
+            <div class="name-badge">触控温控</div>
+          </div>
+
+          <div class="card">
+            <img src="9.webp" decoding="async" loading="lazy">
+            <div class="name-badge">智能面板</div>
+          </div>
+
+          <div class="card">
+            <img src="10.webp" decoding="async" loading="lazy">
+            <div class="name-badge">语音面板</div>
+          </div>
+
+          <div class="card">
+            <img src="11.webp" decoding="async" loading="lazy">
+            <div class="name-badge">语音终端</div>
+          </div>
+
+          <div class="card">
+            <img src="12.webp" decoding="async" loading="lazy">
+            <div class="name-badge">场景面板</div>
+          </div>
+
+          <div class="card">
+            <img src="13.webp" decoding="async" loading="lazy">
+            <div class="name-badge">智能插座</div>
+          </div>
+
+          <div class="card">
+            <img src="14.webp" decoding="async" loading="lazy">
+            <div class="name-badge">多功能插座</div>
+          </div>
+
+          <div class="card">
+            <img src="15.webp" decoding="async" loading="lazy">
+            <div class="name-badge">其他产品</div>
+          </div>
+
+          <div class="card">
+            <img src="16.webp" decoding="async" loading="lazy">
+            <div class="name-badge">智能模块</div>
+          </div>
+
+          <div class="card">
+            <img src="17.webp" decoding="async" loading="lazy">
+            <div class="name-badge">网关中控屏</div>
+          </div>
+
+        
 
         </div>
 
@@ -838,9 +1069,7 @@ if ('serviceWorker' in navigator) {
         './',
         './index.html',
         './products.html',
-        './1.png','./2.png','./3.png','./4.png','./5.png','./6.png',
-        './7.png','./8.png','./9.png','./10.png','./11.png','./12.png',
-        './13.png','./14.png','./15.png','./16.png','./17.png','./18.png'
+        './1.webp','./2.webp','./3.webp','./4.webp','./5.webp','./6.webp','./7.webp','./8.webp','./9.webp','./10.webp','./11.webp','./12.webp','./13.webp','./14.webp','./15.webp','./16.webp','./17.webp'
       ];
 
       self.addEventListener('install', event => {
@@ -890,5 +1119,18 @@ if ('serviceWorker' in navigator) {
 }
 </script>
 
+
+<script>
+(function(){
+  var current=(location.pathname.split('/').pop()||'index.html').replace(/%20/g,' ');
+  document.querySelectorAll('.unified-nav a').forEach(function(a){
+    var href=a.getAttribute('href');
+    if(href===current){a.classList.add('active');}
+    else if(!(current==='contact.html' && a.classList.contains('contact'))){
+      if(!a.classList.contains('contact')) a.classList.remove('active');
+    }
+  });
+})();
+</script>
 </body>
 </html>

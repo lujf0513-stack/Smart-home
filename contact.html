@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>联系我们 - 思辰微智能</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",Arial,sans-serif;
+  background:#020817;
+  color:#fff;
+  overflow-x:hidden;
+}
+a{text-decoration:none;color:inherit}
+
+.page{
+  min-height:100vh;
+  padding:18px 3vw 34px;
+  background:
+    radial-gradient(circle at 18% 18%,rgba(34,211,238,.18),transparent 28%),
+    radial-gradient(circle at 82% 30%,rgba(37,99,235,.22),transparent 36%),
+    radial-gradient(circle at 48% 92%,rgba(14,165,233,.10),transparent 30%),
+    linear-gradient(135deg,#041225 0%,#061327 45%,#020617 100%);
+}
+
+/* 顶部导航栏：与首页 / 产品中心 / 解决方案统一 */
+.nav{
+  max-width:1600px;
+  margin:0 auto 18px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+  position:relative;
+  z-index:5;
+}
+
+.logo{
+  display:inline-flex;
+  align-items:center;
+  gap:9px;
+  padding:12px 20px;
+  border-radius:999px;
+  border:1px solid rgba(125,211,252,.25);
+  background:rgba(255,255,255,.06);
+  box-shadow:0 0 30px rgba(14,165,233,.10);
+  color:#e0faff;
+  font-weight:800;
+  white-space:nowrap;
+}
+
+.nav-links{
+  display:flex;
+  gap:72px;
+  color:#e5eefb;
+  font-weight:700;
+  font-size:18px;
+  letter-spacing:.5px;
+  white-space:nowrap;
+}
+
+.nav-links a{
+  transition:.25s;
+}
+
+.nav-links a:hover,
+.nav-links a.active{
+  color:#67e8f9;
+}
+
+.contact{
+  padding:14px 30px;
+  border-radius:999px;
+  background:linear-gradient(135deg,#2563eb,#22d3ee);
+  font-weight:900;
+  box-shadow:0 0 28px rgba(34,211,238,.28);
+  color:#fff;
+  white-space:nowrap;
+}
+
+.contact.active{
+  box-shadow:0 0 32px rgba(34,211,238,.42);
+}
+
+/* 只保留顶部主视觉区域 */
+.hero{
+  max-width:1600px;
+  margin:34px auto 0;
+  display:grid;
+  grid-template-columns:minmax(0,1.05fr) 420px;
+  gap:26px;
+  align-items:stretch;
+}
+
+.hero-main{
+  position:relative;
+  overflow:hidden;
+  min-height:520px;
+  border-radius:34px;
+  padding:58px;
+  display:grid;
+  grid-template-columns:minmax(0,1fr) 310px;
+  gap:34px;
+  align-items:center;
+  background:
+    radial-gradient(circle at 82% 20%,rgba(34,211,238,.18),transparent 30%),
+    linear-gradient(135deg,rgba(15,23,42,.86),rgba(8,47,73,.44));
+  border:1px solid rgba(96,165,250,.28);
+  box-shadow:0 34px 96px rgba(0,0,0,.36);
+}
+
+.hero-main:before{
+  content:"";
+  position:absolute;
+  right:-120px;
+  bottom:-130px;
+  width:360px;
+  height:360px;
+  border-radius:50%;
+  background:radial-gradient(circle,rgba(34,211,238,.20),transparent 70%);
+}
+
+.copy{
+  position:relative;
+  z-index:2;
+}
+
+.eyebrow{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  color:#67e8f9;
+  font-size:17px;
+  font-weight:900;
+  letter-spacing:.18em;
+  margin-bottom:18px;
+}
+
+.eyebrow:before{
+  content:"";
+  width:44px;
+  height:2px;
+  border-radius:999px;
+  background:#22d3ee;
+  box-shadow:0 0 16px rgba(34,211,238,.65);
+}
+
+.copy h1{
+  font-size:clamp(48px,5vw,82px);
+  line-height:1.06;
+  letter-spacing:-.045em;
+  text-shadow:0 18px 55px rgba(0,0,0,.45);
+}
+
+.copy h1 span{
+  display:block;
+  margin-top:8px;
+  background:linear-gradient(90deg,#67e8f9,#38bdf8,#dbeafe);
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+}
+
+.copy p{
+  margin-top:24px;
+  max-width:760px;
+  color:#c7d9ef;
+  font-size:20px;
+  line-height:1.85;
+}
+
+.actions{
+  display:flex;
+  gap:16px;
+  flex-wrap:wrap;
+  margin-top:34px;
+}
+
+.btn{
+  height:58px;
+  padding:0 30px;
+  border-radius:999px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:900;
+  border:1px solid rgba(255,255,255,.15);
+  transition:.25s;
+}
+
+.btn:hover{
+  transform:translateY(-3px);
+}
+
+.btn.primary{
+  background:linear-gradient(135deg,#22d3ee,#2563eb);
+  color:#031425;
+  box-shadow:0 18px 42px rgba(34,211,238,.28);
+}
+
+.btn.ghost{
+  background:rgba(255,255,255,.05);
+  color:#eaf8ff;
+}
+
+.quick-card{
+  position:relative;
+  z-index:2;
+  padding:24px;
+  border-radius:26px;
+  background:rgba(2,8,23,.42);
+  border:1px solid rgba(125,211,252,.18);
+  backdrop-filter:blur(12px);
+}
+
+.quick-card h3{
+  font-size:23px;
+  margin-bottom:18px;
+}
+
+.quick-list{
+  display:grid;
+  gap:14px;
+}
+
+.quick-item{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  padding:16px;
+  border-radius:18px;
+  background:rgba(255,255,255,.055);
+  border:1px solid rgba(148,163,184,.12);
+}
+
+.quick-icon{
+  width:42px;
+  height:42px;
+  flex:0 0 42px;
+  border-radius:14px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:21px;
+  background:linear-gradient(135deg,rgba(37,99,235,.48),rgba(34,211,238,.25));
+}
+
+.quick-item b{
+  display:block;
+  font-size:16px;
+  margin-bottom:3px;
+}
+
+.quick-item span{
+  display:block;
+  color:#c7d9ef;
+  font-size:14px;
+  line-height:1.45;
+}
+
+.qr-panel{
+  min-height:520px;
+  padding:30px;
+  border-radius:34px;
+  background:
+    radial-gradient(circle at 50% 8%,rgba(34,211,238,.18),transparent 34%),
+    linear-gradient(180deg,rgba(15,23,42,.92),rgba(8,47,73,.46));
+  border:1px solid rgba(96,165,250,.30);
+  box-shadow:0 34px 96px rgba(0,0,0,.36);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+}
+
+.qr-box{
+  width:304px;
+  height:304px;
+  padding:10px;
+  border-radius:28px;
+  background:#fff;
+  box-shadow:0 24px 64px rgba(0,0,0,.38),0 0 40px rgba(34,211,238,.18);
+}
+
+.qr-box img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  display:block;
+  border-radius:20px;
+}
+
+.qr-panel h2{
+  margin-top:24px;
+  font-size:32px;
+}
+
+.qr-panel p{
+  margin-top:10px;
+  color:#c7d9ef;
+  font-size:17px;
+  line-height:1.65;
+}
+
+.qr-tags{
+  margin-top:22px;
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  justify-content:center;
+}
+
+.qr-tags span{
+  padding:8px 14px;
+  border-radius:999px;
+  background:rgba(14,165,233,.12);
+  border:1px solid rgba(34,211,238,.20);
+  color:#dff7ff;
+  font-size:14px;
+  font-weight:800;
+}
+
+@media(max-width:1320px){
+  .nav-links{gap:32px}
+  .hero{grid-template-columns:1fr}
+  .hero-main{grid-template-columns:1fr}
+  .quick-card{max-width:720px}
+  .qr-panel{min-height:auto}
+}
+
+@media(max-width:760px){
+  .page{padding:16px 4vw 30px}
+  .nav{flex-direction:column}
+  .nav-links{gap:18px;flex-wrap:wrap;justify-content:center;font-size:15px}
+  .hero{margin-top:22px}
+  .hero-main{padding:36px 24px;min-height:auto;border-radius:26px}
+  .copy p{font-size:17px}
+  .actions{gap:12px}
+  .btn{width:100%;height:56px}
+  .qr-box{width:240px;height:240px}
+}
+
+
+
+/* ===== 导航栏最终位置锁定：防止支持服务 / 关于我们点击时突然上移 ===== */
+html{
+  scroll-behavior:auto !important;
+  margin:0 !important;
+  padding:0 !important;
+}
+
+body{
+  margin:0 !important;
+  padding:0 !important;
+  overflow-x:hidden !important;
+}
+
+/* 所有页面顶部统一 18px，避免页面切换时导航栏上下跳动 */
+.hero,
+.page,
+.container{
+  padding-top:18px !important;
+}
+
+/* 首页 hero 原本已有 padding，避免重复导致首页下移 */
+.hero{
+  padding-left:3vw !important;
+  padding-right:3vw !important;
+}
+
+/* 联系页 page 原本已有 padding，统一保留左右和底部 */
+.page{
+  padding-left:3vw !important;
+  padding-right:3vw !important;
+}
+
+/* about / support 使用 container 包导航，必须锁定顶部距离 */
+.container{
+  width:min(1680px,96%) !important;
+  margin:auto !important;
+}
+
+/* 统一导航栏，不使用 sticky，避免切换页面时被浏览器重新计算位置 */
+.nav{
+  position:relative !important;
+  top:auto !important;
+  left:auto !important;
+  right:auto !important;
+  z-index:50 !important;
+
+  width:min(1600px,94vw) !important;
+  max-width:1600px !important;
+  height:58px !important;
+  min-height:58px !important;
+
+  margin:0 auto 18px !important;
+  padding:0 !important;
+
+  display:flex !important;
+  align-items:center !important;
+  justify-content:space-between !important;
+  gap:20px !important;
+
+  background:rgba(2,8,23,.38) !important;
+  border:1px solid rgba(125,211,252,.12) !important;
+  border-radius:999px !important;
+  backdrop-filter:blur(14px) !important;
+  -webkit-backdrop-filter:blur(14px) !important;
+  box-shadow:0 0 38px rgba(14,165,233,.08) !important;
+}
+
+.nav::before,
+.nav::after{
+  display:none !important;
+  content:none !important;
+}
+
+.logo{
+  display:inline-flex !important;
+  align-items:center !important;
+  gap:9px !important;
+  height:48px !important;
+  padding:0 26px !important;
+  border-radius:999px !important;
+  border:1px solid rgba(125,211,252,.25) !important;
+  background:rgba(255,255,255,.06) !important;
+  box-shadow:0 0 30px rgba(14,165,233,.10) !important;
+  color:#e0faff !important;
+  font-size:18px !important;
+  font-weight:800 !important;
+  white-space:nowrap !important;
+}
+
+.nav-links{
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  gap:72px !important;
+  color:#e5eefb !important;
+  font-weight:700 !important;
+  font-size:18px !important;
+  letter-spacing:.5px !important;
+  white-space:nowrap !important;
+}
+
+.nav-links a{
+  text-decoration:none !important;
+  color:inherit !important;
+  transition:.25s !important;
+}
+
+.nav-links a:hover{
+  color:#67e8f9 !important;
+}
+
+.nav-links a.active{
+  color:#22d3ee !important;
+}
+
+.contact{
+  display:inline-flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  height:48px !important;
+  padding:0 30px !important;
+  margin-right:6px !important;
+  border-radius:999px !important;
+  background:linear-gradient(135deg,#2563eb,#22d3ee) !important;
+  color:#fff !important;
+  font-weight:900 !important;
+  box-shadow:0 0 28px rgba(34,211,238,.28) !important;
+  text-decoration:none !important;
+  white-space:nowrap !important;
+}
+
+/* about/support 标题区域减少顶部差异，避免看起来导航突然抬高 */
+.page-title,
+.hero{
+  margin-top:0 !important;
+}
+
+@media(max-width:900px){
+  .nav{
+    width:94vw !important;
+    height:auto !important;
+    min-height:auto !important;
+    padding:14px !important;
+    flex-direction:column !important;
+    border-radius:24px !important;
+  }
+
+  .nav-links{
+    gap:22px !important;
+    flex-wrap:wrap !important;
+  }
+
+  .contact{
+    margin-right:0 !important;
+  }
+}
+
+</style>
+</head>
+
+<body>
+<section class="page">
+  <nav class="nav" aria-label="主导航">
+    <div class="logo">☁ 思辰微智能</div>
+    <div class="nav-links">
+      <a href="index.html">首页</a>
+      <a href="products.html">产品中心</a>
+      <a href="solutions.html">解决方案</a>
+      <a href="support.html">支持服务</a>
+      <a href="about.html">关于我们</a>
+    </div>
+    <a class="contact active" href="contact.html">联系我们</a>
+  </nav>
+
+<main class="hero">
+  <section class="hero-main">
+    <div class="copy">
+      <div class="eyebrow">CONTACT US</div>
+      <h1>联系我们<span>获取智能方案支持</span></h1>
+      <p>面向酒店、公寓、办公与智能家居项目，提供产品选型、方案设计、工程对接与技术支持。欢迎通过电话、邮箱或微信与我们沟通需求。</p>
+
+      <div class="actions">
+        <a class="btn primary" href="tel:+8618036116161">立即电话咨询</a>
+        <a class="btn ghost" href="mailto:lujf0513@gmail.com">发送邮件</a>
+      </div>
+    </div>
+
+    <div class="quick-card">
+      <h3>快速联系</h3>
+
+      <div class="quick-list">
+        <a class="quick-item" href="tel:+8618036116161">
+          <div class="quick-icon">☎</div>
+          <div>
+            <b>电话咨询</b>
+            <span>+86 18036116161</span>
+          </div>
+        </a>
+
+        <a class="quick-item" href="mailto:lujf0513@gmail.com">
+          <div class="quick-icon">✉</div>
+          <div>
+            <b>邮箱联系</b>
+            <span>lujf0513@gmail.com</span>
+          </div>
+        </a>
+
+        <div class="quick-item">
+          <div class="quick-icon">💬</div>
+          <div>
+            <b>微信沟通</b>
+            <span>扫码添加，沟通项目需求</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <aside class="qr-panel">
+    <div class="qr-box">
+      <img src="assets/wechat-contact.webp" alt="微信二维码">
+    </div>
+
+    <h2>微信扫码咨询</h2>
+    <p>添加微信，适合项目需求沟通、产品选型与技术支持。</p>
+
+    <div class="qr-tags">
+      <span>项目合作</span>
+      <span>产品选型</span>
+      <span>技术支持</span>
+    </div>
+  </aside>
+</main>
+
+</section>
+
+<script>
+(function(){
+  var current=(location.pathname.split('/').pop()||'index.html').replace(/%20/g,' ');
+  document.querySelectorAll('.unified-nav a').forEach(function(a){
+    var href=a.getAttribute('href');
+    if(href===current){a.classList.add('active');}
+    else if(!(current==='contact.html' && a.classList.contains('contact'))){
+      if(!a.classList.contains('contact')) a.classList.remove('active');
+    }
+  });
+})();
+</script>
+</body>
+</html>

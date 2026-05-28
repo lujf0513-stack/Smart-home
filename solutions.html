@@ -339,23 +339,181 @@ a{text-decoration:none;color:inherit}
   .arch{grid-template-columns:1fr}
   .arch-step::after{display:none!important}
 }
+
+
+
+/* ===== 导航栏最终位置锁定：防止支持服务 / 关于我们点击时突然上移 ===== */
+html{
+  scroll-behavior:auto !important;
+  margin:0 !important;
+  padding:0 !important;
+}
+
+body{
+  margin:0 !important;
+  padding:0 !important;
+  overflow-x:hidden !important;
+}
+
+/* 所有页面顶部统一 18px，避免页面切换时导航栏上下跳动 */
+.hero,
+.page,
+.container{
+  padding-top:18px !important;
+}
+
+/* 首页 hero 原本已有 padding，避免重复导致首页下移 */
+.hero{
+  padding-left:3vw !important;
+  padding-right:3vw !important;
+}
+
+/* 联系页 page 原本已有 padding，统一保留左右和底部 */
+.page{
+  padding-left:3vw !important;
+  padding-right:3vw !important;
+}
+
+/* about / support 使用 container 包导航，必须锁定顶部距离 */
+.container{
+  width:min(1680px,96%) !important;
+  margin:auto !important;
+}
+
+/* 统一导航栏，不使用 sticky，避免切换页面时被浏览器重新计算位置 */
+.nav{
+  position:relative !important;
+  top:auto !important;
+  left:auto !important;
+  right:auto !important;
+  z-index:50 !important;
+
+  width:min(1600px,94vw) !important;
+  max-width:1600px !important;
+  height:58px !important;
+  min-height:58px !important;
+
+  margin:0 auto 18px !important;
+  padding:0 !important;
+
+  display:flex !important;
+  align-items:center !important;
+  justify-content:space-between !important;
+  gap:20px !important;
+
+  background:rgba(2,8,23,.38) !important;
+  border:1px solid rgba(125,211,252,.12) !important;
+  border-radius:999px !important;
+  backdrop-filter:blur(14px) !important;
+  -webkit-backdrop-filter:blur(14px) !important;
+  box-shadow:0 0 38px rgba(14,165,233,.08) !important;
+}
+
+.nav::before,
+.nav::after{
+  display:none !important;
+  content:none !important;
+}
+
+.logo{
+  display:inline-flex !important;
+  align-items:center !important;
+  gap:9px !important;
+  height:48px !important;
+  padding:0 26px !important;
+  border-radius:999px !important;
+  border:1px solid rgba(125,211,252,.25) !important;
+  background:rgba(255,255,255,.06) !important;
+  box-shadow:0 0 30px rgba(14,165,233,.10) !important;
+  color:#e0faff !important;
+  font-size:18px !important;
+  font-weight:800 !important;
+  white-space:nowrap !important;
+}
+
+.nav-links{
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  gap:72px !important;
+  color:#e5eefb !important;
+  font-weight:700 !important;
+  font-size:18px !important;
+  letter-spacing:.5px !important;
+  white-space:nowrap !important;
+}
+
+.nav-links a{
+  text-decoration:none !important;
+  color:inherit !important;
+  transition:.25s !important;
+}
+
+.nav-links a:hover{
+  color:#67e8f9 !important;
+}
+
+.nav-links a.active{
+  color:#22d3ee !important;
+}
+
+.contact{
+  display:inline-flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  height:48px !important;
+  padding:0 30px !important;
+  margin-right:6px !important;
+  border-radius:999px !important;
+  background:linear-gradient(135deg,#2563eb,#22d3ee) !important;
+  color:#fff !important;
+  font-weight:900 !important;
+  box-shadow:0 0 28px rgba(34,211,238,.28) !important;
+  text-decoration:none !important;
+  white-space:nowrap !important;
+}
+
+/* about/support 标题区域减少顶部差异，避免看起来导航突然抬高 */
+.page-title,
+.hero{
+  margin-top:0 !important;
+}
+
+@media(max-width:900px){
+  .nav{
+    width:94vw !important;
+    height:auto !important;
+    min-height:auto !important;
+    padding:14px !important;
+    flex-direction:column !important;
+    border-radius:24px !important;
+  }
+
+  .nav-links{
+    gap:22px !important;
+    flex-wrap:wrap !important;
+  }
+
+  .contact{
+    margin-right:0 !important;
+  }
+}
+
 </style>
 </head>
 
 <body>
 <section class="page">
-
-  <nav class="nav">
+  <nav class="nav" aria-label="主导航">
     <div class="logo">☁ 思辰微智能</div>
     <div class="nav-links">
       <a href="index.html">首页</a>
       <a href="products.html">产品中心</a>
-      <a class="active" href="solutions.html">解决方案</a>
-      <a href="#">智慧场景</a>
-      <a href="#">支持服务</a>
-      <a href="#">关于我们</a>
+      <a href="solutions.html" class="active">解决方案</a>
+      <a href="support.html">支持服务</a>
+      <a href="about.html">关于我们</a>
     </div>
-    <a class="contact" href="#">联系我们</a>
+    <a class="contact" href="contact.html">联系我们</a>
   </nav>
 
   <main class="hero">
@@ -367,7 +525,7 @@ a{text-decoration:none;color:inherit}
     </section>
 
     <section class="scene">
-      <img src="solutions_web_assets/solution-hotel-room.jpg" alt="智慧酒店客房场景图">
+      <img src="solutions_web_assets/solution-hotel-room.webp" alt="智慧酒店客房场景图">
       <div class="points">
         <div class="point p1"><i>💡</i>智能照明</div>
         <div class="point p2"><i>℃</i>空调控制</div>
@@ -392,37 +550,37 @@ a{text-decoration:none;color:inherit}
   <section class="cards">
     <article class="card">
       <div class="card-head"><div class="num">01</div><h3>入住前</h3></div>
-      <div class="thumb"><img src="solutions_web_assets/scene-checkin.jpg" alt="入住前"></div>
+      <div class="thumb"><img src="solutions_web_assets/scene-checkin.webp" alt="入住前"></div>
       <ul><li>自助选房</li><li>个性化偏好设置</li><li>到店信息推送</li></ul>
     </article>
 
     <article class="card">
       <div class="card-head"><div class="num">02</div><h3>入住中</h3></div>
-      <div class="thumb"><img src="solutions_web_assets/scene-stay.jpg" alt="入住中"></div>
+      <div class="thumb"><img src="solutions_web_assets/scene-stay.webp" alt="入住中"></div>
       <ul><li>一键场景控制</li><li>灯光 / 空调 / 窗帘联动</li><li>语音控制，解放双手</li></ul>
     </article>
 
     <article class="card">
       <div class="card-head"><div class="num">03</div><h3>客房服务</h3></div>
-      <div class="thumb"><img src="solutions_web_assets/scene-service.jpg" alt="客房服务"></div>
+      <div class="thumb"><img src="solutions_web_assets/scene-service.webp" alt="客房服务"></div>
       <ul><li>一键呼叫服务</li><li>清洁 / 送物 / 维修</li><li>服务进度实时查看</li></ul>
     </article>
 
     <article class="card">
       <div class="card-head"><div class="num">04</div><h3>能源管理</h3></div>
-      <div class="thumb"><img src="solutions_web_assets/scene-energy.jpg" alt="能源管理"></div>
+      <div class="thumb"><img src="solutions_web_assets/scene-energy.webp" alt="能源管理"></div>
       <ul><li>能耗实时监测</li><li>智能策略节能</li><li>设备定时与联动控制</li></ul>
     </article>
 
     <article class="card">
       <div class="card-head"><div class="num">05</div><h3>安防管理</h3></div>
-      <div class="thumb"><img src="solutions_web_assets/scene-security.jpg" alt="安防管理"></div>
+      <div class="thumb"><img src="solutions_web_assets/scene-security.webp" alt="安防管理"></div>
       <ul><li>门锁管理</li><li>异常告警推送</li><li>视频监控联动</li></ul>
     </article>
 
     <article class="card">
       <div class="card-head"><div class="num">06</div><h3>退房后</h3></div>
-      <div class="thumb"><img src="solutions_web_assets/scene-checkout.jpg" alt="退房后"></div>
+      <div class="thumb"><img src="solutions_web_assets/scene-checkout.webp" alt="退房后"></div>
       <ul><li>无感退房</li><li>消费明细推送</li><li>会员服务持续关怀</li></ul>
     </article>
   </section>
@@ -437,5 +595,18 @@ a{text-decoration:none;color:inherit}
   </section>
 
 </section>
+
+<script>
+(function(){
+  var current=(location.pathname.split('/').pop()||'index.html').replace(/%20/g,' ');
+  document.querySelectorAll('.unified-nav a').forEach(function(a){
+    var href=a.getAttribute('href');
+    if(href===current){a.classList.add('active');}
+    else if(!(current==='contact.html' && a.classList.contains('contact'))){
+      if(!a.classList.contains('contact')) a.classList.remove('active');
+    }
+  });
+})();
+</script>
 </body>
 </html>

@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>关于我们 - 思辰微智能</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
+  background:#020817;color:#fff;overflow-x:hidden;
+}
+body:before{
+  content:"";position:fixed;inset:0;z-index:-1;
+  background:
+    radial-gradient(circle at 18% 16%,rgba(34,211,238,.11),transparent 26%),
+    radial-gradient(circle at 86% 22%,rgba(37,99,235,.18),transparent 34%),
+    linear-gradient(135deg,#041225 0%,#061327 48%,#020617 100%);
+}
+a{text-decoration:none;color:inherit}
+.container{width:min(1680px,96%);margin:auto}
+.nav{
+  position:relative;
+  z-index:5;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  max-width:1600px;
+  margin:0 auto 18px;
+  gap:20px;
+}
+.logo{
+  display:inline-flex;
+  align-items:center;
+  gap:9px;
+  padding:12px 20px;
+  border-radius:999px;
+  border:1px solid rgba(125,211,252,.25);
+  background:rgba(255,255,255,.06);
+  box-shadow:0 0 30px rgba(14,165,233,.10);
+  color:#e0faff;
+  font-size:18px;
+  font-weight:800;
+  white-space:nowrap;
+}
+.nav-links{
+  display:flex;
+  gap:72px;
+  color:#e5eefb;
+  font-weight:700;
+  font-size:18px;
+  letter-spacing:.5px;
+  white-space:nowrap;
+}
+.nav-links a{
+  text-decoration:none;
+  color:inherit;
+  transition:.25s;
+}
+.nav-links a:hover{
+  color:#67e8f9;
+}
+.nav-links a.active{
+  color:#22d3ee;
+}
+.contact{
+  text-decoration:none;
+  padding:14px 30px;
+  border-radius:999px;
+  background:linear-gradient(135deg,#2563eb,#22d3ee);
+  color:#fff;
+  font-weight:900;
+  box-shadow:0 0 28px rgba(34,211,238,.28);
+}
+.page-title{padding:42px 0 22px}
+.page-title h1{font-size:56px;line-height:1.15;letter-spacing:-.04em;margin-bottom:14px}
+.page-title .line{width:56px;height:4px;border-radius:999px;background:linear-gradient(90deg,#2563eb,#22d3ee);margin-bottom:18px}
+.page-title p{color:#c7d9ef;font-size:22px;letter-spacing:.08em}
+.about-hero{
+  display:grid;grid-template-columns:.78fr 1.22fr;gap:34px;align-items:stretch;
+  padding:28px;border-radius:24px;
+  background:linear-gradient(135deg,rgba(15,23,42,.84),rgba(10,22,45,.72));
+  border:1px solid rgba(59,130,246,.20);box-shadow:0 30px 80px rgba(0,0,0,.32);
+}
+.intro-card{padding:34px 22px 24px 24px;display:flex;flex-direction:column;justify-content:center}
+.intro-card h2{font-size:40px;line-height:1.2;margin-bottom:22px;white-space:nowrap}
+.intro-card p{font-size:19px;line-height:1.9;color:#d7e8ff;margin-bottom:32px}
+.values{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.value{text-align:center;padding:20px 8px;border-radius:18px;background:rgba(14,165,233,.06);border:1px solid rgba(34,211,238,.12)}
+.value-icon{width:70px;height:70px;margin:0 auto 16px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#22d3ee;font-size:34px;background:rgba(14,165,233,.12);border:1px solid rgba(34,211,238,.20);box-shadow:0 0 24px rgba(34,211,238,.12)}
+.value h4{font-size:20px;margin-bottom:8px}.value span{font-size:14px;color:#c7d9ef}
+.visual-card{min-height:430px;border-radius:20px;overflow:hidden;border:1px solid rgba(125,211,252,.14);background:#061327}
+.visual-card img{width:100%;height:100%;object-fit:cover;display:block}
+.content-grid{margin:24px 0 48px;display:grid;grid-template-columns:1fr 1.8fr 1.15fr;gap:24px}
+.panel{min-height:330px;padding:30px;border-radius:22px;background:radial-gradient(circle at 100% 0%,rgba(34,211,238,.10),transparent 36%),rgba(15,23,42,.72);border:1px solid rgba(59,130,246,.18);box-shadow:0 22px 60px rgba(0,0,0,.24);overflow:hidden}
+.panel h3{font-size:26px;margin-bottom:20px}
+.panel h3:after{content:"";display:block;width:42px;height:3px;border-radius:99px;margin-top:10px;background:linear-gradient(90deg,#2563eb,#22d3ee)}
+.adv-item{display:flex;gap:16px;margin:20px 0}
+.adv-icon{width:42px;height:42px;flex:0 0 42px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#22d3ee;background:rgba(34,211,238,.10);border:1px solid rgba(34,211,238,.18)}
+.adv-item h4{font-size:18px;margin-bottom:6px}.adv-item p{color:#c7d9ef;line-height:1.6;font-size:15px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:24px}
+.stat{text-align:center;padding:20px 10px;border-right:1px solid rgba(125,211,252,.14)}
+.stat:last-child{border-right:0}
+.stat .icon{font-size:38px;color:#22d3ee;margin-bottom:12px}
+.stat strong{display:block;font-size:38px;line-height:1;margin-bottom:10px}
+.stat span{color:#c7d9ef;font-size:16px}
+.data-map{
+  position:relative;margin-top:28px;height:150px;border-radius:18px;overflow:hidden;
+  background:
+    radial-gradient(circle at 20% 50%,rgba(34,211,238,.18),transparent 18%),
+    radial-gradient(circle at 55% 40%,rgba(37,99,235,.22),transparent 22%),
+    radial-gradient(circle at 82% 54%,rgba(34,211,238,.16),transparent 18%),
+    linear-gradient(180deg,rgba(14,165,233,.10),rgba(37,99,235,.04));
+  border:1px solid rgba(34,211,238,.12);
+}
+.data-map:before{content:"";position:absolute;inset:0;background-image:radial-gradient(circle,rgba(34,211,238,.42) 1px,transparent 1.6px);background-size:16px 16px;opacity:.25}
+.data-map svg{position:absolute;inset:0;width:100%;height:100%}
+.map-node{position:absolute;width:8px;height:8px;border-radius:50%;background:#22d3ee;box-shadow:0 0 16px #22d3ee}
+.n1{left:16%;top:44%}.n2{left:35%;top:60%}.n3{left:54%;top:34%}.n4{left:76%;top:52%}.n5{left:88%;top:36%}
+.timeline{position:relative;padding-left:30px}
+.timeline:before{content:"";position:absolute;left:8px;top:10px;bottom:10px;width:1px;background:rgba(34,211,238,.45)}
+.time-item{position:relative;display:grid;grid-template-columns:70px 1fr;gap:8px;margin:25px 0;color:#c7d9ef}
+.time-item:before{content:"";position:absolute;left:-26px;top:7px;width:10px;height:10px;border-radius:50%;background:#22d3ee;box-shadow:0 0 14px rgba(34,211,238,.8)}
+.time-item b{color:#fff;font-size:18px}
+@media(max-width:1200px){.about-hero,.content-grid{grid-template-columns:1fr}.visual-card{min-height:320px}.stats{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:768px){.nav{height:auto;flex-direction:column;gap:18px;padding:18px 0}.nav-links{gap:22px;flex-wrap:wrap;justify-content:center}.page-title h1{font-size:40px}.page-title p{font-size:18px}.about-hero{padding:18px}.values{grid-template-columns:1fr}.intro-card h2{font-size:30px}.stats{grid-template-columns:1fr}.stat{border-right:0;border-bottom:1px solid rgba(125,211,252,.14)}}
+
+/* 数据展示模块：按参考图重新绘制 */
+.data-panel-ref{
+  position:relative;
+  min-height:330px;
+  padding:30px;
+  border-radius:22px;
+  overflow:hidden;
+  background:
+    radial-gradient(circle at 50% 100%,rgba(0,120,255,.22),transparent 44%),
+    linear-gradient(180deg,rgba(3,18,42,.96),rgba(2,12,31,.96));
+  border:1px solid rgba(59,130,246,.18);
+  box-shadow:0 22px 60px rgba(0,0,0,.24);
+}
+.data-panel-ref h3{
+  position:relative;
+  z-index:2;
+  font-size:26px;
+  margin-bottom:18px;
+}
+.data-panel-ref h3:after{
+  content:"";
+  display:block;
+  width:42px;
+  height:3px;
+  border-radius:99px;
+  margin-top:10px;
+  background:linear-gradient(90deg,#2563eb,#22d3ee);
+}
+.ref-stats{
+  position:relative;
+  z-index:3;
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  align-items:start;
+  gap:0;
+  padding:6px 0 0;
+}
+.ref-stat{
+  position:relative;
+  text-align:center;
+  min-height:142px;
+  padding:0 14px;
+}
+.ref-stat:not(:last-child):after{
+  content:"";
+  position:absolute;
+  right:0;
+  top:8px;
+  width:1px;
+  height:118px;
+  background:linear-gradient(180deg,transparent,rgba(34,211,238,.35),transparent);
+}
+.ref-icon{
+  width:70px;
+  height:70px;
+  margin:0 auto 10px;
+  color:#12d8ff;
+  filter:drop-shadow(0 0 10px rgba(18,216,255,.45));
+}
+.ref-icon svg{
+  width:100%;
+  height:100%;
+  display:block;
+}
+.ref-stat strong{
+  display:block;
+  font-size:38px;
+  line-height:1;
+  color:#fff;
+  margin-bottom:10px;
+  font-weight:900;
+  text-shadow:0 0 12px rgba(255,255,255,.18);
+}
+.ref-stat span{
+  color:#e5edf8;
+  font-size:16px;
+  font-weight:600;
+}
+.ref-map{
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:0;
+  height:160px;
+  z-index:1;
+  opacity:.95;
+  background:
+    linear-gradient(180deg,transparent 0%,rgba(2,38,86,.38) 58%,rgba(0,52,115,.30) 100%);
+}
+.ref-map svg{
+  width:100%;
+  height:100%;
+  display:block;
+}
+@media(max-width:768px){
+  .ref-stats{grid-template-columns:repeat(2,1fr);row-gap:22px}
+  .ref-stat:not(:last-child):after{display:none}
+  .data-panel-ref{min-height:470px}
+}
+
+
+.data-chart-image{
+  position:relative;
+  z-index:2;
+  width:100%;
+  height:150px;
+  margin-top:24px;
+  border-radius:18px;
+  overflow:hidden;
+  object-fit:cover;
+  display:block;
+}
+
+
+
+
+/* ===== 导航栏最终位置锁定：防止支持服务 / 关于我们点击时突然上移 ===== */
+html{
+  scroll-behavior:auto !important;
+  margin:0 !important;
+  padding:0 !important;
+}
+
+body{
+  margin:0 !important;
+  padding:0 !important;
+  overflow-x:hidden !important;
+}
+
+/* 所有页面顶部统一 18px，避免页面切换时导航栏上下跳动 */
+.hero,
+.page,
+.container{
+  padding-top:18px !important;
+}
+
+/* 首页 hero 原本已有 padding，避免重复导致首页下移 */
+.hero{
+  padding-left:3vw !important;
+  padding-right:3vw !important;
+}
+
+/* 联系页 page 原本已有 padding，统一保留左右和底部 */
+.page{
+  padding-left:3vw !important;
+  padding-right:3vw !important;
+}
+
+/* about / support 使用 container 包导航，必须锁定顶部距离 */
+.container{
+  width:min(1680px,96%) !important;
+  margin:auto !important;
+}
+
+/* 统一导航栏，不使用 sticky，避免切换页面时被浏览器重新计算位置 */
+.nav{
+  position:relative !important;
+  top:auto !important;
+  left:auto !important;
+  right:auto !important;
+  z-index:50 !important;
+
+  width:min(1600px,94vw) !important;
+  max-width:1600px !important;
+  height:58px !important;
+  min-height:58px !important;
+
+  margin:0 auto 18px !important;
+  padding:0 !important;
+
+  display:flex !important;
+  align-items:center !important;
+  justify-content:space-between !important;
+  gap:20px !important;
+
+  background:rgba(2,8,23,.38) !important;
+  border:1px solid rgba(125,211,252,.12) !important;
+  border-radius:999px !important;
+  backdrop-filter:blur(14px) !important;
+  -webkit-backdrop-filter:blur(14px) !important;
+  box-shadow:0 0 38px rgba(14,165,233,.08) !important;
+}
+
+.nav::before,
+.nav::after{
+  display:none !important;
+  content:none !important;
+}
+
+.logo{
+  display:inline-flex !important;
+  align-items:center !important;
+  gap:9px !important;
+  height:48px !important;
+  padding:0 26px !important;
+  border-radius:999px !important;
+  border:1px solid rgba(125,211,252,.25) !important;
+  background:rgba(255,255,255,.06) !important;
+  box-shadow:0 0 30px rgba(14,165,233,.10) !important;
+  color:#e0faff !important;
+  font-size:18px !important;
+  font-weight:800 !important;
+  white-space:nowrap !important;
+}
+
+.nav-links{
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  gap:72px !important;
+  color:#e5eefb !important;
+  font-weight:700 !important;
+  font-size:18px !important;
+  letter-spacing:.5px !important;
+  white-space:nowrap !important;
+}
+
+.nav-links a{
+  text-decoration:none !important;
+  color:inherit !important;
+  transition:.25s !important;
+}
+
+.nav-links a:hover{
+  color:#67e8f9 !important;
+}
+
+.nav-links a.active{
+  color:#22d3ee !important;
+}
+
+.contact{
+  display:inline-flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  height:48px !important;
+  padding:0 30px !important;
+  margin-right:6px !important;
+  border-radius:999px !important;
+  background:linear-gradient(135deg,#2563eb,#22d3ee) !important;
+  color:#fff !important;
+  font-weight:900 !important;
+  box-shadow:0 0 28px rgba(34,211,238,.28) !important;
+  text-decoration:none !important;
+  white-space:nowrap !important;
+}
+
+/* about/support 标题区域减少顶部差异，避免看起来导航突然抬高 */
+.page-title,
+.hero{
+  margin-top:0 !important;
+}
+
+@media(max-width:900px){
+  .nav{
+    width:94vw !important;
+    height:auto !important;
+    min-height:auto !important;
+    padding:14px !important;
+    flex-direction:column !important;
+    border-radius:24px !important;
+  }
+
+  .nav-links{
+    gap:22px !important;
+    flex-wrap:wrap !important;
+  }
+
+  .contact{
+    margin-right:0 !important;
+  }
+}
+
+</style>
+</head>
+<body>
+<div class="container">
+  <nav class="nav" aria-label="主导航">
+    <div class="logo">☁ 思辰微智能</div>
+    <div class="nav-links">
+      <a href="index.html">首页</a>
+      <a href="products.html">产品中心</a>
+      <a href="solutions.html">解决方案</a>
+      <a href="support.html">支持服务</a>
+      <a href="about.html" class="active">关于我们</a>
+    </div>
+    <a class="contact" href="contact.html">联系我们</a>
+  </nav>
+
+<section class="page-title" style="display:flex;align-items:flex-end;gap:16px;padding:42px 0 22px;">
+<h1 style="margin:0;font-size:56px;line-height:1.15;letter-spacing:-.04em;">关于我们</h1>
+<p style="margin:0 0 6px;color:#c7d9ef;font-size:22px;letter-spacing:.08em;">创新驱动 · 技术领先 · 客户至上</p>
+</section>
+
+<section class="about-hero">
+<div class="intro-card">
+<h2>思辰微创客实验室</h2>
+<p>专注于智能硬件与物联网技术的研发与创新，致力于为酒店、家居及商业空间提供高品质的智能化产品与解决方案。</p>
+<div class="values">
+<div class="value"><div class="value-icon">💡</div><h4>创新研发</h4><span>持续技术突破</span></div>
+<div class="value"><div class="value-icon">🛡</div><h4>品质保障</h4><span>严格质量把控</span></div>
+<div class="value"><div class="value-icon">👥</div><h4>客户至上</h4><span>用心服务客户</span></div>
+</div>
+</div>
+<div class="visual-card">
+<img src="assets/about-building.webp" alt="思辰微办公楼">
+</div>
+</section>
+
+<section class="content-grid">
+<div class="panel">
+<h3>我们的优势</h3>
+<div class="adv-item"><div class="adv-icon">👥</div><div><h4>专业团队</h4><p>资深研发团队，丰富行业经验。</p></div></div>
+<div class="adv-item"><div class="adv-icon">⌘</div><div><h4>自主研发</h4><p>核心技术自主可控，持续创新。</p></div></div>
+<div class="adv-item"><div class="adv-icon">🎧</div><div><h4>完善服务</h4><p>全方位服务体系，快速响应支持。</p></div></div>
+<div class="adv-item"><div class="adv-icon">👍</div><div><h4>合作共赢</h4><p>开放合作，共同成长。</p></div></div>
+</div>
+
+<div class="panel data-panel-ref">
+<h3>数据展示</h3>
+<div class="ref-stats">
+<div class="ref-stat"><div class="ref-icon"><svg viewBox="0 0 80 80" fill="none" aria-hidden="true">
+<circle cx="31" cy="25" r="15" stroke="currentColor" stroke-width="5"/>
+<path d="M9 68c2-15 12-24 27-24s25 9 27 24" stroke="currentColor" stroke-width="5" stroke-linecap="round"/>
+<circle cx="55" cy="30" r="11" stroke="currentColor" stroke-width="5" opacity=".9"/>
+<path d="M52 48c10 1 17 8 19 20" stroke="currentColor" stroke-width="5" stroke-linecap="round" opacity=".9"/>
+</svg></div><strong>100+</strong><span>团队成员</span></div>
+<div class="ref-stat"><div class="ref-icon"><svg viewBox="0 0 80 80" fill="none" aria-hidden="true">
+<path d="M40 8 66 22v34L40 72 14 56V22L40 8Z" stroke="currentColor" stroke-width="5" stroke-linejoin="round"/>
+<path d="M14 22 40 37 66 22M40 37v35" stroke="currentColor" stroke-width="5" stroke-linejoin="round"/>
+<path d="M33 20 40 16l7 4-7 4-7-4Z" fill="currentColor"/>
+</svg></div><strong>200+</strong><span>产品方案</span></div>
+<div class="ref-stat"><div class="ref-icon"><svg viewBox="0 0 80 80" fill="none" aria-hidden="true">
+<path d="M43 11h24a5 5 0 0 1 5 5v30a5 5 0 0 1-5 5H55L42 64v-8" stroke="currentColor" stroke-width="5" stroke-linejoin="round"/>
+<path d="m57 22 3 7 8 .5-6 5 2 8-7-4-7 4 2-8-6-5 8-.5 3-7Z" stroke="currentColor" stroke-width="4" stroke-linejoin="round"/>
+<path d="M15 61c10-13 23-20 39-20" stroke="currentColor" stroke-width="5" stroke-linecap="round"/>
+<path d="M17 42v18h18" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="19" cy="35" r="4" fill="currentColor"/>
+</svg></div><strong>50+</strong><span>知识产权</span></div>
+<div class="ref-stat"><div class="ref-icon"><svg viewBox="0 0 80 80" fill="none" aria-hidden="true">
+<circle cx="40" cy="40" r="31" stroke="currentColor" stroke-width="5"/>
+<path d="M10 40h60M40 9c10 10 15 20 15 31S50 61 40 71M40 9C30 19 25 29 25 40s5 21 15 31" stroke="currentColor" stroke-width="5" stroke-linecap="round"/>
+<path d="M17 24c6 4 14 6 23 6s17-2 23-6M17 56c6-4 14-6 23-6s17 2 23 6" stroke="currentColor" stroke-width="4" opacity=".9"/>
+</svg></div><strong>1000+</strong><span>合作伙伴</span></div>
+</div>
+<img class="data-chart-image" src="assets/data-display-bg.webp" alt="数据展示背景图">
+</div>
+
+<div class="panel">
+<h3>发展历程</h3>
+<div class="timeline">
+<div class="time-item"><b>2016</b><span>思辰微创客实验室成立</span></div>
+<div class="time-item"><b>2018</b><span>推出多款智能硬件产品</span></div>
+<div class="time-item"><b>2020</b><span>获得多项专利与荣誉认证</span></div>
+<div class="time-item"><b>2022</b><span>业务拓展，服务更多客户</span></div>
+<div class="time-item"><b>未来</b><span>持续创新，创造更多可能</span></div>
+</div>
+</div>
+</section>
+</div>
+
+<script>
+(function(){
+  var current=(location.pathname.split('/').pop()||'index.html').replace(/%20/g,' ');
+  document.querySelectorAll('.unified-nav a').forEach(function(a){
+    var href=a.getAttribute('href');
+    if(href===current){a.classList.add('active');}
+    else if(!(current==='contact.html' && a.classList.contains('contact'))){
+      if(!a.classList.contains('contact')) a.classList.remove('active');
+    }
+  });
+})();
+</script>
+</body>
+</html>
