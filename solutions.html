@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>智慧酒店解决方案 - 思辰微智能</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",Arial,sans-serif;
+  background:#020817;
+  color:#fff;
+  overflow-x:hidden;
+}
+a{text-decoration:none;color:inherit}
+.page{
+  min-height:100vh;
+  padding:18px 3vw 28px;
+  background:
+    radial-gradient(circle at 20% 20%,rgba(34,211,238,.16),transparent 28%),
+    radial-gradient(circle at 80% 36%,rgba(37,99,235,.22),transparent 36%),
+    linear-gradient(135deg,#041225 0%,#061327 45%,#020617 100%);
+}
+.nav{
+  max-width:1600px;
+  margin:0 auto 18px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+  position:relative;
+  z-index:5;
+}
+.logo{
+  display:inline-flex;
+  align-items:center;
+  gap:9px;
+  padding:12px 20px;
+  border-radius:999px;
+  border:1px solid rgba(125,211,252,.25);
+  background:rgba(255,255,255,.06);
+  box-shadow:0 0 30px rgba(14,165,233,.10);
+  color:#e0faff;
+  font-weight:800;
+}
+.nav-links{
+  display:flex;
+  gap:72px;
+  color:#e5eefb;
+  font-weight:700;
+  font-size:18px;
+  letter-spacing:.5px;
+  white-space:nowrap;
+}
+.nav-links a.active{color:#22d3ee}
+.nav-links a:hover{color:#67e8f9}
+.contact{
+  padding:14px 30px;
+  border-radius:999px;
+  background:linear-gradient(135deg,#2563eb,#22d3ee);
+  font-weight:900;
+  box-shadow:0 0 28px rgba(34,211,238,.28);
+}
+
+.hero{
+  max-width:1600px;
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:390px 1fr;
+  align-items:center;
+  gap:26px;
+}
+.copy{
+  position:relative;
+  z-index:2;
+}
+.copy h1{
+  font-size:clamp(42px,4.2vw,72px);
+  line-height:1.08;
+  letter-spacing:-.04em;
+  text-shadow:0 18px 55px rgba(0,0,0,.45);
+}
+.copy h1 span{
+  display:block;
+  margin-top:8px;
+  background:linear-gradient(90deg,#67e8f9,#38bdf8,#dbeafe);
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+}
+.copy h2{
+  margin-top:20px;
+  font-size:25px;
+  color:#e0f2fe;
+}
+.copy p{
+  margin-top:22px;
+  color:#c7d9ef;
+  font-size:17px;
+  line-height:1.9;
+}
+.btn{
+  display:inline-flex;
+  margin-top:28px;
+  padding:17px 34px;
+  border-radius:999px;
+  background:linear-gradient(135deg,#22d3ee,#2563eb);
+  color:#02111f;
+  font-weight:900;
+  box-shadow:0 18px 40px rgba(37,99,235,.36);
+}
+
+.scene{
+  position:relative;
+  min-height:560px;
+  border-radius:30px;
+  overflow:hidden;
+  border:1px solid rgba(96,165,250,.30);
+  box-shadow:0 36px 100px rgba(0,0,0,.45);
+  background:#071426;
+}
+.scene img{
+  width:100%;
+  height:100%;
+  min-height:560px;
+  object-fit:cover;
+  display:block;
+}
+.scene::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(90deg,rgba(2,8,23,.46),transparent 40%,rgba(2,8,23,.18));
+  pointer-events:none;
+}
+.points{
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+}
+.point{
+  position:absolute;
+  display:flex;
+  align-items:center;
+  gap:8px;
+  padding:9px 15px;
+  border-radius:999px;
+  background:rgba(15,23,42,.68);
+  border:1px solid rgba(96,165,250,.38);
+  backdrop-filter:blur(10px);
+  box-shadow:0 0 24px rgba(34,211,238,.18);
+  color:#eaf8ff;
+  font-weight:800;
+  white-space:nowrap;
+}
+.point i{
+  width:38px;
+  height:38px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-style:normal;
+  background:radial-gradient(circle,#22d3ee,#1d4ed8);
+  box-shadow:0 0 24px rgba(34,211,238,.55);
+}
+.p1{left:20%;top:18%}
+.p2{left:50%;top:12%}
+.p3{right:20%;top:28%}
+.p4{right:7%;top:40%}
+.p5{left:22%;bottom:16%}
+.p6{right:2%;bottom:18%}
+
+.value-bar{
+  max-width:1540px;
+  margin:22px auto 0;
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  border-radius:18px;
+  overflow:hidden;
+  background:rgba(15,23,42,.72);
+  border:1px solid rgba(59,130,246,.38);
+  box-shadow:0 24px 70px rgba(0,0,0,.34);
+}
+.value{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  padding:22px 24px;
+  border-right:1px solid rgba(148,163,184,.18);
+}
+.value:last-child{border-right:none}
+.value-icon{
+  width:50px;
+  height:50px;
+  border-radius:16px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:26px;
+  color:#67e8f9;
+  background:rgba(37,99,235,.22);
+}
+.value h3{font-size:18px}
+.value p{margin-top:5px;color:#a9bdd6;font-size:13px}
+
+.title{
+  text-align:center;
+  margin:42px auto 26px;
+  font-size:38px;
+  letter-spacing:3px;
+  color:#eaf8ff;
+  text-shadow:0 0 30px rgba(34,211,238,.24);
+}
+
+.cards{
+  width:min(1540px,100%);
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:repeat(6,1fr);
+  gap:16px;
+}
+.card{
+  padding:18px;
+  min-height:318px;
+  border-radius:18px;
+  background:linear-gradient(180deg,rgba(15,23,42,.78),rgba(8,47,73,.36));
+  border:1px solid rgba(59,130,246,.32);
+  box-shadow:0 22px 60px rgba(0,0,0,.28);
+  transition:.3s;
+}
+.card:hover{
+  transform:translateY(-8px);
+  border-color:rgba(34,211,238,.68);
+  box-shadow:0 28px 80px rgba(0,0,0,.42),0 0 34px rgba(34,211,238,.18);
+}
+.card-head{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+.num{
+  width:48px;
+  height:34px;
+  border-radius:12px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:linear-gradient(135deg,#2563eb,#22d3ee);
+  font-weight:900;
+  box-shadow:0 0 18px rgba(34,211,238,.38);
+}
+.card h3{font-size:20px}
+.thumb{
+  margin:18px 0;
+  height:126px;
+  border-radius:14px;
+  overflow:hidden;
+  border:1px solid rgba(96,165,250,.20);
+  background:#071426;
+}
+.thumb img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+.card ul{
+  list-style:none;
+  color:#dbeafe;
+  font-size:14px;
+  line-height:1.9;
+}
+.card li::before{
+  content:"•";
+  color:#22d3ee;
+  margin-right:8px;
+}
+
+.arch{
+  width:min(1540px,100%);
+  margin:22px auto 0;
+  padding:22px;
+  border-radius:20px;
+  background:rgba(15,23,42,.65);
+  border:1px solid rgba(59,130,246,.26);
+  display:grid;
+  grid-template-columns:190px repeat(5,1fr);
+  align-items:center;
+  gap:18px;
+}
+.arch-title h3{font-size:22px}
+.arch-title p{margin-top:8px;color:#9fb4cc;font-size:14px;line-height:1.5}
+.arch-step{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  color:#e0f2fe;
+  position:relative;
+}
+.arch-step:not(:last-child)::after{
+  content:"→";
+  position:absolute;
+  right:-16px;
+  color:#38bdf8;
+  font-size:26px;
+}
+.arch-icon{
+  width:56px;
+  height:56px;
+  border-radius:18px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:rgba(37,99,235,.24);
+  color:#67e8f9;
+  font-size:28px;
+}
+.arch-step h4{font-size:17px}
+.arch-step p{margin-top:5px;color:#9fb4cc;font-size:13px}
+
+@media(max-width:1200px){
+  .hero{grid-template-columns:1fr}
+  .copy{text-align:center}
+  .copy p{max-width:760px;margin-left:auto;margin-right:auto}
+  .cards{grid-template-columns:repeat(3,1fr)}
+  .value-bar{grid-template-columns:repeat(2,1fr)}
+  .arch{grid-template-columns:1fr 1fr}
+}
+@media(max-width:760px){
+  .nav{flex-direction:column}
+  .nav-links{gap:18px;flex-wrap:wrap;justify-content:center;font-size:15px}
+  .scene img,.scene{min-height:420px}
+  .point{font-size:12px;padding:7px 10px}
+  .point i{width:32px;height:32px}
+  .cards{grid-template-columns:1fr}
+  .value-bar{grid-template-columns:1fr}
+  .arch{grid-template-columns:1fr}
+  .arch-step::after{display:none!important}
+}
+</style>
+</head>
+
+<body>
+<section class="page">
+
+  <nav class="nav">
+    <div class="logo">☁ 思辰微智能</div>
+    <div class="nav-links">
+      <a href="index.html">首页</a>
+      <a href="products.html">产品中心</a>
+      <a class="active" href="solutions.html">解决方案</a>
+      <a href="#">智慧场景</a>
+      <a href="#">支持服务</a>
+      <a href="#">关于我们</a>
+    </div>
+    <a class="contact" href="#">联系我们</a>
+  </nav>
+
+  <main class="hero">
+    <section class="copy">
+      <h1>智慧酒店<span>解决方案</span></h1>
+      <h2>智能互联 · 卓越体验 · 高效运营</h2>
+      <p>基于物联网与 AI 技术，打造安全、舒适、节能的智慧酒店空间，提升入住体验，降低运营成本，助力酒店数字化升级。</p>
+      <a class="btn" href="#solutions">了解方案优势 →</a>
+    </section>
+
+    <section class="scene">
+      <img src="solutions_web_assets/solution-hotel-room.jpg" alt="智慧酒店客房场景图">
+      <div class="points">
+        <div class="point p1"><i>💡</i>智能照明</div>
+        <div class="point p2"><i>℃</i>空调控制</div>
+        <div class="point p3"><i>▥</i>窗帘控制</div>
+        <div class="point p4"><i>🎙</i>语音控制</div>
+        <div class="point p5"><i>🔌</i>智慧插座</div>
+        <div class="point p6"><i>🔒</i>门锁管理</div>
+      </div>
+    </section>
+  </main>
+
+  <section class="value-bar">
+    <div class="value"><div class="value-icon">◇</div><div><h3>提升入住体验</h3><p>个性化场景与智能服务</p></div></div>
+    <div class="value"><div class="value-icon">▤</div><div><h3>降低运营成本</h3><p>智能节能与设备管理</p></div></div>
+    <div class="value"><div class="value-icon">🛡</div><div><h3>保障安全可靠</h3><p>多重防护与实时告警</p></div></div>
+    <div class="value"><div class="value-icon">▥</div><div><h3>数据驱动决策</h3><p>可视化报表与分析</p></div></div>
+    <div class="value"><div class="value-icon">▣</div><div><h3>快速部署扩展</h3><p>模块化设计灵活扩展</p></div></div>
+  </section>
+
+  <h2 class="title" id="solutions">全场景覆盖 · 打造智慧酒店新体验</h2>
+
+  <section class="cards">
+    <article class="card">
+      <div class="card-head"><div class="num">01</div><h3>入住前</h3></div>
+      <div class="thumb"><img src="solutions_web_assets/scene-checkin.jpg" alt="入住前"></div>
+      <ul><li>自助选房</li><li>个性化偏好设置</li><li>到店信息推送</li></ul>
+    </article>
+
+    <article class="card">
+      <div class="card-head"><div class="num">02</div><h3>入住中</h3></div>
+      <div class="thumb"><img src="solutions_web_assets/scene-stay.jpg" alt="入住中"></div>
+      <ul><li>一键场景控制</li><li>灯光 / 空调 / 窗帘联动</li><li>语音控制，解放双手</li></ul>
+    </article>
+
+    <article class="card">
+      <div class="card-head"><div class="num">03</div><h3>客房服务</h3></div>
+      <div class="thumb"><img src="solutions_web_assets/scene-service.jpg" alt="客房服务"></div>
+      <ul><li>一键呼叫服务</li><li>清洁 / 送物 / 维修</li><li>服务进度实时查看</li></ul>
+    </article>
+
+    <article class="card">
+      <div class="card-head"><div class="num">04</div><h3>能源管理</h3></div>
+      <div class="thumb"><img src="solutions_web_assets/scene-energy.jpg" alt="能源管理"></div>
+      <ul><li>能耗实时监测</li><li>智能策略节能</li><li>设备定时与联动控制</li></ul>
+    </article>
+
+    <article class="card">
+      <div class="card-head"><div class="num">05</div><h3>安防管理</h3></div>
+      <div class="thumb"><img src="solutions_web_assets/scene-security.jpg" alt="安防管理"></div>
+      <ul><li>门锁管理</li><li>异常告警推送</li><li>视频监控联动</li></ul>
+    </article>
+
+    <article class="card">
+      <div class="card-head"><div class="num">06</div><h3>退房后</h3></div>
+      <div class="thumb"><img src="solutions_web_assets/scene-checkout.jpg" alt="退房后"></div>
+      <ul><li>无感退房</li><li>消费明细推送</li><li>会员服务持续关怀</li></ul>
+    </article>
+  </section>
+
+  <section class="arch">
+    <div class="arch-title"><h3>方案架构</h3><p>稳定可靠的全栈架构，支撑酒店智能化运营。</p></div>
+    <div class="arch-step"><div class="arch-icon">⌘</div><div><h4>感知层</h4><p>智能设备采集数据</p></div></div>
+    <div class="arch-step"><div class="arch-icon">☁</div><div><h4>网络层</h4><p>Zigbee / WiFi 接入</p></div></div>
+    <div class="arch-step"><div class="arch-icon">▣</div><div><h4>平台层</h4><p>设备管理 / 数据处理</p></div></div>
+    <div class="arch-step"><div class="arch-icon">⚙</div><div><h4>应用层</h4><p>多端应用 / 场景联动</p></div></div>
+    <div class="arch-step"><div class="arch-icon">👥</div><div><h4>用户层</h4><p>酒店 / 住客 / 管理者</p></div></div>
+  </section>
+
+</section>
+</body>
+</html>
