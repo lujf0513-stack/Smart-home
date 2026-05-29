@@ -155,18 +155,6 @@ body::before{
   position:relative;
 }
 
-.hero::before,.hero::after{
-  content:"";
-  position:absolute;
-  top:30px;
-  width:48%;
-  height:1px;
-  background:linear-gradient(90deg,transparent,#3b82f6,transparent);
-}
-
-.hero::before{left:-5%;transform:rotate(28deg)}
-.hero::after{right:-5%;transform:rotate(-28deg)}
-
 .hero h1{
   font-size:clamp(48px,7vw,84px);
   line-height:1;
@@ -207,7 +195,14 @@ body::before{
     linear-gradient(135deg,rgba(15,23,42,.86),rgba(8,47,73,.42));
   border:1px solid rgba(59,130,246,.55);
   box-shadow:0 24px 80px rgba(0,0,0,.35), inset 0 0 60px rgba(14,165,233,.05);
-  overflow:hidden;
+  overflow:visible;
+  transition:.3s;
+}
+
+.gateway-card:hover{
+  transform:translateY(-8px);
+  border-color:rgba(34,211,238,.68);
+  box-shadow:0 28px 80px rgba(0,0,0,.42),0 0 34px rgba(34,211,238,.18), inset 0 0 60px rgba(14,165,233,.05);
 }
 
 .image-wrap{
@@ -297,13 +292,14 @@ body::before{
     linear-gradient(135deg,rgba(15,23,42,.86),rgba(8,47,73,.42));
   border:1px solid rgba(59,130,246,.55);
   box-shadow:0 24px 70px rgba(0,0,0,.35), inset 0 0 55px rgba(14,165,233,.05);
-  overflow:hidden;
-  transition:.35s;
+  overflow:visible;
+  transition:.3s;
 }
 
 .panel-card:hover{
   transform:translateY(-8px);
-  box-shadow:0 30px 90px rgba(0,0,0,.45),0 0 35px rgba(34,211,238,.22);
+  border-color:rgba(34,211,238,.68);
+  box-shadow:0 28px 80px rgba(0,0,0,.42),0 0 34px rgba(34,211,238,.18), inset 0 0 55px rgba(14,165,233,.05);
 }
 
 .panel-card .image-wrap{
@@ -512,13 +508,14 @@ body::before{
     linear-gradient(135deg,rgba(15,23,42,.86),rgba(8,47,73,.42));
   border:1px solid rgba(59,130,246,.55);
   box-shadow:0 24px 70px rgba(0,0,0,.35), inset 0 0 55px rgba(14,165,233,.05);
-  overflow:hidden;
-  transition:.35s;
+  overflow:visible;
+  transition:.3s;
 }
 
 .temp-card:hover{
   transform:translateY(-8px);
-  box-shadow:0 30px 90px rgba(0,0,0,.45),0 0 35px rgba(34,211,238,.22);
+  border-color:rgba(34,211,238,.68);
+  box-shadow:0 28px 80px rgba(0,0,0,.42),0 0 34px rgba(34,211,238,.18), inset 0 0 55px rgba(14,165,233,.05);
 }
 
 .temp-card .image-wrap{
@@ -576,7 +573,14 @@ body::before{
     linear-gradient(135deg,rgba(15,23,42,.88),rgba(8,47,73,.42));
   border:1px solid rgba(59,130,246,.55);
   box-shadow:0 24px 80px rgba(0,0,0,.35), inset 0 0 55px rgba(14,165,233,.05);
-  overflow:hidden;
+  overflow:visible;
+  transition:.3s;
+}
+
+.voice-card:hover{
+  transform:translateY(-8px);
+  border-color:rgba(34,211,238,.68);
+  box-shadow:0 28px 80px rgba(0,0,0,.42),0 0 34px rgba(34,211,238,.18), inset 0 0 55px rgba(14,165,233,.05);
 }
 
 .voice-card h2{
@@ -713,13 +717,14 @@ body::before{
     linear-gradient(135deg,rgba(15,23,42,.88),rgba(8,47,73,.42));
   border:1px solid rgba(59,130,246,.55);
   box-shadow:0 24px 70px rgba(0,0,0,.35), inset 0 0 55px rgba(14,165,233,.05);
-  overflow:hidden;
-  transition:.35s;
+  overflow:visible;
+  transition:.3s;
 }
 
 .socket-card:hover{
   transform:translateY(-8px);
-  box-shadow:0 30px 90px rgba(0,0,0,.45),0 0 35px rgba(34,211,238,.22);
+  border-color:rgba(34,211,238,.68);
+  box-shadow:0 28px 80px rgba(0,0,0,.42),0 0 34px rgba(34,211,238,.18), inset 0 0 55px rgba(14,165,233,.05);
 }
 
 .socket-card h2{
@@ -804,7 +809,14 @@ body::before{
     linear-gradient(135deg,rgba(15,23,42,.88),rgba(8,47,73,.42));
   border:1px solid rgba(59,130,246,.55);
   box-shadow:0 24px 70px rgba(0,0,0,.35), inset 0 0 55px rgba(14,165,233,.05);
-  overflow:hidden;
+  overflow:visible;
+  transition:.3s;
+}
+
+.other-card:hover{
+  transform:translateY(-8px);
+  border-color:rgba(34,211,238,.68);
+  box-shadow:0 28px 80px rgba(0,0,0,.42),0 0 34px rgba(34,211,238,.18), inset 0 0 55px rgba(14,165,233,.05);
 }
 
 .other-card h2{
@@ -1040,7 +1052,7 @@ body > .nav{
 <nav class="tabs">
   <div class="tab active" data-series="gateway" onclick="showSeries('gateway',this)">▣ 网关系列</div>
   <div class="tab" data-series="panel" onclick="showSeries('panel',this)">▥ 面板系列</div>
-  <div class="tab" data-series="temp" onclick="showSeries('temp',this)">◴ 旋钮温控系列</div>
+  <div class="tab" data-series="temp" onclick="showSeries('temp',this)">◴ 旋钮温控</div>
   <div class="tab" data-series="voice" onclick="showSeries('voice',this)">◉ 语音系列</div>
   <div class="tab" data-series="socket" onclick="showSeries('socket',this)">▧ 插座系列</div>
   <div class="tab" data-series="network" onclick="showSeries('network',this)">▤ 网络覆盖</div>
@@ -1463,7 +1475,7 @@ body > .nav{
       <h2>紧急呼叫面板</h2>
       <div class="line"></div>
       <div class="image-wrap"><img src="9.webp" alt="紧急呼叫面板" decoding="async" loading="lazy"></div>
-      <div class="other-card-bottom">png
+      <div class="other-card-bottom">
         <div class="other-mini"><div class="mini-icon">🔔</div><h4>紧急呼叫</h4><p>一键呼叫求助</p></div>
         <div class="other-mini"><div class="mini-icon">🛡</div><h4>安全可靠</h4><p>稳定耐用</p></div>
         <div class="other-mini"><div class="mini-icon">✿</div><h4>简约设计</h4><p>美观大方</p></div>
