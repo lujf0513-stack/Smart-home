@@ -1164,20 +1164,29 @@ document.addEventListener('DOMContentLoaded', function () {
     wechat: '搜索公众号文章关键词...'
   };
 
+  const applyTabState = key => {
+    tabs.forEach(item => item.classList.toggle('active', item.dataset.tab === key));
+    panels.forEach(panel => {
+      panel.classList.toggle('active', panel.dataset.panel === key);
+    });
+
+    if (search) {
+      search.value = '';
+      search.placeholder = placeholders[key] || '搜索关键词...';
+    }
+  };
+
+  const initialTab = (location.hash || '').replace('#', '');
+  if (placeholders[initialTab]) {
+    applyTabState(initialTab);
+  }
+
   tabs.forEach(tab => {
     tab.addEventListener('click', () => {
       const key = tab.dataset.tab;
-
-      tabs.forEach(item => item.classList.remove('active'));
-      tab.classList.add('active');
-
-      panels.forEach(panel => {
-        panel.classList.toggle('active', panel.dataset.panel === key);
-      });
-
-      if (search) {
-        search.value = '';
-        search.placeholder = placeholders[key] || '搜索关键词...';
+      applyTabState(key);
+      if (location.hash !== '#' + key) {
+        history.replaceState(null, '', '#' + key);
       }
     });
   });
