@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>SCW Smart Life - 产品展示</title>
+<title>SCW Smart Life</title>
 
 <style>
 *{
@@ -609,6 +609,8 @@ html{
   scroll-behavior:auto !important;
   margin:0 !important;
   padding:0 !important;
+  overflow-y:scroll !important;
+  scrollbar-gutter:stable !important;
 }
 
 body{
@@ -648,9 +650,9 @@ body{
   top:auto !important;
   left:auto !important;
   right:auto !important;
-  z-index:50 !important;
+  z-index:10 !important;
 
-  width:min(1600px,94vw) !important;
+  width:min(1600px,100%) !important;
   max-width:1600px !important;
   height:58px !important;
   min-height:58px !important;
@@ -663,12 +665,9 @@ body{
   justify-content:space-between !important;
   gap:20px !important;
 
-  background:rgba(2,8,23,.38) !important;
-  border:1px solid rgba(125,211,252,.12) !important;
-  border-radius:999px !important;
-  backdrop-filter:blur(14px) !important;
-  -webkit-backdrop-filter:blur(14px) !important;
-  box-shadow:0 0 38px rgba(14,165,233,.08) !important;
+  background:transparent !important;
+  border:0 !important;
+  box-shadow:none !important;
 }
 
 .nav::before,
@@ -680,9 +679,10 @@ body{
 .logo{
   display:inline-flex !important;
   align-items:center !important;
-  gap:9px !important;
-  height:48px !important;
-  padding:0 26px !important;
+  justify-content:center !important;
+  height:46px !important;
+  min-width:164px !important;
+  padding:0 18px !important;
   border-radius:999px !important;
   border:1px solid rgba(125,211,252,.25) !important;
   background:rgba(255,255,255,.06) !important;
@@ -725,7 +725,6 @@ body{
   justify-content:center !important;
   height:48px !important;
   padding:0 30px !important;
-  margin-right:6px !important;
   border-radius:999px !important;
   background:linear-gradient(135deg,#2563eb,#22d3ee) !important;
   color:#fff !important;
@@ -743,7 +742,7 @@ body{
 
 @media(max-width:900px){
   .nav{
-    width:94vw !important;
+    width:100% !important;
     height:auto !important;
     min-height:auto !important;
     padding:14px !important;
@@ -866,17 +865,17 @@ body{
           
           <div class="card main">
             <img src="1.webp" decoding="async" loading="eager" fetchpriority="high">
-            <div class="name-badge">一键开关</div>
+            <div class="name-badge">一键开关/场景</div>
           </div>
 
           <div class="card">
             <img src="2.webp" decoding="async" loading="eager" fetchpriority="high">
-            <div class="name-badge">二键开关</div>
+            <div class="name-badge">二键开关/场景</div>
           </div>
 
           <div class="card">
             <img src="3.webp" decoding="async" loading="eager" fetchpriority="high">
-            <div class="name-badge">三键开关</div>
+            <div class="name-badge">三键开关/场景</div>
           </div>
 
           <div class="card">
@@ -886,62 +885,62 @@ body{
 
           <div class="card">
             <img src="5.webp" decoding="async" loading="eager" fetchpriority="high">
-            <div class="name-badge">调光旋钮</div>
+            <div class="name-badge">旋钮调光器（经典款）</div>
           </div>
 
           <div class="card">
             <img src="6.webp" decoding="async" loading="lazy">
-            <div class="name-badge">温控面板</div>
+            <div class="name-badge">旋钮温控器（经典款）</div>
           </div>
 
           <div class="card">
             <img src="7.webp" decoding="async" loading="lazy">
-            <div class="name-badge">彩屏温控</div>
+            <div class="name-badge">旋钮温控器（彩屏款）</div>
           </div>
 
           <div class="card">
             <img src="8.webp" decoding="async" loading="lazy">
-            <div class="name-badge">触控温控</div>
+            <div class="name-badge">触控温控器（黑晶款）</div>
           </div>
 
           <div class="card">
             <img src="9.webp" decoding="async" loading="lazy">
-            <div class="name-badge">智能面板</div>
+            <div class="name-badge">紧急呼叫面板</div>
           </div>
 
           <div class="card">
             <img src="10.webp" decoding="async" loading="lazy">
-            <div class="name-badge">语音面板</div>
+            <div class="name-badge">墙壁开关</div>
           </div>
 
           <div class="card">
             <img src="11.webp" decoding="async" loading="lazy">
-            <div class="name-badge">语音终端</div>
+            <div class="name-badge">离线语音</div>
           </div>
 
           <div class="card">
             <img src="12.webp" decoding="async" loading="lazy">
-            <div class="name-badge">场景面板</div>
+            <div class="name-badge">3孔插座（16A）</div>
           </div>
 
           <div class="card">
             <img src="13.webp" decoding="async" loading="lazy">
-            <div class="name-badge">智能插座</div>
+            <div class="name-badge">5孔插座（10A）</div>
           </div>
 
           <div class="card">
             <img src="14.webp" decoding="async" loading="lazy">
-            <div class="name-badge">多功能插座</div>
+            <div class="name-badge">5孔+USB插座（10A）</div>
           </div>
 
           <div class="card">
             <img src="15.webp" decoding="async" loading="lazy">
-            <div class="name-badge">其他产品</div>
+            <div class="name-badge">无线AP</div>
           </div>
 
           <div class="card">
             <img src="16.webp" decoding="async" loading="lazy">
-            <div class="name-badge">智能模块</div>
+            <div class="name-badge">插卡取电</div>
           </div>
 
           <div class="card">

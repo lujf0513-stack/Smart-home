@@ -246,6 +246,8 @@ html{
   scroll-behavior:auto !important;
   margin:0 !important;
   padding:0 !important;
+  overflow-y:scroll !important;
+  scrollbar-gutter:stable !important;
 }
 
 body{
@@ -285,9 +287,9 @@ body{
   top:auto !important;
   left:auto !important;
   right:auto !important;
-  z-index:50 !important;
+  z-index:10 !important;
 
-  width:min(1600px,94vw) !important;
+  width:min(1600px,100%) !important;
   max-width:1600px !important;
   height:58px !important;
   min-height:58px !important;
@@ -300,12 +302,9 @@ body{
   justify-content:space-between !important;
   gap:20px !important;
 
-  background:rgba(2,8,23,.38) !important;
-  border:1px solid rgba(125,211,252,.12) !important;
-  border-radius:999px !important;
-  backdrop-filter:blur(14px) !important;
-  -webkit-backdrop-filter:blur(14px) !important;
-  box-shadow:0 0 38px rgba(14,165,233,.08) !important;
+  background:transparent !important;
+  border:0 !important;
+  box-shadow:none !important;
 }
 
 .nav::before,
@@ -317,9 +316,10 @@ body{
 .logo{
   display:inline-flex !important;
   align-items:center !important;
-  gap:9px !important;
-  height:48px !important;
-  padding:0 26px !important;
+  justify-content:center !important;
+  height:46px !important;
+  min-width:164px !important;
+  padding:0 18px !important;
   border-radius:999px !important;
   border:1px solid rgba(125,211,252,.25) !important;
   background:rgba(255,255,255,.06) !important;
@@ -362,7 +362,6 @@ body{
   justify-content:center !important;
   height:48px !important;
   padding:0 30px !important;
-  margin-right:6px !important;
   border-radius:999px !important;
   background:linear-gradient(135deg,#2563eb,#22d3ee) !important;
   color:#fff !important;
@@ -380,7 +379,7 @@ body{
 
 @media(max-width:900px){
   .nav{
-    width:94vw !important;
+    width:100% !important;
     height:auto !important;
     min-height:auto !important;
     padding:14px !important;

@@ -745,331 +745,146 @@ display:none !important;
 
 
 
-/* ===== 统一导航栏修复：所有页面位置、间距、点击状态保持一致 ===== */
-html{scroll-behavior:auto!important;}
-body{overflow-x:hidden!important;}
-.nav.unified-nav,
-.unified-nav{
-  width:min(1600px,94vw)!important;
-  height:58px!important;
-  max-width:1600px!important;
-  margin:0 auto 18px!important;
-  padding:0!important;
-  position:relative!important;
-  left:auto!important;
-  right:auto!important;
-  top:auto!important;
-  transform:none!important;
-  display:flex!important;
-  align-items:center!important;
-  justify-content:space-between!important;
-  gap:20px!important;
-  z-index:50!important;
-}
-.unified-nav .logo{
-  flex:0 0 178px!important;
-  height:46px!important;
-  padding:0 20px!important;
-  display:inline-flex!important;
-  align-items:center!important;
-  justify-content:center!important;
-  gap:9px!important;
-  border-radius:999px!important;
-  border:1px solid rgba(125,211,252,.25)!important;
-  background:rgba(255,255,255,.06)!important;
-  box-shadow:0 0 30px rgba(14,165,233,.10)!important;
-  color:#e0faff!important;
-  font-size:18px!important;
-  font-weight:800!important;
-  white-space:nowrap!important;
-}
-.unified-nav .nav-links{
-  flex:1 1 auto!important;
-  min-width:0!important;
-  height:58px!important;
-  display:flex!important;
-  align-items:center!important;
-  justify-content:center!important;
-  gap:58px!important;
-  color:#e5eefb!important;
-  font-weight:700!important;
-  font-size:18px!important;
-  letter-spacing:.5px!important;
-  white-space:nowrap!important;
-}
-.unified-nav .nav-links a{
-  display:inline-flex!important;
-  align-items:center!important;
-  height:58px!important;
-  line-height:58px!important;
-  text-decoration:none!important;
-  color:inherit!important;
-  transition:color .25s ease!important;
-}
-.unified-nav .nav-links a:hover{color:#67e8f9!important;}
-.unified-nav .nav-links a.active{color:#22d3ee!important;}
-.unified-nav .contact{
-  flex:0 0 132px!important;
-  height:46px!important;
-  padding:0 24px!important;
-  border-radius:999px!important;
-  display:inline-flex!important;
-  align-items:center!important;
-  justify-content:center!important;
-  background:linear-gradient(135deg,#2563eb,#22d3ee)!important;
-  color:#fff!important;
-  font-size:16px!important;
-  font-weight:900!important;
-  line-height:46px!important;
-  box-shadow:0 0 28px rgba(34,211,238,.28)!important;
-  text-decoration:none!important;
-  white-space:nowrap!important;
-  transition:box-shadow .25s ease,color .25s ease!important;
-}
-.unified-nav .contact.active{
-  color:#fff!important;
-  box-shadow:0 0 34px rgba(34,211,238,.48), inset 0 0 0 1px rgba(255,255,255,.28)!important;
-}
-@media(max-width:1080px){
-  .nav.unified-nav,.unified-nav{height:auto!important;flex-direction:column!important;gap:16px!important;margin-bottom:22px!important;}
-  .unified-nav .logo,.unified-nav .contact{flex:0 0 auto!important;}
-  .unified-nav .nav-links{height:auto!important;line-height:1!important;gap:24px!important;flex-wrap:wrap!important;}
-  .unified-nav .nav-links a{height:auto!important;line-height:1.3!important;}
-}
-
-
-/* ===== 统一导航栏最终修复：六个页面保持同一位置，不上下/左右跳动 ===== */
+/* ===== 导航栏最终位置锁定：防止支持服务 / 关于我们点击时突然上移 ===== */
 html{
-  scroll-behavior:auto!important;
-  overflow-y:scroll;
-  scrollbar-gutter:stable;
-}
-body{overflow-x:hidden!important;}
-a{-webkit-tap-highlight-color:transparent;}
-.nav.unified-nav,
-.nav{
-  position:sticky!important;
-  top:0!important;
-  z-index:999!important;
-  width:min(1600px,94vw)!important;
-  max-width:1600px!important;
-  min-height:68px!important;
-  margin:0 auto 18px!important;
-  padding:0!important;
-  display:flex!important;
-  align-items:center!important;
-  justify-content:space-between!important;
-  gap:20px!important;
-  background:transparent!important;
-  border:0!important;
-  transform:none!important;
-  backdrop-filter:none!important;
-}
-.nav.unified-nav .logo,
-.nav .logo{
-  flex:0 0 164px!important;
-  min-width:164px!important;
-  height:46px!important;
-  display:inline-flex!important;
-  align-items:center!important;
-  justify-content:center!important;
-  gap:9px!important;
-  padding:0 20px!important;
-  border-radius:999px!important;
-  border:1px solid rgba(125,211,252,.25)!important;
-  background:rgba(255,255,255,.06)!important;
-  box-shadow:0 0 30px rgba(14,165,233,.10)!important;
-  color:#e0faff!important;
-  font-size:18px!important;
-  font-weight:800!important;
-  line-height:1!important;
-  white-space:nowrap!important;
-}
-.nav.unified-nav .nav-links,
-.nav .nav-links{
-  flex:1 1 auto!important;
-  min-width:0!important;
-  height:46px!important;
-  display:flex!important;
-  align-items:center!important;
-  justify-content:center!important;
-  gap:72px!important;
-  color:#e5eefb!important;
-  font-weight:700!important;
-  font-size:18px!important;
-  letter-spacing:.5px!important;
-  white-space:nowrap!important;
-}
-.nav.unified-nav .nav-links a,
-.nav .nav-links a{
-  display:inline-flex!important;
-  align-items:center!important;
-  justify-content:center!important;
-  height:46px!important;
-  line-height:46px!important;
-  color:#e5eefb!important;
-  text-decoration:none!important;
-  transition:color .22s ease!important;
-  transform:none!important;
-}
-.nav.unified-nav .nav-links a:hover,
-.nav.unified-nav .nav-links a.active,
-.nav .nav-links a:hover,
-.nav .nav-links a.active{
-  color:#22d3ee!important;
-  background:transparent!important;
-  box-shadow:none!important;
-}
-.nav.unified-nav .contact,
-.nav .contact{
-  flex:0 0 118px!important;
-  min-width:118px!important;
-  height:46px!important;
-  padding:0 24px!important;
-  border-radius:999px!important;
-  display:inline-flex!important;
-  align-items:center!important;
-  justify-content:center!important;
-  background:linear-gradient(135deg,#2563eb,#22d3ee)!important;
-  color:#fff!important;
-  font-weight:900!important;
-  font-size:16px!important;
-  line-height:1!important;
-  text-decoration:none!important;
-  white-space:nowrap!important;
-  box-shadow:0 0 28px rgba(34,211,238,.28)!important;
-  transform:none!important;
-}
-.nav.unified-nav .contact.active,
-.nav .contact.active{
-  box-shadow:0 0 34px rgba(34,211,238,.46)!important;
-  outline:1px solid rgba(125,211,252,.36)!important;
-}
-@media(max-width:1100px){
-  .nav.unified-nav,.nav{width:min(100%,94vw)!important;min-height:auto!important;flex-wrap:wrap!important;justify-content:center!important;padding:10px 0!important;}
-  .nav.unified-nav .logo,.nav .logo{flex:0 0 auto!important;}
-  .nav.unified-nav .nav-links,.nav .nav-links{order:3;flex:1 0 100%!important;gap:24px!important;flex-wrap:wrap!important;height:auto!important;}
-  .nav.unified-nav .nav-links a,.nav .nav-links a{height:34px!important;line-height:34px!important;}
-  .nav.unified-nav .contact,.nav .contact{flex:0 0 auto!important;}
-}
-
-
-/* ===== 二次修复：导航栏切换不再上下/左右跳动 ===== */
-html{
-  scroll-behavior:auto!important;
-  overflow-y:scroll!important; /* 保留滚动条占位，避免有些页面有滚动条、有些没有导致左右移动 */
+  scroll-behavior:auto !important;
+  margin:0 !important;
+  padding:0 !important;
+  overflow-y:scroll !important;
+  scrollbar-gutter:stable !important;
 }
 body{
-  padding-top:94px!important; /* 固定导航占位，所有页面一致 */
-  overflow-x:hidden!important;
+  margin:0 !important;
+  padding:0 !important;
+  overflow-x:hidden !important;
 }
-.nav.unified-nav,
+
+/* 所有页面顶部统一 18px，避免页面切换时导航栏上下跳动 */
+.hero,
+.page,
+.container{
+  padding-top:18px !important;
+  box-sizing:border-box !important;
+}
+
+/* 页面主内容横向也统一，避免视觉上导航位置不一致 */
+.hero,
+.page,
+.container{
+  padding-left:3vw !important;
+  padding-right:3vw !important;
+}
+
+/* about / support 使用 container 包导航，必须锁定顶部距离 */
+.container{
+  width:min(1680px,96%) !important;
+  margin:auto !important;
+}
+
+/* 统一导航栏，不使用 sticky，避免切换页面时被浏览器重新计算位置 */
 .nav{
-  position:fixed!important;
-  top:18px!important;
-  left:50%!important;
-  transform:translateX(-50%)!important;
-  width:min(1600px,94vw)!important;
-  height:58px!important;
-  margin:0!important;
-  padding:0!important;
-  z-index:9999!important;
-  display:flex!important;
-  align-items:center!important;
-  justify-content:space-between!important;
-  gap:20px!important;
-  background:rgba(2,8,23,.58)!important;
-  border:1px solid rgba(125,211,252,.16)!important;
-  border-radius:999px!important;
-  backdrop-filter:blur(14px)!important;
-  -webkit-backdrop-filter:blur(14px)!important;
-  box-shadow:0 18px 46px rgba(0,0,0,.20),0 0 30px rgba(14,165,233,.08)!important;
+  position:relative !important;
+  top:auto !important;
+  left:auto !important;
+  transform:none !important;
+  width:min(1600px,100%) !important;
+  max-width:1600px !important;
+  height:58px !important;
+  min-height:58px !important;
+  margin:0 auto 18px !important;
+  padding:0 !important;
+  display:flex !important;
+  align-items:center !important;
+  justify-content:space-between !important;
+  gap:20px !important;
+  z-index:10 !important;
+  background:transparent !important;
+  border:0 !important;
+  box-shadow:none !important;
 }
-.nav .logo,
+
 .logo{
-  height:46px!important;
-  min-width:156px!important;
-  margin-left:6px!important;
-  padding:0 18px!important;
-  display:inline-flex!important;
-  align-items:center!important;
-  justify-content:center!important;
-  gap:9px!important;
-  border-radius:999px!important;
-  font-size:18px!important;
-  line-height:46px!important;
-  white-space:nowrap!important;
-  flex:0 0 auto!important;
+  display:inline-flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  height:46px !important;
+  min-width:164px !important;
+  padding:0 18px !important;
+  border-radius:999px !important;
+  border:1px solid rgba(125,211,252,.25) !important;
+  background:rgba(255,255,255,.06) !important;
+  box-shadow:0 0 30px rgba(14,165,233,.10) !important;
+  color:#e0faff !important;
+  font-size:18px !important;
+  font-weight:800 !important;
+  white-space:nowrap !important;
 }
-.nav .nav-links,
+
 .nav-links{
-  position:absolute!important;
-  left:50%!important;
-  top:50%!important;
-  transform:translate(-50%,-50%)!important;
-  display:flex!important;
-  align-items:center!important;
-  justify-content:center!important;
-  gap:72px!important;
-  margin:0!important;
-  padding:0!important;
-  height:58px!important;
-  line-height:58px!important;
-  white-space:nowrap!important;
-  flex-wrap:nowrap!important;
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  gap:72px !important;
+  color:#e5eefb !important;
+  font-weight:700 !important;
+  font-size:18px !important;
+  letter-spacing:.5px !important;
+  white-space:nowrap !important;
 }
-.nav .nav-links a,
+
 .nav-links a{
-  display:inline-flex!important;
-  align-items:center!important;
-  height:58px!important;
-  line-height:58px!important;
-  padding:0!important;
-  margin:0!important;
-  font-size:18px!important;
-  font-weight:700!important;
-  letter-spacing:.5px!important;
-  color:#e5eefb!important;
-  text-decoration:none!important;
-  white-space:nowrap!important;
+  text-decoration:none !important;
+  color:inherit !important;
+  transition:.25s !important;
 }
-.nav .nav-links a:hover,
-.nav .nav-links a.active,
-.nav-links a:hover,
+
+.nav-links a:hover{
+  color:#67e8f9 !important;
+}
+
 .nav-links a.active{
-  color:#22d3ee!important;
+  color:#22d3ee !important;
 }
-.nav .contact,
+
 .contact{
-  height:46px!important;
-  min-width:116px!important;
-  margin-right:6px!important;
-  padding:0 24px!important;
-  display:inline-flex!important;
-  align-items:center!important;
-  justify-content:center!important;
-  border-radius:999px!important;
-  font-size:16px!important;
-  line-height:46px!important;
-  white-space:nowrap!important;
-  flex:0 0 auto!important;
-  text-decoration:none!important;
+  display:inline-flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  height:48px !important;
+  padding:0 30px !important;
+  border-radius:999px !important;
+  background:linear-gradient(135deg,#2563eb,#22d3ee) !important;
+  color:#fff !important;
+  font-weight:900 !important;
+  box-shadow:0 0 28px rgba(34,211,238,.28) !important;
+  text-decoration:none !important;
+  white-space:nowrap !important;
 }
-.nav .contact.active,
-.contact.active{
-  box-shadow:0 0 32px rgba(34,211,238,.45)!important;
+
+/* about/support 标题区域减少顶部差异，避免看起来导航突然抬高 */
+.page-title,
+.hero{
+  margin-top:0 !important;
 }
-/* 固定导航后，去掉各页面原本不同的顶部间距 */
-.page{padding-top:18px!important;}
-body>.hero:first-of-type{margin-top:0!important;}
-body>.tabs:first-of-type{margin-top:0!important;}
+
 @media(max-width:900px){
-  body{padding-top:150px!important;}
-  .nav.unified-nav,.nav{height:auto!important;min-height:118px!important;border-radius:28px!important;align-items:center!important;justify-content:center!important;padding:14px!important;flex-direction:column!important;}
-  .nav .logo,.logo{margin:0!important;}
-  .nav .nav-links,.nav-links{position:static!important;transform:none!important;height:auto!important;line-height:1!important;gap:22px!important;flex-wrap:wrap!important;}
-  .nav .nav-links a,.nav-links a{height:28px!important;line-height:28px!important;font-size:15px!important;}
-  .nav .contact,.contact{margin:0!important;height:40px!important;line-height:40px!important;}
+  .nav{
+    width:100% !important;
+    height:auto !important;
+    min-height:auto !important;
+    padding:14px !important;
+    flex-direction:column !important;
+    border-radius:24px !important;
+  }
+
+  .nav-links{
+    gap:22px !important;
+    flex-wrap:wrap !important;
+  }
+
+  .contact{
+    margin-right:0 !important;
+  }
 }
 
 </style>
@@ -1077,7 +892,7 @@ body>.tabs:first-of-type{margin-top:0!important;}
 
 <body>
 <div class="container">
-  <nav class="nav unified-nav" aria-label="主导航">
+  <nav class="nav" aria-label="主导航">
     <div class="logo">☁ 思辰微智能</div>
     <div class="nav-links">
       <a href="index.html">首页</a>
@@ -1386,7 +1201,7 @@ document.addEventListener('DOMContentLoaded', function () {
 <script>
 (function(){
   var current=(location.pathname.split('/').pop()||'index.html').replace(/%20/g,' ');
-  document.querySelectorAll('.unified-nav a').forEach(function(a){
+  document.querySelectorAll('.nav a').forEach(function(a){
     var href=a.getAttribute('href');
     if(href===current){a.classList.add('active');}
     else if(!(current==='contact.html' && a.classList.contains('contact'))){

@@ -898,9 +898,9 @@ body{
   top:auto !important;
   left:auto !important;
   right:auto !important;
-  z-index:50 !important;
+  z-index:10 !important;
 
-  width:min(1600px,94vw) !important;
+  width:min(1600px,100%) !important;
   max-width:1600px !important;
   height:58px !important;
   min-height:58px !important;
@@ -913,12 +913,9 @@ body{
   justify-content:space-between !important;
   gap:20px !important;
 
-  background:rgba(2,8,23,.38) !important;
-  border:1px solid rgba(125,211,252,.12) !important;
-  border-radius:999px !important;
-  backdrop-filter:blur(14px) !important;
-  -webkit-backdrop-filter:blur(14px) !important;
-  box-shadow:0 0 38px rgba(14,165,233,.08) !important;
+  background:transparent !important;
+  border:0 !important;
+  box-shadow:none !important;
 }
 
 /* 如果旧文件里有黑色伪元素或遮罩，禁止盖在导航背后 */
@@ -931,9 +928,10 @@ body{
 .logo{
   display:inline-flex !important;
   align-items:center !important;
-  gap:9px !important;
-  height:48px !important;
-  padding:0 26px !important;
+  justify-content:center !important;
+  height:46px !important;
+  min-width:164px !important;
+  padding:0 18px !important;
   border-radius:999px !important;
   border:1px solid rgba(125,211,252,.25) !important;
   background:rgba(255,255,255,.06) !important;
@@ -976,7 +974,6 @@ body{
   justify-content:center !important;
   height:48px !important;
   padding:0 30px !important;
-  margin-right:6px !important;
   border-radius:999px !important;
   background:linear-gradient(135deg,#2563eb,#22d3ee) !important;
   color:#fff !important;
@@ -999,7 +996,7 @@ body > .nav{
 /* 移动端 */
 @media(max-width:900px){
   .nav{
-    width:94vw !important;
+    width:100% !important;
     height:auto !important;
     min-height:auto !important;
     padding:14px !important;
@@ -1041,12 +1038,12 @@ body > .nav{
 
 
 <nav class="tabs">
-  <div class="tab active" onclick="showSeries('gateway',this)">▣ 网关系列</div>
-  <div class="tab" onclick="showSeries('panel',this)">▥ 面板系列</div>
-  <div class="tab" onclick="showSeries('temp',this)">◴ 旋钮温控系列</div>
-  <div class="tab" onclick="showSeries('voice',this)">◉ 语音系列</div>
-  <div class="tab" onclick="showSeries('socket',this)">▧ 插座系列</div>
-  <div class="tab" onclick="showSeries('other',this)">▦ 其他系列</div>
+  <div class="tab active" data-series="gateway" onclick="showSeries('gateway',this)">▣ 网关系列</div>
+  <div class="tab" data-series="panel" onclick="showSeries('panel',this)">▥ 面板系列</div>
+  <div class="tab" data-series="temp" onclick="showSeries('temp',this)">◴ 旋钮温控系列</div>
+  <div class="tab" data-series="voice" onclick="showSeries('voice',this)">◉ 语音系列</div>
+  <div class="tab" data-series="socket" onclick="showSeries('socket',this)">▧ 插座系列</div>
+  <div class="tab" data-series="other" onclick="showSeries('other',this)">▦ 其他系列</div>
 </nav>
 
 <section id="gateway" class="series active">
@@ -1059,7 +1056,7 @@ body > .nav{
     <article class="gateway-card">
       <div class="image-wrap"><img src="17.webp" alt="CS4 网关中控屏" decoding="async" loading="lazy"></div>
       <div class="info">
-        <h2>CS4 网关中控屏</h2>
+        <h2>4寸彩屏中控</h2>
         <div class="line"></div>
         <ul>
           <li>4寸高清触控屏</li>
@@ -1080,7 +1077,7 @@ body > .nav{
     <article class="gateway-card">
       <div class="image-wrap"><img src="18.webp" alt="CS4 SE 网关" decoding="async" loading="lazy"></div>
       <div class="info">
-        <h2>CS4 SE 网关</h2>
+        <h2>无屏网关</h2>
         <div class="line"></div>
         <ul>
           <li>小巧简约，稳定可靠</li>
@@ -1116,7 +1113,7 @@ body > .nav{
   <main class="panel-products">
     <article class="panel-card">
       <div class="image-wrap"><img src="1.webp" alt="单开关面板" decoding="async" loading="eager" fetchpriority="high"></div>
-      <h2>单开关面板</h2>
+      <h2>单开面板</h2>
       <div class="line"></div>
       <p>经典单键，简约百搭，适合卧室、客厅、走廊等基础照明控制。</p>
       <div class="features-mini">
@@ -1128,7 +1125,7 @@ body > .nav{
 
     <article class="panel-card">
       <div class="image-wrap"><img src="2.webp" alt="二开关面板" decoding="async" loading="lazy"></div>
-      <h2>二开关面板</h2>
+      <h2>二开面板</h2>
       <div class="line"></div>
       <p>双键独立控制，灵活便捷，可满足多灯位、多区域控制需求。</p>
       <div class="features-mini">
@@ -1140,7 +1137,7 @@ body > .nav{
 
     <article class="panel-card">
       <div class="image-wrap"><img src="3.webp" alt="三开关面板" decoding="async" loading="lazy"></div>
-      <h2>三开关面板</h2>
+      <h2>三开面板</h2>
       <div class="line"></div>
       <p>场景联动，一键智控，适合客餐厅、套房、办公等复合空间。</p>
       <div class="features-mini">
@@ -1152,7 +1149,7 @@ body > .nav{
 
     <article class="panel-card">
       <div class="image-wrap"><img src="4.webp" alt="四开关面板" decoding="async" loading="lazy"></div>
-      <h2>四开关面板</h2>
+      <h2>四开面板</h2>
       <div class="line"></div>
       <p>四控合一，全面掌控，减少墙面开关数量，空间更整洁统一。</p>
       <div class="features-mini">
@@ -1234,7 +1231,7 @@ body > .nav{
 
   <main class="voice-products">
     <article class="voice-card">
-      <h2>语音呼叫面板（呼叫/前台）</h2>
+      <h2>墙壁电话</h2>
       <div class="line"></div>
 
       <div class="voice-main">
@@ -1286,7 +1283,7 @@ body > .nav{
     </article>
 
     <article class="voice-card">
-      <h2>语音播报面板（WiFi连接）</h2>
+      <h2>离线语音</h2>
       <div class="line"></div>
 
       <div class="voice-main">
@@ -1298,16 +1295,16 @@ body > .nav{
           <div class="voice-feature">
             <div class="vicon">⌁</div>
             <div>
-              <h3>WiFi连接</h3>
-              <p>支持WiFi联网，远程语音播报</p>
+              <h3>无线连接</h3>
+              <p>支持无线联网，远程语音播报</p>
             </div>
           </div>
 
           <div class="voice-feature">
             <div class="vicon">◉</div>
             <div>
-              <h3>语音播报</h3>
-              <p>可自定义语音内容，定时播放</p>
+              <h3>红外遥控</h3>
+              <p>内置码库，支持红外遥控</p>
             </div>
           </div>
 
@@ -1330,8 +1327,8 @@ body > .nav{
       </div>
 
       <div class="voice-card-bottom">
-        <div class="voice-mini"><div class="mini-icon">⌁</div><div><h4>WiFi连接</h4><p>稳定联网</p></div></div>
-        <div class="voice-mini"><div class="mini-icon">🔊</div><div><h4>语音播报</h4><p>定时/实时播放</p></div></div>
+        <div class="voice-mini"><div class="mini-icon">⌁</div><div><h4>无线连接</h4><p>稳定联网</p></div></div>
+        <div class="voice-mini"><div class="mini-icon">🔊</div><div><h4>红外遥控</h4><p>内置海量码库</p></div></div>
         <div class="voice-mini"><div class="mini-icon">⌂</div><div><h4>远程管理</h4><p>APP远程控制</p></div></div>
         <div class="voice-mini"><div class="mini-icon">♧</div><div><h4>节能环保</h4><p>低功耗设计</p></div></div>
       </div>
@@ -1357,9 +1354,9 @@ body > .nav{
 
   <main class="socket-products">
     <article class="socket-card">
-      <h2>三孔插座（10A）</h2>
+      <h2>三孔插座（16A）</h2>
       <div class="line"></div>
-      <div class="image-wrap"><img src="12.webp" alt="三孔插座10A" decoding="async" loading="eager" fetchpriority="high"></div>
+      <div class="image-wrap"><img src="12.webp" alt="三孔插座16A" decoding="async" loading="eager" fetchpriority="high"></div>
 
       <div class="socket-card-bottom">
         <div class="socket-mini"><div class="mini-icon">🛡</div><h4>安全防护</h4><p>多重保护</p></div>
@@ -1383,9 +1380,9 @@ body > .nav{
     </article>
 
     <article class="socket-card">
-      <h2>五孔带USB插座（10A）</h2>
+      <h2>五孔+USB插座（10A）</h2>
       <div class="line"></div>
-      <div class="image-wrap"><img src="14.webp" alt="五孔带USB插座10A" decoding="async" loading="lazy"></div>
+      <div class="image-wrap"><img src="14.webp" alt="五孔+USB插座10A" decoding="async" loading="lazy"></div>
 
       <div class="socket-card-bottom">
         <div class="socket-mini"><div class="mini-icon">🛡</div><h4>安全防护</h4><p>多重保护</p></div>
@@ -1418,7 +1415,7 @@ body > .nav{
       <h2>紧急呼叫面板</h2>
       <div class="line"></div>
       <div class="image-wrap"><img src="9.webp" alt="紧急呼叫面板" decoding="async" loading="lazy"></div>
-      <div class="other-card-bottom">
+      <div class="other-card-bottom">png
         <div class="other-mini"><div class="mini-icon">🔔</div><h4>紧急呼叫</h4><p>一键呼叫求助</p></div>
         <div class="other-mini"><div class="mini-icon">🛡</div><h4>安全可靠</h4><p>稳定耐用</p></div>
         <div class="other-mini"><div class="mini-icon">✿</div><h4>简约设计</h4><p>美观大方</p></div>
@@ -1467,8 +1464,32 @@ function showSeries(id,el){
   document.getElementById(id).classList.add('active');
   document.querySelectorAll('.tab').forEach(tab=>tab.classList.remove('active'));
   el.classList.add('active');
+  if(location.hash !== '#' + id){
+    history.replaceState(null, '', '#' + id);
+  }
   window.scrollTo({top:0,behavior:'smooth'});
 }
+
+(function(){
+  var validSeries = ['gateway','panel','temp','voice','socket','other'];
+  var initial = (location.hash || '').replace('#','');
+  if(!validSeries.includes(initial)){
+    return;
+  }
+
+  var activeTab = document.querySelector('.tab[data-series="' + initial + '"]');
+  var activePanel = document.getElementById(initial);
+  if(!activeTab || !activePanel){
+    return;
+  }
+
+  document.querySelectorAll('.series').forEach(function(item){
+    item.classList.toggle('active', item.id === initial);
+  });
+  document.querySelectorAll('.tab').forEach(function(tab){
+    tab.classList.toggle('active', tab === activeTab);
+  });
+})();
 </script>
 
 
