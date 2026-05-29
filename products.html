@@ -1520,22 +1520,35 @@ function showSeries(id,el){
 
 (function(){
   var validSeries = ['gateway','panel','temp','voice','socket','network','other'];
-  var initial = (location.hash || '').replace('#','');
-  if(!validSeries.includes(initial)){
-    return;
+  function syncSeriesFromHash(shouldScrollTop){
+    var initial = (location.hash || '').replace('#','');
+    if(!validSeries.includes(initial)){
+      return;
+    }
+
+    var activeTab = document.querySelector('.tab[data-series="' + initial + '"]');
+    var activePanel = document.getElementById(initial);
+    if(!activeTab || !activePanel){
+      return;
+    }
+
+    document.querySelectorAll('.series').forEach(function(item){
+      item.classList.toggle('active', item.id === initial);
+    });
+    document.querySelectorAll('.tab').forEach(function(tab){
+      tab.classList.toggle('active', tab === activeTab);
+    });
+
+    if(shouldScrollTop){
+      requestAnimationFrame(function(){
+        window.scrollTo(0, 0);
+      });
+    }
   }
 
-  var activeTab = document.querySelector('.tab[data-series="' + initial + '"]');
-  var activePanel = document.getElementById(initial);
-  if(!activeTab || !activePanel){
-    return;
-  }
-
-  document.querySelectorAll('.series').forEach(function(item){
-    item.classList.toggle('active', item.id === initial);
-  });
-  document.querySelectorAll('.tab').forEach(function(tab){
-    tab.classList.toggle('active', tab === activeTab);
+  syncSeriesFromHash(true);
+  window.addEventListener('hashchange', function(){
+    syncSeriesFromHash(true);
   });
 })();
 </script>

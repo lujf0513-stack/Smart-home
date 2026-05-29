@@ -154,6 +154,22 @@ a{text-decoration:none;color:inherit}
   font-weight:800;
   white-space:nowrap;
 }
+.point-link{
+  cursor:pointer;
+  pointer-events:auto;
+  text-decoration:none;
+  transition:transform .3s ease,border-color .3s ease,box-shadow .3s ease,background .3s ease;
+}
+.point-link:hover{
+  transform:translateY(-6px) scale(1.08);
+  border-color:rgba(34,211,238,.95);
+  background:rgba(15,23,42,.82);
+  box-shadow:0 0 35px rgba(34,211,238,.45),0 0 70px rgba(34,211,238,.25);
+}
+.point-link:focus-visible{
+  outline:2px solid #67e8f9;
+  outline-offset:4px;
+}
 .point i{
   width:38px;
   height:38px;
@@ -526,12 +542,12 @@ body{
     <section class="scene">
       <img src="solutions_web_assets/solution-hotel-room.webp" alt="智慧酒店客房场景图">
       <div class="points">
-        <div class="point p1"><i>💡</i>智能照明</div>
-        <div class="point p2"><i>℃</i>空调控制</div>
-        <div class="point p3"><i>▥</i>窗帘控制</div>
-        <div class="point p4"><i>🎙</i>语音控制</div>
-        <div class="point p5"><i>🔌</i>智慧插座</div>
-        <div class="point p6"><i>📶</i>无线覆盖</div>
+        <a class="point p1 point-link" href="products.html#panel" aria-label="查看产品中心面板系列"><i>💡</i>智能照明</a>
+        <a class="point p2 point-link" href="products.html#temp" aria-label="查看产品中心旋钮温控系列"><i>℃</i>空调控制</a>
+        <a class="point p3 point-link" href="products.html#panel" aria-label="查看产品中心面板系列"><i>▥</i>窗帘控制</a>
+        <a class="point p4 point-link" href="products.html#voice" aria-label="查看产品中心语音系列"><i>🎙</i>语音控制</a>
+        <a class="point p5 point-link" href="products.html#socket" aria-label="查看产品中心插座系列"><i>🔌</i>智慧插座</a>
+        <a class="point p6 point-link" href="products.html#network" aria-label="查看产品中心网络覆盖"><i>📶</i>无线覆盖</a>
       </div>
     </section>
   </main>
