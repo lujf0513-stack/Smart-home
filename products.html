@@ -110,7 +110,7 @@ body::before{
   width:min(1500px,92%);
   margin:34px auto 0;
   display:grid;
-  grid-template-columns:repeat(6,1fr);
+  grid-template-columns:repeat(7,1fr);
   border:1px solid rgba(96,165,250,.25);
   border-radius:10px;
   overflow:hidden;
@@ -1043,6 +1043,7 @@ body > .nav{
   <div class="tab" data-series="temp" onclick="showSeries('temp',this)">◴ 旋钮温控系列</div>
   <div class="tab" data-series="voice" onclick="showSeries('voice',this)">◉ 语音系列</div>
   <div class="tab" data-series="socket" onclick="showSeries('socket',this)">▧ 插座系列</div>
+  <div class="tab" data-series="network" onclick="showSeries('network',this)">▤ 网络覆盖</div>
   <div class="tab" data-series="other" onclick="showSeries('other',this)">▦ 其他系列</div>
 </nav>
 
@@ -1404,6 +1405,53 @@ body > .nav{
 
 
 
+
+<section id="network" class="series">
+  <div class="hero">
+    <h1>网络覆盖系列</h1>
+    <p>高速组网，稳定覆盖，满足酒店、公寓及智能空间部署需求</p>
+  </div>
+
+  <main class="panel-products">
+    <article class="panel-card">
+      <div class="image-wrap"><img src="19.webp" alt="吸顶AP"></div>
+      <h2>吸顶AP</h2>
+      <div class="line"></div>
+      <p>吸顶设计，支持WiFi6高速无线覆盖，适用于酒店公区与办公场景。</p>
+    </article>
+
+    <article class="panel-card">
+      <div class="image-wrap"><img src="20.webp" alt="墙装AP"></div>
+      <h2>墙装AP</h2>
+      <div class="line"></div>
+      <p>集成网络接口与无线覆盖能力，POE供电，部署简单，兼顾美观与性能。</p>
+    </article>
+
+    <article class="panel-card">
+      <div class="image-wrap"><img src="21.webp" alt="9口 PoE管理机"></div>
+      <h2>9口 PoE管理机</h2>
+      <div class="line"></div>
+      <p>支持PoE供电与集中管理，为AP及智能终端提供稳定网络接入。</p>
+    </article>
+
+    <article class="panel-card">
+      <div class="image-wrap"><img src="22.webp" alt="5口 PoE管理机"></div>
+      <h2>5口 PoE管理机</h2>
+      <div class="line"></div>
+      <p>统一管理无线网络设备，实现集中配置、监控与运维管理。</p>
+    </article>
+  </main>
+
+  <section class="bottom-features panel-bottom">
+    <div class="bottom-item"><div class="bottom-icon">📶</div><div><h3>WiFi6覆盖</h3><p>高速稳定无线连接</p></div></div>
+    <div class="bottom-item"><div class="bottom-icon">⚡</div><div><h3>PoE供电</h3><p>简化施工布线</p></div></div>
+    <div class="bottom-item"><div class="bottom-icon">🌐</div><div><h3>统一组网</h3><p>多设备集中管理</p></div></div>
+    <div class="bottom-item"><div class="bottom-icon">🛡</div><div><h3>稳定可靠</h3><p>企业级网络架构</p></div></div>
+    <div class="bottom-item"><div class="bottom-icon">🏨</div><div><h3>酒店应用</h3><p>适合酒店公寓项目</p></div></div>
+  </section>
+</section>
+
+
 <section id="other" class="series">
   <div class="hero">
     <h1>其他系列</h1>
@@ -1471,7 +1519,7 @@ function showSeries(id,el){
 }
 
 (function(){
-  var validSeries = ['gateway','panel','temp','voice','socket','other'];
+  var validSeries = ['gateway','panel','temp','voice','socket','network','other'];
   var initial = (location.hash || '').replace('#','');
   if(!validSeries.includes(initial)){
     return;
