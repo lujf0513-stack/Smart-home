@@ -1312,6 +1312,223 @@ html[lang="en"] .bottom-item p{
   }
 }
 
+
+
+/* ===== 中文移动端修复：只影响中文界面，英文优化不变 ===== */
+@media(max-width:760px){
+  html[lang="zh-CN"] body{
+    overflow-x:hidden !important;
+  }
+
+  html[lang="zh-CN"] .nav{
+    width:94% !important;
+    margin:14px auto 16px !important;
+    padding:14px 12px !important;
+    height:auto !important;
+    min-height:auto !important;
+    flex-direction:column !important;
+    align-items:center !important;
+    justify-content:center !important;
+    gap:12px !important;
+    border-radius:22px !important;
+  }
+
+  html[lang="zh-CN"] .logo{
+    height:42px !important;
+    min-width:auto !important;
+    padding:0 16px !important;
+    font-size:16px !important;
+  }
+
+  html[lang="zh-CN"] .nav-links{
+    width:100% !important;
+    display:flex !important;
+    flex-wrap:wrap !important;
+    justify-content:center !important;
+    align-items:center !important;
+    gap:10px 16px !important;
+    font-size:14px !important;
+    line-height:1.35 !important;
+    letter-spacing:0 !important;
+    white-space:normal !important;
+  }
+
+  html[lang="zh-CN"] .nav-links a{
+    white-space:nowrap !important;
+  }
+
+  html[lang="zh-CN"] .contact{
+    height:42px !important;
+    padding:0 22px !important;
+    font-size:14px !important;
+  }
+
+  html[lang="zh-CN"] .lang-toggle{
+    height:38px !important;
+    padding:0 14px !important;
+    font-size:13px !important;
+  }
+
+  html[lang="zh-CN"] .tabs{
+    width:92% !important;
+    margin:18px auto 0 !important;
+    grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+    border-radius:12px !important;
+  }
+
+  html[lang="zh-CN"] .tab{
+    min-width:0 !important;
+    min-height:54px !important;
+    padding:0 8px !important;
+    gap:6px !important;
+    font-size:14px !important;
+    line-height:1.25 !important;
+    letter-spacing:0 !important;
+    white-space:normal !important;
+    text-align:center !important;
+  }
+
+  html[lang="zh-CN"] .hero{
+    padding:30px 5vw 20px !important;
+  }
+
+  html[lang="zh-CN"] .hero h1{
+    font-size:clamp(34px,10vw,44px) !important;
+    line-height:1.1 !important;
+    letter-spacing:3px !important;
+  }
+
+  html[lang="zh-CN"] .hero p{
+    max-width:92vw !important;
+    margin:14px auto 0 !important;
+    font-size:16px !important;
+    line-height:1.6 !important;
+    letter-spacing:1px !important;
+  }
+
+  html[lang="zh-CN"] .gateway-products,
+  html[lang="zh-CN"] .panel-products,
+  html[lang="zh-CN"] .temp-products,
+  html[lang="zh-CN"] .voice-products,
+  html[lang="zh-CN"] .socket-products,
+  html[lang="zh-CN"] .other-products{
+    width:92% !important;
+    grid-template-columns:1fr !important;
+    gap:18px !important;
+  }
+
+  html[lang="zh-CN"] .gateway-card,
+  html[lang="zh-CN"] .panel-card,
+  html[lang="zh-CN"] .temp-card,
+  html[lang="zh-CN"] .voice-card,
+  html[lang="zh-CN"] .socket-card,
+  html[lang="zh-CN"] .other-card{
+    width:100% !important;
+    min-height:auto !important;
+    padding:22px !important;
+    border-radius:20px !important;
+    overflow:hidden !important;
+  }
+
+  html[lang="zh-CN"] .gateway-card{
+    grid-template-columns:1fr !important;
+    gap:18px !important;
+  }
+
+  html[lang="zh-CN"] .panel-card .image-wrap,
+  html[lang="zh-CN"] .temp-card .image-wrap,
+  html[lang="zh-CN"] .socket-card .image-wrap,
+  html[lang="zh-CN"] .other-card .image-wrap{
+    height:auto !important;
+    min-height:210px !important;
+    margin-bottom:18px !important;
+  }
+
+  html[lang="zh-CN"] .image-wrap img,
+  html[lang="zh-CN"] .panel-card .image-wrap img,
+  html[lang="zh-CN"] .temp-card .image-wrap img,
+  html[lang="zh-CN"] .socket-card .image-wrap img,
+  html[lang="zh-CN"] .other-card .image-wrap img{
+    max-width:100% !important;
+    max-height:260px !important;
+    object-fit:contain !important;
+  }
+
+  html[lang="zh-CN"] .panel-card h2,
+  html[lang="zh-CN"] .temp-card h2,
+  html[lang="zh-CN"] .socket-card h2,
+  html[lang="zh-CN"] .other-card h2,
+  html[lang="zh-CN"] .voice-card h2,
+  html[lang="zh-CN"] .info h2{
+    font-size:24px !important;
+    line-height:1.25 !important;
+    margin-bottom:10px !important;
+    white-space:normal !important;
+  }
+
+  html[lang="zh-CN"] .panel-card p,
+  html[lang="zh-CN"] .temp-card p,
+  html[lang="zh-CN"] .voice-feature p{
+    font-size:15px !important;
+    line-height:1.7 !important;
+  }
+
+  html[lang="zh-CN"] .voice-main{
+    grid-template-columns:1fr !important;
+    gap:20px !important;
+  }
+
+  html[lang="zh-CN"] .voice-card-bottom,
+  html[lang="zh-CN"] .socket-card-bottom,
+  html[lang="zh-CN"] .other-card-bottom{
+    grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+    gap:12px !important;
+  }
+
+  html[lang="zh-CN"] .features-mini{
+    grid-template-columns:repeat(3,minmax(0,1fr)) !important;
+    gap:8px !important;
+  }
+
+  html[lang="zh-CN"] .feature-mini,
+  html[lang="zh-CN"] .socket-mini,
+  html[lang="zh-CN"] .other-mini{
+    min-width:0 !important;
+    overflow-wrap:break-word !important;
+  }
+
+  html[lang="zh-CN"] .badges{
+    grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+  }
+
+  html[lang="zh-CN"] .bottom-features{
+    width:92% !important;
+    grid-template-columns:1fr !important;
+    gap:12px !important;
+    padding:18px !important;
+    margin:24px auto 46px !important;
+  }
+
+  html[lang="zh-CN"] .bottom-item{
+    justify-content:flex-start !important;
+    min-width:0 !important;
+  }
+}
+
+@media(max-width:420px){
+  html[lang="zh-CN"] .nav-links{
+    gap:8px 12px !important;
+    font-size:13px !important;
+  }
+  html[lang="zh-CN"] .tab{
+    font-size:13px !important;
+    min-height:52px !important;
+  }
+  html[lang="zh-CN"] .features-mini{
+    grid-template-columns:1fr !important;
+  }
+}
+
 </style>
 
 <!-- 图片加载优化：优先加载首屏关键图片 -->
