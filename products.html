@@ -1024,6 +1024,294 @@ body > .nav{
   }
 }
 
+
+
+/* ===== 中英切换按钮 / Language Switch ===== */
+.lang-toggle{
+  height:42px;
+  padding:0 16px;
+  border-radius:999px;
+  border:1px solid rgba(125,211,252,.28);
+  background:rgba(255,255,255,.075);
+  color:#e0faff;
+  font-weight:900;
+  letter-spacing:.04em;
+  cursor:pointer;
+  box-shadow:0 0 22px rgba(34,211,238,.12);
+  transition:.25s;
+  white-space:nowrap;
+}
+.lang-toggle:hover{transform:translateY(-2px);border-color:rgba(34,211,238,.7);color:#67e8f9;box-shadow:0 0 28px rgba(34,211,238,.24)}
+@media(max-width:768px){.lang-toggle{height:38px;padding:0 14px;font-size:13px}}
+
+
+
+/* bilingual product text fix */
+.other-card h2,.other-mini h4,.other-mini p,.hero p,.bottom-item h3,.bottom-item p{
+  white-space:normal;
+  overflow-wrap:break-word;
+  word-break:normal;
+}
+.other-card-bottom{
+  grid-template-columns:repeat(4,minmax(0,1fr));
+}
+html[lang="en"] .other-mini h4{
+  font-size:15px;
+  line-height:1.25;
+}
+html[lang="en"] .other-mini p{
+  font-size:12px;
+  line-height:1.35;
+}
+html[lang="en"] .other-card h2{
+  font-size:30px;
+  line-height:1.2;
+}
+@media(max-width:760px){
+  .other-card-bottom{grid-template-columns:repeat(2,minmax(0,1fr));}
+}
+
+
+
+/* ===== English-only layout optimization: Chinese UI remains unchanged ===== */
+html[lang="en"] .tabs{
+  grid-template-columns:repeat(7,minmax(0,1fr));
+}
+
+html[lang="en"] .tab{
+  min-width:0;
+  padding:0 8px;
+  font-size:clamp(13px,1vw,16px);
+  line-height:1.25;
+  letter-spacing:.01em;
+  white-space:normal;
+  text-align:center;
+}
+
+html[lang="en"] .hero{
+  padding-top:48px;
+  padding-bottom:28px;
+}
+
+html[lang="en"] .hero h1{
+  font-size:clamp(42px,5.6vw,72px);
+  letter-spacing:.08em;
+  line-height:1.05;
+}
+
+html[lang="en"] .hero p{
+  max-width:980px;
+  margin-left:auto;
+  margin-right:auto;
+  font-size:clamp(17px,1.45vw,21px);
+  line-height:1.55;
+  letter-spacing:.04em;
+}
+
+/* Product cards: align heights only in English mode */
+html[lang="en"] .panel-card,
+html[lang="en"] .temp-card,
+html[lang="en"] .socket-card,
+html[lang="en"] .other-card{
+  display:flex;
+  flex-direction:column;
+  min-height:610px;
+}
+
+html[lang="en"] .panel-card h2,
+html[lang="en"] .temp-card h2,
+html[lang="en"] .socket-card h2,
+html[lang="en"] .other-card h2{
+  min-height:68px;
+  display:flex;
+  align-items:flex-end;
+  font-size:clamp(22px,1.65vw,28px);
+  line-height:1.2;
+  letter-spacing:.01em;
+  white-space:normal;
+  overflow-wrap:break-word;
+}
+
+html[lang="en"] .panel-card p,
+html[lang="en"] .temp-card p,
+html[lang="en"] .panel-products .panel-card p{
+  min-height:86px;
+  font-size:16px;
+  line-height:1.6;
+  overflow-wrap:break-word;
+}
+
+html[lang="en"] .panel-card .image-wrap{
+  height:245px;
+  flex:0 0 245px;
+}
+
+html[lang="en"] .temp-card .image-wrap{
+  height:300px;
+  flex:0 0 300px;
+}
+
+html[lang="en"] .socket-card .image-wrap{
+  height:310px;
+  flex:0 0 310px;
+}
+
+html[lang="en"] .other-card .image-wrap{
+  height:320px;
+  flex:0 0 320px;
+}
+
+html[lang="en"] .features-mini,
+html[lang="en"] .socket-card-bottom,
+html[lang="en"] .other-card-bottom{
+  margin-top:auto;
+}
+
+html[lang="en"] .feature-mini,
+html[lang="en"] .socket-mini,
+html[lang="en"] .other-mini{
+  min-width:0;
+  font-size:13px;
+  line-height:1.25;
+  overflow-wrap:break-word;
+}
+
+html[lang="en"] .socket-mini h4,
+html[lang="en"] .other-mini h4,
+html[lang="en"] .voice-mini h4{
+  font-size:14px;
+  line-height:1.25;
+  min-height:36px;
+  display:flex;
+  align-items:flex-end;
+  justify-content:center;
+  overflow-wrap:break-word;
+}
+
+html[lang="en"] .socket-mini p,
+html[lang="en"] .other-mini p,
+html[lang="en"] .voice-mini p{
+  font-size:12px;
+  line-height:1.35;
+  min-height:32px;
+}
+
+html[lang="en"] .socket-card-bottom,
+html[lang="en"] .other-card-bottom{
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:10px;
+}
+
+/* Gateway cards keep original grid structure, only refine English text */
+html[lang="en"] .gateway-card{
+  min-height:455px;
+  align-items:center;
+}
+
+html[lang="en"] .info h2{
+  font-size:clamp(26px,2vw,32px);
+  line-height:1.2;
+}
+
+html[lang="en"] .info ul{
+  font-size:17px;
+  line-height:1.5;
+}
+
+html[lang="en"] .badge{
+  min-height:52px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  line-height:1.25;
+  padding:12px 8px;
+}
+
+/* Voice cards */
+html[lang="en"] .voice-card{
+  display:flex;
+  flex-direction:column;
+  min-height:560px;
+}
+
+html[lang="en"] .voice-main{
+  flex:1;
+  align-items:center;
+}
+
+html[lang="en"] .voice-feature h3{
+  font-size:17px;
+  line-height:1.25;
+}
+
+html[lang="en"] .voice-feature p{
+  font-size:13px;
+  line-height:1.45;
+}
+
+html[lang="en"] .voice-card-bottom{
+  margin-top:auto;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:10px;
+}
+
+html[lang="en"] .bottom-features{
+  align-items:stretch;
+}
+
+html[lang="en"] .bottom-item{
+  min-width:0;
+  min-height:86px;
+  padding:8px 6px;
+}
+
+html[lang="en"] .bottom-item h3{
+  font-size:16px;
+  line-height:1.25;
+  white-space:normal;
+  overflow-wrap:break-word;
+}
+
+html[lang="en"] .bottom-item p{
+  font-size:12px;
+  line-height:1.35;
+  white-space:normal;
+  overflow-wrap:break-word;
+}
+
+/* English responsive tuning */
+@media(max-width:1200px){
+  html[lang="en"] .tabs{grid-template-columns:repeat(4,minmax(0,1fr));}
+  html[lang="en"] .panel-card,
+  html[lang="en"] .temp-card,
+  html[lang="en"] .socket-card,
+  html[lang="en"] .other-card{min-height:auto;}
+}
+
+@media(max-width:760px){
+  html[lang="en"] .tabs{grid-template-columns:repeat(2,minmax(0,1fr));}
+  html[lang="en"] .tab{min-height:58px;font-size:14px;}
+  html[lang="en"] .hero h1{letter-spacing:.04em;}
+  html[lang="en"] .hero p{letter-spacing:.02em;}
+  html[lang="en"] .panel-card h2,
+  html[lang="en"] .temp-card h2,
+  html[lang="en"] .socket-card h2,
+  html[lang="en"] .other-card h2{
+    min-height:0;
+    align-items:flex-start;
+  }
+  html[lang="en"] .panel-card p,
+  html[lang="en"] .temp-card p,
+  html[lang="en"] .panel-products .panel-card p{
+    min-height:0;
+  }
+  html[lang="en"] .socket-card-bottom,
+  html[lang="en"] .other-card-bottom,
+  html[lang="en"] .voice-card-bottom{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+}
+
 </style>
 
 <!-- 图片加载优化：优先加载首屏关键图片 -->
@@ -1641,5 +1929,61 @@ if ('serviceWorker' in navigator) {
   });
 })();
 </script>
+
+<script>
+(function(){
+  const i18n = {"☁ 思辰微智能": "☁ SCW Smart", "首页": "Home", "产品中心": "Products", "解决方案": "Solutions", "支持服务": "Support", "关于我们": "About Us", "联系我们": "Contact Us", "关于我们 - 思辰微智能": "About Us - SCW Smart", "产品中心 - 思辰微智能": "Products - SCW Smart", "解决方案 - 思辰微智能": "Solutions - SCW Smart", "支持服务 - 思辰微智能": "Support - SCW Smart", "联系我们 - 思辰微智能": "Contact Us - SCW Smart", "图片加载优化：优先加载首屏关键图片": "Image loading optimization: prioritize above-the-fold key images", "左侧": "Left", "右侧": "Right", "让生活更简单": "Make Life Simpler", "使酒店更智能": "Make Hotels Smarter", "以智能面板、温控、场景联动为核心， 打造安全稳定、简约大气、易安装、 经久耐用的智慧空间体验。": "Centered on smart panels, thermostats, and scene automation, we create safe, stable, elegant, easy-to-install, and durable smart-space experiences.", "探索解决方案 →": "Explore Solutions →", "查看产品矩阵": "View Products", "多协议兼容": "Multi-Protocol Compatible", "100+设备互联互通": "100+ Devices Interconnected", "AI 智能联动": "AI Smart Automation", "主动感知 智慧决策": "Proactive Sensing, Smart Decisions", "盾": "Shield", "全方位守护": "Comprehensive Protection", "安防监测 安心无忧": "Security Monitoring, Worry-Free", "叶": "Leaf", "节能环保": "Energy Saving", "智能调节 绿色生活": "Smart Adjustment, Greener Living", "产品展示": "Product Showcase", "一键开关/场景": "1-Key Switch / Scene", "二键开关/场景": "2-Key Switch / Scene", "三键开关/场景": "3-Key Switch / Scene", "四键开关/场景": "4-Key Switch / Scene", "旋钮调光器（经典款）": "Rotary Dimmer (Classic)", "旋钮温控器（经典款）": "Rotary Thermostat (Classic)", "旋钮温控器（彩屏款）": "Rotary Thermostat (Color Screen)", "触控温控器（黑晶款）": "Touch Thermostat (Black Crystal)", "紧急呼叫面板": "Emergency Call Panel", "墙壁电话": "Wall Phone", "离线语音": "Offline Voice Panel", "3孔插座（16A）": "3-Pin Socket (16A)", "5孔插座（10A）": "5-Hole Socket (10A)", "5孔+USB插座（10A）": "5-Hole + USB Socket (10A)", "无线AP": "Wireless AP", "插卡取电": "Key Card Power Switch", "网关中控屏": "Gateway Control Screen", "快速部署": "Fast Deployment", "标准化安装 更省施工时间": "Standardized installation saves time", "云端管理": "Cloud Management", "远程运维 实时状态监控": "Remote O&M with real-time status", "智慧场景": "Smart Scenes", "酒店 公寓 办公全覆盖": "Covers hotels, apartments, and offices", "稳定可靠": "Stable & Reliable", "工业级方案 长期稳定运行": "Industrial-grade solutions for long-term operation", "© 2026 苏州思辰微智能科技有限公司 版权所有": "© 2026 Suzhou SCW Smart Technology Co., Ltd. All rights reserved.", "▣ 网关系列": "▣ Gateway Series", "▥ 面板系列": "▥ Panel Series", "◴ 旋钮温控": "◴ Rotary Thermostat", "◉ 语音系列": "◉ Voice Series", "▧ 插座系列": "▧ Socket Series", "▤ 网络覆盖": "▤ Network Coverage", "▦ 其他系列": "▦ Other Series", "网关系列": "Gateway Series", "稳定连接，高效协同，打造全屋智能设备的核心枢纽": "Stable connectivity and efficient coordination for the core hub of whole-home smart devices", "4寸彩屏中控": "4-inch Color Touch Control", "4寸高清触控屏": "4-inch HD touch screen", "Zigbee 3.0 / WiFi 双模": "Zigbee 3.0 / WiFi dual mode", "全屋设备集中控制": "Centralized whole-home device control", "场景联动 / 语音控制": "Scene automation / voice control", "支持 OTA 在线升级": "Supports OTA online upgrades", "4寸触控屏": "4-inch Touch Screen", "OTA升级": "OTA Upgrade", "无屏网关": "Screenless Gateway", "小巧简约，稳定可靠": "Compact, simple, stable and reliable", "Zigbee 3.0 网关": "Zigbee 3.0 Gateway", "快速配网，轻松管理": "Fast pairing, easy management", "支持本地与云端联动": "Supports local and cloud linkage", "低功耗，7×24h 稳定运行": "Low power consumption, 24/7 stable operation", "快速配网": "Fast Pairing", "低功耗": "Low Power", "全屋互联": "Whole-Home Connectivity", "稳定连接各类智能设备": "Stable connection for all smart devices", "安全稳定": "Safe & Stable", "多重加密，数据更安全": "Multiple encryption for safer data", "开放兼容": "Open Compatibility", "兼容多品牌智能设备": "Compatible with multi-brand smart devices", "云端同步": "Cloud Sync", "云端备份与远程管理": "Cloud backup and remote management", "面板系列": "Panel Series", "极简设计，匠心工艺，打造高品质智能生活体验": "Minimalist design and refined craftsmanship for a premium smart living experience", "单开面板": "1-Gang Panel", "经典单键，简约百搭，适合卧室、客厅、走廊等基础照明控制。": "Classic single-key design for basic lighting control in bedrooms, living rooms, corridors, and more.", "钢化玻璃": "Tempered Glass", "轻触操控": "Touch Control", "阻燃材质": "Flame-Retardant Material", "二开面板": "2-Gang Panel", "双键独立控制，灵活便捷，可满足多灯位、多区域控制需求。": "Dual independent keys for flexible multi-light and multi-zone control.", "精工工艺": "Precision Craftsmanship", "长久耐用": "Long-Lasting", "三开面板": "3-Gang Panel", "场景联动，一键智控，适合客餐厅、套房、办公等复合空间。": "Scene automation and one-touch control for dining rooms, suites, offices, and mixed spaces.", "联动控制": "Linked Control", "场景模式": "Scene Mode", "无缝贴合": "Seamless Fit", "四开面板": "4-Gang Panel", "四控合一，全面掌控，减少墙面开关数量，空间更整洁统一。": "Four controls in one, reducing wall switches for a cleaner, unified space.", "多控合一": "Multi-Control Integration", "多色可选": "Multiple Colors", "安全可靠": "Safe & Reliable", "多重保护机制，使用更安心": "Multiple protections for peace of mind", "高端材质": "Premium Materials", "优选材料，质感细腻": "Selected materials with fine texture", "精工制造": "Precision Manufacturing", "严苛工艺，品质如一": "Strict process, consistent quality", "轻松安装": "Easy Installation", "标准86底盒，快速安装": "Standard 86 back box, quick installation", "多样组合": "Flexible Combinations", "支持连体组合，个性定制": "Supports multi-gang combinations and customization", "旋钮温控系列": "Rotary Thermostat Series", "精准控温，智享舒适生活": "Precise temperature control for comfortable smart living", "经典旋钮设计，支持空调、风速、模式切换，适合酒店、公寓及住宅空间。": "Classic rotary design supporting AC, fan speed, and mode switching for hotels, apartments, and homes.", "旋钮控制": "Rotary Control", "制冷模式": "Cooling Mode", "舒适控温": "Comfort Control", "高清彩屏显示，旋钮调节更直观，支持定时关机、自动模式与多档风速。": "HD color display with intuitive rotary adjustment, timer off, auto mode, and multi-speed fan control.", "定时关机": "Timer Off", "旋钮调节": "Rotary Adjustment", "智能模式": "Smart Mode", "黑晶玻璃触控面板，大屏温度显示，操作灵敏，适合现代高端空间。": "Black crystal glass touch panel with large temperature display and responsive operation for modern premium spaces.", "触控操作": "Touch Operation", "高清显示": "HD Display", "稳定耐用": "Stable & Durable", "精准控温": "Precise Control", "温度控制精确到0.5℃": "Temperature control accurate to 0.5°C", "智能节能，绿色低碳": "Smart energy saving, green and low-carbon", "智能芯片": "Smart Chip", "高性能芯片，稳定可靠": "High-performance chip, stable and reliable", "安装便捷": "Easy Installation", "多重保护": "Multiple Protection", "多重安全防护，使用安心": "Multiple safety protections for peace of mind", "语音系列": "Voice Series", "智能语音交互，解放双手，畅享便捷生活": "Smart voice interaction frees your hands for convenient living", "语音呼叫": "Voice Call", "一键呼叫前台，语音沟通更便捷": "One-touch front-desk call for easier voice communication", "高清音质": "HD Sound Quality", "内置高品质扬声器，声音清晰洪亮": "Built-in premium speaker with clear and loud sound", "简约设计": "Minimalist Design", "简约面板设计，适配多种装修风格": "Minimal panel design fits various interior styles", "快速安装，稳定可靠": "Quick installation, stable and reliable", "一键直呼": "One-Touch Call", "状态指示": "Status Indicator", "呼叫状态提示": "Call status indication", "7×24小时运行": "24/7 Operation", "低功耗设计": "Low-power design", "无线连接": "Wireless Connection", "支持无线联网，远程语音播报": "Supports wireless networking and remote voice announcements", "红外遥控": "IR Remote Control", "内置码库，支持红外遥控": "Built-in code library supports IR remote control", "高保真音质": "Hi-Fi Sound", "高保真扬声器，声音饱满清晰": "Hi-Fi speaker with full, clear sound", "简易配置": "Easy Configuration", "手机APP配置，操作简单易用": "Mobile app configuration, simple and easy", "稳定联网": "Stable Networking", "内置海量码库": "Built-in massive code library", "远程管理": "Remote Management", "APP远程控制": "Remote control via app", "智能交互": "Smart Interaction", "语音交互，解放双手": "Voice interaction frees your hands", "高效便捷": "Efficient & Convenient", "提升生活效率，操作更便捷": "Improves efficiency and convenience", "优质硬件，稳定运行": "Quality hardware for stable operation", "安全保护": "Security Protection", "多重防护，隐私安全": "Multiple protections for privacy and safety", "广泛适配": "Wide Compatibility", "适配多种场景，灵活应用": "Fits multiple scenarios with flexible use", "插座系列": "Socket Series", "安全用电，智能便捷，打造舒适生活": "Safe power use with smart convenience for comfortable living", "三孔插座（16A）": "3-Pin Socket (16A)", "安全防护": "Safety Protection", "阻燃材料": "Flame-Retardant Material", "高温阻燃": "High-Temperature Flame Retardant", "标准孔距": "Standard Spacing", "国标设计": "National-standard design", "快速接线": "Fast Wiring", "五孔插座（10A）": "5-Hole Socket (10A)", "安全用电": "Safe Power Use", "安心可靠": "Reliable & Secure", "兼容性强": "Strong Compatibility", "五孔+USB插座（10A）": "5-Hole + USB Socket (10A)", "双USB接口": "Dual USB Ports", "低能耗设计，绿色节能": "Low-energy design, green and efficient", "优质材料，持久耐用": "Quality materials for durability", "品质保证": "Quality Assurance", "严格质检，品质保障": "Strict quality inspection and assurance", "网络覆盖系列": "Network Coverage Series", "高速组网，稳定覆盖，满足酒店、公寓及智能空间部署需求": "High-speed networking and stable coverage for hotels, apartments, and smart-space deployments", "吸顶AP": "Ceiling AP", "吸顶设计，支持WiFi6高速无线覆盖，适用于酒店公区与办公场景。": "Ceiling-mounted design with WiFi 6 high-speed coverage for hotel public areas and offices.", "墙装AP": "Wall-Mounted AP", "集成网络接口与无线覆盖能力，POE供电，部署简单，兼顾美观与性能。": "Integrated network interface and wireless coverage with PoE power for easy deployment, aesthetics, and performance.", "9口 PoE管理机": "9-Port PoE Managed Switch", "支持PoE供电与集中管理，为AP及智能终端提供稳定网络接入。": "Supports PoE power and centralized management for stable network access to APs and smart terminals.", "5口 PoE管理机": "5-Port PoE Managed Switch", "统一管理无线网络设备，实现集中配置、监控与运维管理。": "Unified wireless device management for centralized configuration, monitoring, and O&M.", "WiFi6覆盖": "WiFi 6 Coverage", "高速稳定无线连接": "Fast, stable wireless connection", "PoE供电": "PoE Power Supply", "简化施工布线": "Simplifies installation wiring", "智慧酒店": "Smart Hotel", "方案": "Solution", "智能互联 · 卓越体验 · 高效运营": "Smart Connectivity · Excellent Experience · Efficient Operations", "基于物联网与 AI 技术，打造安全、舒适、节能的智慧酒店空间，提升入住体验，降低运营成本，助力酒店数字化升级。": "Based on IoT and AI technologies, we create safe, comfortable, and energy-saving smart hotel spaces that improve guest experience, reduce operating costs, and support digital upgrades.", "了解方案优势 →": "View Solution Benefits →", "智能照明": "Smart Lighting", "空调控制": "AC Control", "窗帘控制": "Curtain Control", "语音控制": "Voice Control", "智慧插座": "Smart Socket", "无线覆盖": "Wireless Coverage", "提升入住体验": "Improve Guest Experience", "个性化场景与智能服务": "Personalized scenes and smart services", "降低运营成本": "Reduce Operating Costs", "智能节能与设备管理": "Smart energy saving and device management", "保障安全可靠": "Ensure Safety & Reliability", "多重防护与实时告警": "Multiple protections and real-time alerts", "数据驱动决策": "Data-Driven Decisions", "可视化报表与分析": "Visual reports and analytics", "快速部署扩展": "Fast Deployment & Expansion", "模块化设计灵活扩展": "Modular design for flexible expansion", "全场景覆盖 · 打造智慧酒店新体验": "Full-Scenario Coverage · A New Smart Hotel Experience", "入住前": "Before Check-In", "自助选房": "Self-service room selection", "个性化偏好设置": "Personalized preference settings", "到店信息推送": "Arrival information push", "入住中": "During Stay", "一键场景控制": "One-touch scene control", "灯光 / 空调 / 窗帘联动": "Lighting / AC / curtain linkage", "语音控制，解放双手": "Voice control frees your hands", "客房服务": "Room Service", "一键呼叫服务": "One-touch service call", "清洁 / 送物 / 维修": "Cleaning / delivery / maintenance", "服务进度实时查看": "Real-time service progress", "能源管理": "Energy Management", "能耗实时监测": "Real-time energy monitoring", "智能策略节能": "Smart energy-saving strategies", "设备定时与联动控制": "Device scheduling and linkage control", "安防管理": "Security Management", "门锁管理": "Door lock management", "异常告警推送": "Abnormal alert push", "视频监控联动": "Video surveillance linkage", "退房后": "After Check-Out", "无感退房": "Seamless check-out", "消费明细推送": "Billing details push", "会员服务持续关怀": "Continuous member care", "方案架构": "Solution Architecture", "稳定可靠的全栈架构，支撑酒店智能化运营。": "A stable and reliable full-stack architecture supports smart hotel operations.", "感知层": "Sensing Layer", "智能设备采集数据": "Smart devices collect data", "网络层": "Network Layer", "Zigbee / WiFi 接入": "Zigbee / WiFi access", "平台层": "Platform Layer", "设备管理 / 数据处理": "Device management / data processing", "应用层": "Application Layer", "多端应用 / 场景联动": "Multi-terminal apps / scene linkage", "用户层": "User Layer", "酒店 / 住客 / 管理者": "Hotel / guests / managers", "技术支持中心": "Technical Support Center", "专业文档 · 常见问题 · 公众号文章": "Professional Docs · FAQs · WeChat Articles", "为您提供全面的技术支持与服务，帮助您更好地使用我们的产品与解决方案。": "We provide comprehensive technical support and services to help you use our products and solutions better.", "📄 技术文档": "📄 Technical Docs", "❔ 常见问题": "❔ FAQs", "💬 公众号文章": "💬 WeChat Articles", "文档分类": "Document Categories", "🛠 安装指南": "🛠 Installation Guide", "📷 设备配置": "📷 Device Configuration", "⚙ 功能说明": "⚙ Feature Description", "⭕ 故障处理": "⭕ Troubleshooting", "▶ 视频教程": "▶ Video Tutorials", "⬇ 下载中心": "⬇ Download Center", "网关安装指南": "Gateway Installation Guide", "详细介绍智能网关安装、联网与系统配置流程": "Detailed guide to smart gateway installation, networking, and system configuration", "更新于 2024-05-20": "Updated on 2024-05-20", "设备配网教程": "Device Pairing Tutorial", "一步步教您如何添加设备到系统": "Step-by-step guide to adding devices to the system", "更新于 2024-05-18": "Updated on 2024-05-18", "场景设置说明": "Scene Setup Guide", "自定义场景与自动化联动配置方法": "How to configure custom scenes and automation linkage", "更新于 2024-05-15": "Updated on 2024-05-15", "固件升级说明": "Firmware Upgrade Guide", "设备 OTA 升级操作指南": "Device OTA upgrade operation guide", "更新于 2024-05-12": "Updated on 2024-05-12", "常见故障处理": "Common Troubleshooting", "常见问题与解决方案汇总": "Summary of common problems and solutions", "更新于 2024-05-10": "Updated on 2024-05-10", "视频操作指南": "Video Operation Guide", "视频演示设备配置与使用方法": "Video demonstration of device configuration and use", "更新于 2024-05-08": "Updated on 2024-05-08", "设备无法联网怎么办？": "What if the device cannot connect?", "请确认网关在线、Wi-Fi 信号稳定，并重新执行设备配网流程。": "Please confirm the gateway is online, Wi-Fi signal is stable, and repeat device pairing.", "建议优先检查网络环境": "Check the network environment first", "手机无法添加设备？": "Phone cannot add device?", "检查蓝牙、定位权限是否开启，设备是否处于待配网状态。": "Check whether Bluetooth and location permissions are enabled and whether the device is in pairing mode.", "适用于 App 添加失败": "For app pairing failures", "酒店场景如何联动？": "How do hotel scenes link together?", "可通过网关、面板、门磁、温控等设备设置自动化场景。": "Automation scenes can be set using gateways, panels, door sensors, thermostats, and other devices.", "适用于客房智能控制": "For smart guest-room control", "设备离线如何处理？": "How to handle offline devices?", "请检查供电、网关距离、网络状态，必要时重启设备和网关。": "Check power supply, gateway distance, and network status; restart devices and gateway if needed.", "适用于设备离线": "For offline devices", "如何恢复出厂设置？": "How to restore factory settings?", "长按设备按键进入重置模式，具体时长以产品说明为准。": "Press and hold the device button to enter reset mode; exact duration depends on the product manual.", "重置前请确认数据备份": "Confirm data backup before reset", "灯光无法响应？": "Light does not respond?", "检查开关线路、设备绑定状态及场景自动化配置是否正确。": "Check switch wiring, device binding status, and scene automation configuration.", "适用于灯控类产品": "For lighting-control products", "公众号文章入口": "WeChat Article Entry", "可放置微信公众号文章标题与跳转链接，方便客户查看产品教程。": "Place WeChat article titles and links here for customers to view product tutorials.", "建议后续替换为真实文章链接": "Replace with real article links later", "酒店智能控制方案": "Hotel Smart Control Solution", "介绍客控系统、智能面板、网关及场景联动的应用方式。": "Introduces guest-room control systems, smart panels, gateways, and scene linkage applications.", "公众号文章": "WeChat Article", "产品安装与配置教程": "Product Installation & Configuration Tutorial", "整理常用设备安装、配网、调试与维护说明。": "Covers installation, pairing, debugging, and maintenance for common devices.", "需要更多帮助?": "Need More Help?", "我们的技术支持团队随时为您服务": "Our technical support team is ready to help", "提交工单": "Submit Ticket", "思辰微创客实验室": "SCW Maker Lab", "微信扫一扫关注公众号": "Scan WeChat to follow our official account", "产品教程": "Product Tutorials", "更新资讯": "Updates", "技术支持": "Technical Support", "搜索文档关键词...": "Search document keywords...", "创新驱动 · 品质保障 · 客户至上": "Innovation Driven · Quality Assured · Customer First", "专注于智能硬件与物联网技术的研发与创新，致力于为酒店、家居及商业空间提供高品质的智能化产品与解决方案。": "Focused on smart hardware and IoT R&D and innovation, providing high-quality smart products and solutions for hotels, homes, and commercial spaces.", "创新驱动": "Innovation Driven", "持续技术突破": "Continuous technical breakthroughs", "品质保障": "Quality Assurance", "严格质量把控": "Strict quality control", "客户至上": "Customer First", "用心服务客户": "Serving customers with care", "我们的优势": "Our Advantages", "专业团队": "Professional Team", "资深研发团队，丰富行业经验。": "Experienced R&D team with rich industry expertise.", "自主研发": "Independent R&D", "核心技术自主可控，持续创新。": "Core technologies are independently controlled with continuous innovation.", "完善服务": "Complete Service", "全方位服务体系，快速响应支持。": "Comprehensive service system with fast response support.", "合作共赢": "Win-Win Cooperation", "开放合作，共同成长。": "Open cooperation and shared growth.", "数据展示": "Data Display", "团队成员": "Team Members", "产品方案": "Product Solutions", "知识产权": "Intellectual Property", "合作伙伴": "Partners", "发展历程": "Development Timeline", "思辰微创客实验室成立": "SCW Maker Lab established", "推出多款智能硬件产品": "Launched multiple smart hardware products", "获得多项专利与荣誉认证": "Received multiple patents and honor certifications", "业务拓展，服务更多客户": "Expanded business to serve more customers", "未来": "Future", "持续创新，创造更多可能": "Continue innovating and creating more possibilities", "获取智能方案支持": "Get Smart Solution Support", "面向酒店、公寓、办公与智能家居项目，提供产品选型、方案设计、工程对接与技术支持。欢迎通过电话、邮箱或微信与我们沟通需求。": "For hotel, apartment, office, and smart-home projects, we provide product selection, solution design, project coordination, and technical support. Contact us by phone, email, or WeChat to discuss your needs.", "立即电话咨询": "Call Now", "发送邮件": "Send Email", "快速联系": "Quick Contact", "电话咨询": "Phone Consultation", "邮箱联系": "Email Contact", "微信沟通": "WeChat Communication", "扫码添加，沟通项目需求": "Scan to add us and discuss project needs", "微信扫码咨询": "Consult via WeChat", "添加微信，适合项目需求沟通、产品选型与技术支持。": "Add us on WeChat for project consultation, product selection, and technical support.", "项目合作": "Project Cooperation", "产品选型": "Product Selection", "其他系列": "Other Series", "应急呼叫": "Emergency Call", "弱电信息插座": "Low-Voltage Data Socket", "多样化智能配件，满足不同场景需求": "Diversified smart accessories for different scenarios", "酒店插卡取电开关": "Hotel Key Card Power Switch", "弱电信息插座（网口）": "Low-Voltage Data Socket (Network Port)", "紧急呼叫": "Emergency Call", "一键呼叫求助": "One-Touch Emergency Help", "美观大方": "Elegant Appearance", "安全节能": "Safe & Energy Saving", "插卡通电": "Card-Powered Activation", "延时断电": "Delayed Power-Off", "延时设计": "Delay-Off Design", "防火阻燃": "Fire-Retardant", "网络接口": "Network Port", "稳定传输": "Stable Transmission", "高速传输": "High-Speed Transmission", "性能稳定": "Stable Performance", "防尘防护": "Dust Protection", "标准86底盒": "Standard 86 Back Box", "标准86底盒，轻松安装": "Standard 86 back box, easy installation", "标准86底盒，快速安装，稳定可靠": "Standard 86 back box, quick installation, stable and reliable", "统一组网": "Unified Networking", "多设备集中管理": "Centralized multi-device management", "企业级网络架构": "Enterprise-grade network architecture", "酒店应用": "Hotel Applications", "适合酒店公寓项目": "Suitable for hotel and apartment projects", "多重防护，使用更安心": "Multiple protections for safer use"};
+  const titleMap = {"关于我们 - 思辰微智能": "About Us - SCW Smart", "产品中心 - 思辰微智能": "Products - SCW Smart", "解决方案 - 思辰微智能": "Solutions - SCW Smart", "支持服务 - 思辰微智能": "Support - SCW Smart", "联系我们 - 思辰微智能": "Contact Us - SCW Smart"};
+  const placeholderMap = {"搜索文档关键词...":"Search document keywords...","搜索关键词...":"Search keywords...","搜索技术文档关键词...":"Search technical docs...","搜索常见问题关键词...":"Search FAQs...","搜索公众号文章关键词...":"Search WeChat articles..."};
+  function convertTextNode(node, lang){
+    const raw = node.nodeValue;
+    const trimmed = raw.trim();
+    if(!trimmed) return;
+    if(!node.__cnText) node.__cnText = trimmed;
+    const cn = node.__cnText;
+    if(lang === 'en' && i18n[cn]){
+      node.nodeValue = raw.replace(trimmed, i18n[cn]);
+    }else{
+      node.nodeValue = raw.replace(trimmed, cn);
+    }
+  }
+  function walk(lang){
+    const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
+      acceptNode(node){
+        const p = node.parentElement;
+        if(!p || ['SCRIPT','STYLE','NOSCRIPT'].includes(p.tagName)) return NodeFilter.FILTER_REJECT;
+        return node.nodeValue.trim() ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_REJECT;
+      }
+    });
+    const nodes=[]; while(walker.nextNode()) nodes.push(walker.currentNode);
+    nodes.forEach(n=>convertTextNode(n, lang));
+    document.querySelectorAll('input[placeholder]').forEach(el=>{
+      if(!el.dataset.cnPlaceholder) el.dataset.cnPlaceholder = el.getAttribute('placeholder') || '';
+      const cn = el.dataset.cnPlaceholder;
+      el.setAttribute('placeholder', lang==='en' ? (placeholderMap[cn] || cn) : cn);
+    });
+    document.documentElement.lang = lang === 'en' ? 'en' : 'zh-CN';
+    const cnTitle = document.title;
+    if(!document.documentElement.dataset.cnTitle) document.documentElement.dataset.cnTitle = cnTitle;
+    const savedCnTitle = document.documentElement.dataset.cnTitle;
+    document.title = lang === 'en' ? (titleMap[savedCnTitle] || savedCnTitle) : savedCnTitle;
+    const btn = document.querySelector('.lang-toggle');
+    if(btn) btn.textContent = lang === 'en' ? '中文' : 'EN';
+  }
+  window.setSiteLang = function(lang){ localStorage.setItem('siteLang', lang); walk(lang); };
+  document.addEventListener('DOMContentLoaded', function(){
+    let btn = document.querySelector('.lang-toggle');
+    if(!btn){
+      btn = document.createElement('button'); btn.type='button'; btn.className='lang-toggle'; btn.setAttribute('aria-label','Switch language');
+      const nav = document.querySelector('.nav');
+      if(nav) nav.appendChild(btn); else document.body.prepend(btn);
+    }
+    btn.addEventListener('click', function(){ setSiteLang((localStorage.getItem('siteLang') || 'zh') === 'en' ? 'zh' : 'en'); });
+    document.addEventListener('click', function(e){ if(e.target.closest('[data-tab]')) setTimeout(function(){ walk(localStorage.getItem('siteLang') || 'zh'); }, 0); });
+    walk(localStorage.getItem('siteLang') || 'zh');
+  });
+})();
+</script>
+
 </body>
 </html>

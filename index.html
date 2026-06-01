@@ -801,128 +801,93 @@ body{
 
 
 
-/* ===== 手机端产品展示完整显示修复 =====
-   解决手机宽度较小时，轮播产品左右被裁切、图片显示不全的问题。
-   手机端只突出显示当前产品，左右预览卡隐藏，保证主产品完整显示。 */
-@media(max-width:768px){
-  .hero{
-    min-height:auto !important;
-    padding-bottom:26px !important;
-  }
-
+/* ===== 最终响应式修复：PC 保持原 3D 展示，手机保证产品完整显示 ===== */
+@media(min-width:769px){
   .layout{
-    grid-template-columns:1fr !important;
-    gap:24px !important;
-    min-height:auto !important;
-    width:100% !important;
-    overflow:hidden !important;
+    display:grid !important;
+    grid-template-columns:minmax(620px,720px) minmax(760px,860px) !important;
+    justify-content:center !important;
+    align-items:center !important;
+    gap:38px !important;
+    min-height:calc(100vh - 240px) !important;
+    overflow:visible !important;
   }
-
   .copy{
-    width:100% !important;
-    max-width:100% !important;
-    justify-self:center !important;
-    padding:0 4px !important;
+    max-width:720px !important;
+    justify-self:end !important;
+    text-align:left !important;
   }
-
   .showcase{
     width:100% !important;
-    max-width:100% !important;
-    padding:10px !important;
-    border-radius:28px !important;
-    overflow:hidden !important;
-    justify-self:center !important;
-  }
-
-  .panel{
-    min-height:520px !important;
-    height:auto !important;
-    padding:18px 12px 22px !important;
-    border-radius:24px !important;
-    overflow:hidden !important;
-  }
-
-  .product-title{
-    top:20px !important;
-    font-size:22px !important;
-    letter-spacing:.04em !important;
-  }
-
-  .carousel{
-    height:430px !important;
-    margin-top:58px !important;
+    max-width:860px !important;
+    padding:14px !important;
+    border-radius:42px !important;
     overflow:visible !important;
-    perspective:none !important;
+    justify-self:start !important;
   }
-
+  .panel{
+    min-height:720px !important;
+    height:auto !important;
+    padding:20px 20px 24px !important;
+    border-radius:36px !important;
+    overflow:hidden !important;
+  }
+  .carousel{
+    position:relative !important;
+    height:650px !important;
+    margin-top:38px !important;
+    perspective:1100px !important;
+    overflow:visible !important;
+  }
   .card{
+    position:absolute !important;
     top:0 !important;
     left:50% !important;
-    width:min(72vw,280px) !important;
-    height:370px !important;
-    opacity:0 !important;
-    pointer-events:none !important;
-    transform:translateX(-50%) scale(.92) !important;
-    transition:opacity .35s ease, transform .35s ease !important;
-  }
-
-  .card.main{
-    opacity:1 !important;
-    z-index:8 !important;
+    width:430px !important;
+    height:580px !important;
+    transform-style:preserve-3d !important;
+    opacity:.26;
     pointer-events:auto !important;
-    transform:translateX(-50%) scale(1) !important;
   }
+  .card.main{opacity:1 !important;z-index:8 !important;transform:translateX(-50%) scale(1.12) !important;}
+  .card.left1{z-index:5 !important;transform:translateX(-98%) scale(.82) rotateY(8deg) !important;opacity:.26 !important;}
+  .card.left2{z-index:4 !important;transform:translateX(-148%) scale(.66) rotateY(12deg) !important;opacity:.26 !important;}
+  .card.right1{z-index:5 !important;transform:translateX(-2%) scale(.82) rotateY(-8deg) !important;opacity:.26 !important;}
+  .card.right2{z-index:4 !important;transform:translateX(46%) scale(.66) rotateY(-10deg) !important;opacity:.26 !important;}
+  .card.hide-left{z-index:1 !important;transform:translateX(-190%) scale(.58) !important;opacity:0 !important;}
+  .card.hide-right{z-index:1 !important;transform:translateX(95%) scale(.58) !important;opacity:0 !important;}
+  .card img{width:100% !important;height:100% !important;object-fit:contain !important;}
+  .name-badge{bottom:4px !important;white-space:nowrap !important;font-size:15px !important;}
+  .arrow{width:54px !important;height:54px !important;font-size:36px !important;top:50% !important;}
+  .arrow.left{left:14px !important;}
+  .arrow.right{right:14px !important;}
+}
 
-  .card.left1,
-  .card.left2,
-  .card.right1,
-  .card.right2,
-  .card.hide-left,
-  .card.hide-right{
-    opacity:0 !important;
-    transform:translateX(-50%) scale(.88) !important;
-  }
-
-  .card img{
-    width:100% !important;
-    height:100% !important;
-    object-fit:contain !important;
-  }
-
-  .name-badge{
-    bottom:-34px !important;
-    max-width:92vw !important;
-    padding:9px 16px !important;
-    font-size:13px !important;
-    white-space:normal !important;
-    text-align:center !important;
-  }
-
-  .arrow{
-    width:42px !important;
-    height:42px !important;
-    font-size:30px !important;
-    top:54% !important;
-    background:rgba(15,23,42,.62) !important;
-  }
-
+@media(max-width:768px){
+  .hero{min-height:auto !important;padding-bottom:26px !important;}
+  .layout{grid-template-columns:1fr !important;gap:24px !important;min-height:auto !important;width:100% !important;overflow:hidden !important;text-align:center !important;}
+  .copy{width:100% !important;max-width:100% !important;justify-self:center !important;padding:0 4px !important;text-align:center !important;}
+  .copy h1{font-size:clamp(38px,11vw,52px) !important;line-height:1.08 !important;}
+  .copy p{font-size:16px !important;line-height:1.75 !important;margin-left:auto !important;margin-right:auto !important;}
+  .showcase{width:100% !important;max-width:100% !important;padding:10px !important;border-radius:28px !important;overflow:hidden !important;justify-self:center !important;}
+  .panel{min-height:520px !important;height:auto !important;padding:18px 12px 22px !important;border-radius:24px !important;overflow:hidden !important;}
+  .product-title{top:20px !important;font-size:22px !important;letter-spacing:.04em !important;}
+  .carousel{height:430px !important;margin-top:58px !important;overflow:visible !important;perspective:none !important;}
+  .card{top:0 !important;left:50% !important;width:min(72vw,280px) !important;height:370px !important;opacity:0 !important;pointer-events:none !important;transform:translateX(-50%) scale(.92) !important;transition:opacity .35s ease, transform .35s ease !important;}
+  .card.main{opacity:1 !important;z-index:8 !important;pointer-events:auto !important;transform:translateX(-50%) scale(1) !important;}
+  .card.left1,.card.left2,.card.right1,.card.right2,.card.hide-left,.card.hide-right{opacity:0 !important;transform:translateX(-50%) scale(.88) !important;}
+  .card img{width:100% !important;height:100% !important;object-fit:contain !important;}
+  .name-badge{bottom:-34px !important;max-width:92vw !important;padding:9px 16px !important;font-size:13px !important;white-space:normal !important;text-align:center !important;}
+  .arrow{width:42px !important;height:42px !important;font-size:30px !important;top:54% !important;background:rgba(15,23,42,.62) !important;}
   .arrow.left{left:8px !important;}
   .arrow.right{right:8px !important;}
-
-  .bottom-bar{
-    grid-template-columns:1fr !important;
-    gap:14px !important;
-    padding:18px !important;
-  }
+  .bottom-bar{grid-template-columns:1fr !important;gap:14px !important;padding:18px !important;}
 }
 
 @media(max-width:420px){
   .panel{min-height:490px !important;}
   .carousel{height:400px !important;}
-  .card{
-    width:min(76vw,250px) !important;
-    height:340px !important;
-  }
+  .card{width:min(76vw,250px) !important;height:340px !important;}
 }
 
 </style>
@@ -1228,7 +1193,7 @@ setInterval(next,5000);
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', function () {
     const swCode = `
-      const CACHE_NAME = 'scw-static-cache-v1';
+      const CACHE_NAME = 'scw-static-cache-final-v3';
       const ASSETS = [
         './',
         './index.html',
