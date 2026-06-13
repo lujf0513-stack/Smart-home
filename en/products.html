@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 
-<html lang="zh-CN">
+<html lang="en">
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1.0" name="viewport"/>
-<link rel="icon" type="image/svg+xml" href="assets/favicon.svg?v=4"/>
-<title>产品中心 - 思辰微智能</title>
+<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg?v=4"/>
+<title>Products - SCW Smart</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 
@@ -173,7 +173,7 @@ body::before{
   letter-spacing:4px;
 }
 
-/* 网关 */
+/* Gateway */
 .gateway-products{
   width:min(1500px,92%);
   margin:0 auto;
@@ -274,7 +274,7 @@ body::before{
   backdrop-filter:blur(8px);
 }
 
-/* 面板 */
+/* Panel */
 .panel-products{
   width:min(1500px,92%);
   margin:0 auto;
@@ -490,7 +490,7 @@ body::before{
   .gateway-bottom,.panel-bottom{grid-template-columns:1fr}
 }
 
-/* 温控 */
+/* Thermostat */
 .temp-products{
   width:min(1500px,92%);
   margin:0 auto;
@@ -555,7 +555,7 @@ body::before{
 }
 
 
-/* 语音系列 */
+/* Voice Series */
 .voice-products{
   width:min(1500px,92%);
   margin:0 auto;
@@ -699,7 +699,7 @@ body::before{
 }
 
 
-/* 插座系列 */
+/* Socket Series */
 .socket-products{
   width:min(1500px,92%);
   margin:0 auto;
@@ -791,7 +791,7 @@ body::before{
 }
 
 
-/* 其他系列 */
+/* Other Series */
 .other-products{
   width:min(1500px,92%);
   margin:0 auto;
@@ -886,7 +886,7 @@ body::before{
 
 
 
-/* ===== 最终导航栏统一修复：去掉顶部黑色长条，所有页面保持一致 ===== */
+/* ===== Final navigation fix: remove top dark bar and keep all pages consistent ===== */
 html{
   scroll-behavior:auto !important;
   margin:0 !important;
@@ -899,13 +899,13 @@ body{
   overflow-x:hidden !important;
 }
 
-/* 首页 / 联系我们 使用 .hero 或 .page 承载背景时，背景必须从顶部开始 */
+/* Hero/page background starts from the top */
 .hero,
 .page{
   padding-top:18px !important;
 }
 
-/* 产品页原导航 sticky 会形成顶部黑条，这里强制取消 */
+/* Disable sticky navigation to avoid top dark bar */
 .nav{
   position:relative !important;
   top:auto !important;
@@ -931,7 +931,7 @@ body{
   box-shadow:none !important;
 }
 
-/* 如果旧文件里有黑色伪元素或遮罩，禁止盖在导航背后 */
+/* Prevent old pseudo elements or overlays behind navigation */
 .nav::before,
 .nav::after{
   display:none !important;
@@ -996,17 +996,17 @@ body{
   white-space:nowrap !important;
 }
 
-/* 首页顶部不能再单独出现深黑横条 */
+/* Prevent dark bar above hero */
 .hero > .nav{
   margin-top:0 !important;
 }
 
-/* 产品页顶部导航不再 sticky，也不占满整行 */
+/* Product page navigation is no longer sticky or full-width */
 body > .nav{
   margin-top:18px !important;
 }
 
-/* 移动端 */
+/* Mobile */
 @media(max-width:900px){
   .nav{
     width:100% !important;
@@ -1027,7 +1027,7 @@ body > .nav{
 
 
 
-/* ===== 中英切换按钮 / Language Switch ===== */
+/* ===== Language Switch ===== */
 .lang-toggle{
   display:inline-flex !important;
   align-items:center !important;
@@ -1072,437 +1072,444 @@ body > .nav{
   flex:0 0 auto !important;
   text-decoration:none !important;
 }
+html[lang="en"] .nav-links{
+  gap:48px !important;
+}
+html[lang="en"] .contact{
+  padding-left:24px !important;
+  padding-right:24px !important;
+}
 
 </style>
-<!-- 图片加载优化：优先加载首屏关键图片 -->
-<link as="image" href="1.webp" rel="preload"/>
-<link as="image" href="10.webp" rel="preload"/>
-<link as="image" href="11.webp" rel="preload"/>
-<link as="image" href="12.webp" rel="preload"/>
+<!-- Image loading optimization: prioritize above-the-fold key images -->
+<link as="image" href="../1.webp" rel="preload"/>
+<link as="image" href="../10.webp" rel="preload"/>
+<link as="image" href="../11.webp" rel="preload"/>
+<link as="image" href="../12.webp" rel="preload"/>
 <meta content="public, max-age=604800" http-equiv="Cache-Control"/>
 </head>
 <body>
 <!-- Site navigation -->
-<nav aria-label="主导航" class="nav">
-<div class="logo"><img alt="" src="assets/logo.svg" style="width:24px;height:24px;display:block;flex:0 0 24px;"/>思辰微智能</div>
+<nav aria-label="Main Navigation" class="nav">
+<div class="logo"><img alt="" src="../assets/logo.svg" style="width:24px;height:24px;display:block;flex:0 0 24px;"/>SCW Smart</div>
 <div class="nav-links">
-<a href="index.html">首页</a>
-<a class="active" href="products.html">产品中心</a>
-<a href="solutions.html">解决方案</a>
-<a href="support.html">支持服务</a>
-<a href="about.html">关于我们</a>
+<a href="index.html">Home</a>
+<a class="active" href="products.html">Products</a>
+<a href="solutions.html">Solutions</a>
+<a href="support.html">Support</a>
+<a href="about.html">About Us</a>
 </div>
-<a class="contact" href="contact.html">联系我们</a>
-<a class="lang-toggle" href="en/products.html">EN</a></nav>
+<a class="contact" href="contact.html">Contact Us</a>
+<a class="lang-toggle" href="../products.html">中文</a></nav>
 <!-- Product category tabs -->
 <nav class="tabs">
-<div class="tab active" data-series="gateway" onclick="showSeries('gateway',this)">▣ 网关系列</div>
-<div class="tab" data-series="panel" onclick="showSeries('panel',this)">▥ 面板系列</div>
-<div class="tab" data-series="temp" onclick="showSeries('temp',this)">◴ 旋钮温控</div>
-<div class="tab" data-series="voice" onclick="showSeries('voice',this)">◉ 语音系列</div>
-<div class="tab" data-series="socket" onclick="showSeries('socket',this)">▧ 插座系列</div>
-<div class="tab" data-series="network" onclick="showSeries('network',this)">▤ 网络覆盖</div>
-<div class="tab" data-series="other" onclick="showSeries('other',this)">▦ 其他系列</div>
+<div class="tab active" data-series="gateway" onclick="showSeries('gateway',this)">▣ Gateway Series</div>
+<div class="tab" data-series="panel" onclick="showSeries('panel',this)">▥ Panel Series</div>
+<div class="tab" data-series="temp" onclick="showSeries('temp',this)">◴ Rotary Thermostat</div>
+<div class="tab" data-series="voice" onclick="showSeries('voice',this)">◉ Voice Series</div>
+<div class="tab" data-series="socket" onclick="showSeries('socket',this)">▧ Socket Series</div>
+<div class="tab" data-series="network" onclick="showSeries('network',this)">▤ Network Coverage</div>
+<div class="tab" data-series="other" onclick="showSeries('other',this)">▦ Other Series</div>
 </nav>
 <section class="series active" id="gateway">
 <div class="hero">
-<h1>网关系列</h1>
-<p>稳定连接，高效协同，打造全屋智能设备的核心枢纽</p>
+<h1>Gateway Series</h1>
+<p>Stable connectivity and efficient coordination for the core hub of whole-home smart devices</p>
 </div>
 <main class="gateway-products">
 <article class="gateway-card">
-<div class="image-wrap"><img alt="CS4 网关中控屏" decoding="async" loading="lazy" src="17.webp"/></div>
+<div class="image-wrap"><img alt="CS4 Gateway Control Screen" decoding="async" loading="lazy" src="../17.webp"/></div>
 <div class="info">
-<h2>4寸彩屏中控</h2>
+<h2>4-inch Color Touch Control</h2>
 <div class="line"></div>
 <ul>
-<li>4寸高清触控屏</li>
-<li>Zigbee 3.0 / WiFi 双模</li>
-<li>全屋设备集中控制</li>
-<li>场景联动 / 语音控制</li>
-<li>支持 OTA 在线升级</li>
+<li>4-inch HD touch screen</li>
+<li>Zigbee 3.0 / WiFi dual mode</li>
+<li>Centralized whole-home device control</li>
+<li>Scene automation / voice control</li>
+<li>Supports OTA online upgrades</li>
 </ul>
 </div>
 <div class="badges">
-<div class="badge">4寸触控屏</div>
+<div class="badge">4-inch Touch Screen</div>
 <div class="badge">Zigbee 3.0</div>
 <div class="badge">WiFi</div>
-<div class="badge">OTA升级</div>
+<div class="badge">OTA Upgrade</div>
 </div>
 </article>
 <article class="gateway-card">
-<div class="image-wrap"><img alt="CS4 SE 网关" decoding="async" loading="lazy" src="18.webp"/></div>
+<div class="image-wrap"><img alt="CS4 SE Gateway" decoding="async" loading="lazy" src="../18.webp"/></div>
 <div class="info">
-<h2>无屏网关</h2>
+<h2>Screenless Gateway</h2>
 <div class="line"></div>
 <ul>
-<li>小巧简约，稳定可靠</li>
-<li>Zigbee 3.0 网关</li>
-<li>快速配网，轻松管理</li>
-<li>支持本地与云端联动</li>
-<li>低功耗，7×24h 稳定运行</li>
+<li>Compact, simple, stable and reliable</li>
+<li>Zigbee 3.0 Gateway</li>
+<li>Fast pairing, easy management</li>
+<li>Supports local and cloud linkage</li>
+<li>Low power consumption, 24/7 stable operation</li>
 </ul>
 </div>
 <div class="badges">
 <div class="badge">Zigbee 3.0</div>
-<div class="badge">稳定可靠</div>
-<div class="badge">快速配网</div>
-<div class="badge">低功耗</div>
+<div class="badge">Stable &amp; Reliable</div>
+<div class="badge">Fast Pairing</div>
+<div class="badge">Low Power</div>
 </div>
 </article>
 </main>
 <section class="bottom-features gateway-bottom">
-<div class="bottom-item"><div class="bottom-icon">⌘</div><div><h3>全屋互联</h3><p>稳定连接各类智能设备</p></div></div>
-<div class="bottom-item"><div class="bottom-icon">✓</div><div><h3>安全稳定</h3><p>多重加密，数据更安全</p></div></div>
-<div class="bottom-item"><div class="bottom-icon">□</div><div><h3>开放兼容</h3><p>兼容多品牌智能设备</p></div></div>
-<div class="bottom-item"><div class="bottom-icon">☁</div><div><h3>云端同步</h3><p>云端备份与远程管理</p></div></div>
+<div class="bottom-item"><div class="bottom-icon">⌘</div><div><h3>Whole-Home Connectivity</h3><p>Stable connection for all smart devices</p></div></div>
+<div class="bottom-item"><div class="bottom-icon">✓</div><div><h3>Safe &amp; Stable</h3><p>Multiple encryption for safer data</p></div></div>
+<div class="bottom-item"><div class="bottom-icon">□</div><div><h3>Open Compatibility</h3><p>Compatible with multi-brand smart devices</p></div></div>
+<div class="bottom-item"><div class="bottom-icon">☁</div><div><h3>Cloud Sync</h3><p>Cloud backup and remote management</p></div></div>
 </section>
 </section>
 <section class="series" id="panel">
 <div class="hero">
-<h1>面板系列</h1>
-<p>极简设计，匠心工艺，打造高品质智能生活体验</p>
+<h1>Panel Series</h1>
+<p>Minimalist design and refined craftsmanship for a premium smart living experience</p>
 </div>
 <main class="panel-products">
 <article class="panel-card">
-<div class="image-wrap"><img alt="单开关面板" decoding="async" fetchpriority="high" loading="eager" src="1.webp"/></div>
-<h2>单开面板</h2>
+<div class="image-wrap"><img alt="1-Gang Switch Panel" decoding="async" fetchpriority="high" loading="eager" src="../1.webp"/></div>
+<h2>1-Gang Panel</h2>
 <div class="line"></div>
-<p>经典单键，简约百搭，适合卧室、客厅、走廊等基础照明控制。</p>
+<p>Classic single-key design for basic lighting control in bedrooms, living rooms, corridors, and more.</p>
 <div class="features-mini">
-<div class="feature-mini"><span>◇</span>钢化玻璃</div>
-<div class="feature-mini"><span>☝</span>轻触操控</div>
-<div class="feature-mini"><span>♨</span>阻燃材质</div>
+<div class="feature-mini"><span>◇</span>Tempered Glass</div>
+<div class="feature-mini"><span>☝</span>Touch Control</div>
+<div class="feature-mini"><span>♨</span>Flame-Retardant Material</div>
 </div>
 </article>
 <article class="panel-card">
-<div class="image-wrap"><img alt="二开关面板" decoding="async" loading="lazy" src="2.webp"/></div>
-<h2>二开面板</h2>
+<div class="image-wrap"><img alt="2-Gang Switch Panel" decoding="async" loading="lazy" src="../2.webp"/></div>
+<h2>2-Gang Panel</h2>
 <div class="line"></div>
-<p>双键独立控制，灵活便捷，可满足多灯位、多区域控制需求。</p>
+<p>Dual independent keys for flexible multi-light and multi-zone control.</p>
 <div class="features-mini">
-<div class="feature-mini"><span>✓</span>安全稳定</div>
-<div class="feature-mini"><span>⚙</span>精工工艺</div>
-<div class="feature-mini"><span>◷</span>长久耐用</div>
+<div class="feature-mini"><span>✓</span>Safe &amp; Stable</div>
+<div class="feature-mini"><span>⚙</span>Precision Craftsmanship</div>
+<div class="feature-mini"><span>◷</span>Long-Lasting</div>
 </div>
 </article>
 <article class="panel-card">
-<div class="image-wrap"><img alt="三开关面板" decoding="async" loading="lazy" src="3.webp"/></div>
-<h2>三开面板</h2>
+<div class="image-wrap"><img alt="3-Gang Switch Panel" decoding="async" loading="lazy" src="../3.webp"/></div>
+<h2>3-Gang Panel</h2>
 <div class="line"></div>
-<p>场景联动，一键智控，适合客餐厅、套房、办公等复合空间。</p>
+<p>Scene automation and one-touch control for dining rooms, suites, offices, and mixed spaces.</p>
 <div class="features-mini">
-<div class="feature-mini"><span>🔗</span>联动控制</div>
-<div class="feature-mini"><span>☼</span>场景模式</div>
-<div class="feature-mini"><span>▣</span>无缝贴合</div>
+<div class="feature-mini"><span>🔗</span>Linked Control</div>
+<div class="feature-mini"><span>☼</span>Scene Mode</div>
+<div class="feature-mini"><span>▣</span>Seamless Fit</div>
 </div>
 </article>
 <article class="panel-card">
-<div class="image-wrap"><img alt="四开关面板" decoding="async" loading="lazy" src="4.webp"/></div>
-<h2>四开面板</h2>
+<div class="image-wrap"><img alt="4-Gang Switch Panel" decoding="async" loading="lazy" src="../4.webp"/></div>
+<h2>4-Gang Panel</h2>
 <div class="line"></div>
-<p>四控合一，全面掌控，减少墙面开关数量，空间更整洁统一。</p>
+<p>Four controls in one, reducing wall switches for a cleaner, unified space.</p>
 <div class="features-mini">
-<div class="feature-mini"><span>▦</span>多控合一</div>
-<div class="feature-mini"><span>♧</span>低功耗</div>
-<div class="feature-mini"><span>◌</span>多色可选</div>
+<div class="feature-mini"><span>▦</span>Multi-Control Integration</div>
+<div class="feature-mini"><span>♧</span>Low Power</div>
+<div class="feature-mini"><span>◌</span>Multiple Colors</div>
 </div>
 </article>
 </main>
 <section class="bottom-features panel-bottom">
-<div class="bottom-item"><div class="bottom-icon">✓</div><div><h3>安全可靠</h3><p>多重保护机制，使用更安心</p></div></div>
-<div class="bottom-item"><div class="bottom-icon">◇</div><div><h3>高端材质</h3><p>优选材料，质感细腻</p></div></div>
-<div class="bottom-item"><div class="bottom-icon">⚙</div><div><h3>精工制造</h3><p>严苛工艺，品质如一</p></div></div>
-<div class="bottom-item"><div class="bottom-icon">🛠</div><div><h3>轻松安装</h3><p>标准86底盒，快速安装</p></div></div>
-<div class="bottom-item"><div class="bottom-icon">♛</div><div><h3>多样组合</h3><p>支持连体组合，个性定制</p></div></div>
+<div class="bottom-item"><div class="bottom-icon">✓</div><div><h3>Safe &amp; Reliable</h3><p>Multiple protections for peace of mind</p></div></div>
+<div class="bottom-item"><div class="bottom-icon">◇</div><div><h3>Premium Materials</h3><p>Selected materials with fine texture</p></div></div>
+<div class="bottom-item"><div class="bottom-icon">⚙</div><div><h3>Precision Manufacturing</h3><p>Strict process, consistent quality</p></div></div>
+<div class="bottom-item"><div class="bottom-icon">🛠</div><div><h3>Easy Installation</h3><p>Standard 86 back box, quick installation</p></div></div>
+<div class="bottom-item"><div class="bottom-icon">♛</div><div><h3>Flexible Combinations</h3><p>Supports multi-gang combinations and customization</p></div></div>
 </section>
 </section>
 <section class="series" id="temp">
 <div class="hero">
-<h1>旋钮温控系列</h1>
-<p>精准控温，智享舒适生活</p>
+<h1>Rotary Thermostat Series</h1>
+<p>Precise temperature control for comfortable smart living</p>
 </div>
 <main class="temp-products">
 <article class="temp-card">
-<div class="image-wrap"><img alt="旋钮温控器经典款" decoding="async" loading="lazy" src="6.webp"/></div>
-<h2>旋钮温控器（经典款）</h2>
+<div class="image-wrap"><img alt="Rotary Thermostat Classic" decoding="async" loading="lazy" src="../6.webp"/></div>
+<h2>Rotary Thermostat (Classic)</h2>
 <div class="line"></div>
-<p>经典旋钮设计，支持空调、风速、模式切换，适合酒店、公寓及住宅空间。</p>
+<p>Classic rotary design supporting AC, fan speed, and mode switching for hotels, apartments, and homes.</p>
 <div class="features-mini">
-<div class="feature-mini"><span>◉</span>旋钮控制</div>
-<div class="feature-mini"><span>❄</span>制冷模式</div>
-<div class="feature-mini"><span>♨</span>舒适控温</div>
+<div class="feature-mini"><span>◉</span>Rotary Control</div>
+<div class="feature-mini"><span>❄</span>Cooling Mode</div>
+<div class="feature-mini"><span>♨</span>Comfort Control</div>
 </div>
 </article>
 <article class="temp-card">
-<div class="image-wrap"><img alt="旋钮温控器彩屏款" decoding="async" loading="lazy" src="7.webp"/></div>
-<h2>旋钮温控器（彩屏款）</h2>
+<div class="image-wrap"><img alt="Rotary Thermostat Color Screen" decoding="async" loading="lazy" src="../7.webp"/></div>
+<h2>Rotary Thermostat (Color Screen)</h2>
 <div class="line"></div>
-<p>高清彩屏显示，旋钮调节更直观，支持定时关机、自动模式与多档风速。</p>
+<p>HD color display with intuitive rotary adjustment, timer off, auto mode, and multi-speed fan control.</p>
 <div class="features-mini">
-<div class="feature-mini"><span>◷</span>定时关机</div>
-<div class="feature-mini"><span>◎</span>旋钮调节</div>
-<div class="feature-mini"><span>☼</span>智能模式</div>
+<div class="feature-mini"><span>◷</span>Timer Off</div>
+<div class="feature-mini"><span>◎</span>Rotary Adjustment</div>
+<div class="feature-mini"><span>☼</span>Smart Mode</div>
 </div>
 </article>
 <article class="temp-card">
-<div class="image-wrap"><img alt="触控温控器黑晶款" decoding="async" loading="lazy" src="8.webp"/></div>
-<h2>触控温控器（黑晶款）</h2>
+<div class="image-wrap"><img alt="Touch Thermostat Black Crystal" decoding="async" loading="lazy" src="../8.webp"/></div>
+<h2>Touch Thermostat (Black Crystal)</h2>
 <div class="line"></div>
-<p>黑晶玻璃触控面板，大屏温度显示，操作灵敏，适合现代高端空间。</p>
+<p>Black crystal glass touch panel with large temperature display and responsive operation for modern premium spaces.</p>
 <div class="features-mini">
-<div class="feature-mini"><span>☝</span>触控操作</div>
-<div class="feature-mini"><span>▣</span>高清显示</div>
-<div class="feature-mini"><span>✓</span>稳定耐用</div>
+<div class="feature-mini"><span>☝</span>Touch Operation</div>
+<div class="feature-mini"><span>▣</span>HD Display</div>
+<div class="feature-mini"><span>✓</span>Stable &amp; Durable</div>
 </div>
 </article>
 </main>
 <section class="bottom-features temp-bottom">
-<div class="bottom-item"><div class="bottom-icon">℃</div><div><h3>精准控温</h3><p>温度控制精确到0.5℃</p></div></div>
-<div class="bottom-item"><div class="bottom-icon">♧</div><div><h3>节能环保</h3><p>智能节能，绿色低碳</p></div></div>
-<div class="bottom-item"><div class="bottom-icon">▣</div><div><h3>智能芯片</h3><p>高性能芯片，稳定可靠</p></div></div>
-<div class="bottom-item"><div class="bottom-icon">🛠</div><div><h3>安装便捷</h3><p>标准86底盒，快速安装</p></div></div>
-<div class="bottom-item"><div class="bottom-icon">✓</div><div><h3>多重保护</h3><p>多重安全防护，使用安心</p></div></div>
+<div class="bottom-item"><div class="bottom-icon">℃</div><div><h3>Precise Control</h3><p>Temperature control accurate to 0.5°C</p></div></div>
+<div class="bottom-item"><div class="bottom-icon">♧</div><div><h3>Energy Saving</h3><p>Smart energy saving, green and low-carbon</p></div></div>
+<div class="bottom-item"><div class="bottom-icon">▣</div><div><h3>Smart Chip</h3><p>High-performance chip, stable and reliable</p></div></div>
+<div class="bottom-item"><div class="bottom-icon">🛠</div><div><h3>Easy Installation</h3><p>Standard 86 back box, quick installation</p></div></div>
+<div class="bottom-item"><div class="bottom-icon">✓</div><div><h3>Multiple Protection</h3><p>Multiple safety protections for peace of mind</p></div></div>
 </section>
 </section>
 <section class="series" id="voice">
 <div class="hero">
-<h1>语音系列</h1>
-<p>智能语音交互，解放双手，畅享便捷生活</p>
+<h1>Voice Series</h1>
+<p>Smart voice interaction frees your hands for convenient living</p>
 </div>
 <main class="voice-products">
 <article class="voice-card">
-<h2>墙壁电话</h2>
+<h2>Wall Phone</h2>
 <div class="line"></div>
 <div class="voice-main">
 <div class="voice-img">
-<img alt="语音呼叫面板" decoding="async" fetchpriority="high" loading="eager" src="10.webp"/>
+<img alt="Voice Call Panel" decoding="async" fetchpriority="high" loading="eager" src="../10.webp"/>
 </div>
 <div class="voice-list">
 <div class="voice-feature">
 <div class="vicon">⚙</div>
 <div>
-<h3>语音呼叫</h3>
-<p>一键呼叫前台，语音沟通更便捷</p>
+<h3>Voice Call</h3>
+<p>One-touch front-desk call for easier voice communication</p>
 </div>
 </div>
 <div class="voice-feature">
 <div class="vicon">🔊</div>
 <div>
-<h3>高清音质</h3>
-<p>内置高品质扬声器，声音清晰洪亮</p>
+<h3>HD Sound Quality</h3>
+<p>Built-in premium speaker with clear and loud sound</p>
 </div>
 </div>
 <div class="voice-feature">
 <div class="vicon">▣</div>
 <div>
-<h3>简约设计</h3>
-<p>简约面板设计，适配多种装修风格</p>
+<h3>Minimalist Design</h3>
+<p>Minimal panel design fits various interior styles</p>
 </div>
 </div>
 <div class="voice-feature">
 <div class="vicon">✿</div>
 <div>
-<h3>安装便捷</h3>
-<p>标准86底盒，快速安装，稳定可靠</p>
+<h3>Easy Installation</h3>
+<p>Standard 86 back box, quick installation，Stable &amp; Reliable</p>
 </div>
 </div>
 </div>
 </div>
 <div class="voice-card-bottom">
-<div class="voice-mini"><div class="mini-icon">☎</div><div><h4>语音呼叫</h4><p>一键直呼</p></div></div>
-<div class="voice-mini"><div class="mini-icon">◷</div><div><h4>状态指示</h4><p>呼叫状态提示</p></div></div>
-<div class="voice-mini"><div class="mini-icon">✿</div><div><h4>稳定可靠</h4><p>7×24小时运行</p></div></div>
-<div class="voice-mini"><div class="mini-icon">♧</div><div><h4>节能环保</h4><p>低功耗设计</p></div></div>
+<div class="voice-mini"><div class="mini-icon">☎</div><div><h4>Voice Call</h4><p>One-Touch Call</p></div></div>
+<div class="voice-mini"><div class="mini-icon">◷</div><div><h4>Status Indicator</h4><p>Call status indication</p></div></div>
+<div class="voice-mini"><div class="mini-icon">✿</div><div><h4>Stable &amp; Reliable</h4><p>24/7 Operation</p></div></div>
+<div class="voice-mini"><div class="mini-icon">♧</div><div><h4>Energy Saving</h4><p>Low-power design</p></div></div>
 </div>
 </article>
 <article class="voice-card">
-<h2>离线语音</h2>
+<h2>Offline Voice Panel</h2>
 <div class="line"></div>
 <div class="voice-main">
 <div class="voice-img">
-<img alt="语音播报面板" decoding="async" fetchpriority="high" loading="eager" src="11.webp"/>
+<img alt="Voice Broadcast Panel" decoding="async" fetchpriority="high" loading="eager" src="../11.webp"/>
 </div>
 <div class="voice-list">
 <div class="voice-feature">
 <div class="vicon">⌁</div>
 <div>
-<h3>无线连接</h3>
-<p>支持无线联网，远程语音播报</p>
+<h3>Wireless Connection</h3>
+<p>Supports wireless networking and remote voice announcements</p>
 </div>
 </div>
 <div class="voice-feature">
 <div class="vicon">◉</div>
 <div>
-<h3>红外遥控</h3>
-<p>内置码库，支持红外遥控</p>
+<h3>IR Remote Control</h3>
+<p>Built-in code library supports IR remote control</p>
 </div>
 </div>
 <div class="voice-feature">
 <div class="vicon">🔊</div>
 <div>
-<h3>高保真音质</h3>
-<p>高保真扬声器，声音饱满清晰</p>
+<h3>Hi-Fi Sound</h3>
+<p>Hi-Fi speaker with full, clear sound</p>
 </div>
 </div>
 <div class="voice-feature">
 <div class="vicon">⚙</div>
 <div>
-<h3>简易配置</h3>
-<p>手机APP配置，操作简单易用</p>
+<h3>Easy Configuration</h3>
+<p>Mobile app configuration, simple and easy</p>
 </div>
 </div>
 </div>
 </div>
 <div class="voice-card-bottom">
-<div class="voice-mini"><div class="mini-icon">⌁</div><div><h4>无线连接</h4><p>稳定联网</p></div></div>
-<div class="voice-mini"><div class="mini-icon">🔊</div><div><h4>红外遥控</h4><p>内置海量码库</p></div></div>
-<div class="voice-mini"><div class="mini-icon">⌂</div><div><h4>远程管理</h4><p>APP远程控制</p></div></div>
-<div class="voice-mini"><div class="mini-icon">♧</div><div><h4>节能环保</h4><p>低功耗设计</p></div></div>
+<div class="voice-mini"><div class="mini-icon">⌁</div><div><h4>Wireless Connection</h4><p>Stable Networking</p></div></div>
+<div class="voice-mini"><div class="mini-icon">🔊</div><div><h4>IR Remote Control</h4><p>Built-in massive code library</p></div></div>
+<div class="voice-mini"><div class="mini-icon">⌂</div><div><h4>Remote Management</h4><p>Remote control via app</p></div></div>
+<div class="voice-mini"><div class="mini-icon">♧</div><div><h4>Energy Saving</h4><p>Low-power design</p></div></div>
 </div>
 </article>
 </main>
 <section class="bottom-features voice-bottom">
-<div class="bottom-item"><div class="bottom-icon">⚙</div><div><h3>智能交互</h3><p>语音交互，解放双手</p></div></div>
-<div class="bottom-item"><div class="bottom-icon">🔗</div><div><h3>高效便捷</h3><p>提升生活效率，操作更便捷</p></div></div>
-<div class="bottom-item"><div class="bottom-icon">✿</div><div><h3>稳定可靠</h3><p>优质硬件，稳定运行</p></div></div>
-<div class="bottom-item"><div class="bottom-icon">🛡</div><div><h3>安全保护</h3><p>多重防护，隐私安全</p></div></div>
-<div class="bottom-item"><div class="bottom-icon">▣</div><div><h3>广泛适配</h3><p>适配多种场景，灵活应用</p></div></div>
+<div class="bottom-item"><div class="bottom-icon">⚙</div><div><h3>Smart Interaction</h3><p>Voice interaction frees your hands</p></div></div>
+<div class="bottom-item"><div class="bottom-icon">🔗</div><div><h3>Efficient &amp; Convenient</h3><p>Improves efficiency and convenience</p></div></div>
+<div class="bottom-item"><div class="bottom-icon">✿</div><div><h3>Stable &amp; Reliable</h3><p>Quality hardware for stable operation</p></div></div>
+<div class="bottom-item"><div class="bottom-icon">🛡</div><div><h3>Security Protection</h3><p>Multiple protections for privacy and safety</p></div></div>
+<div class="bottom-item"><div class="bottom-icon">▣</div><div><h3>Wide Compatibility</h3><p>Fits multiple scenarios with flexible use</p></div></div>
 </section>
 </section>
 <section class="series" id="socket">
 <div class="hero">
-<h1>插座系列</h1>
-<p>安全用电，智能便捷，打造舒适生活</p>
+<h1>Socket Series</h1>
+<p>Safe power use with smart convenience for comfortable living</p>
 </div>
 <main class="socket-products">
 <article class="socket-card">
-<h2>三孔插座（16A）</h2>
+<h2>3-Pin Socket (16A)</h2>
 <div class="line"></div>
-<div class="image-wrap"><img alt="三孔插座16A" decoding="async" fetchpriority="high" loading="eager" src="12.webp"/></div>
+<div class="image-wrap"><img alt="3-Pin Socket 16A" decoding="async" fetchpriority="high" loading="eager" src="../12.webp"/></div>
 <div class="socket-card-bottom">
-<div class="socket-mini"><div class="mini-icon">🛡</div><h4>安全防护</h4><p>多重保护</p></div>
-<div class="socket-mini"><div class="mini-icon">♨</div><h4>阻燃材料</h4><p>高温阻燃</p></div>
-<div class="socket-mini"><div class="mini-icon">🔌</div><h4>标准孔距</h4><p>国标设计</p></div>
-<div class="socket-mini"><div class="mini-icon">🛠</div><h4>安装便捷</h4><p>快速接线</p></div>
+<div class="socket-mini"><div class="mini-icon">🛡</div><h4>Safety Protection</h4><p>Multiple Protection</p></div>
+<div class="socket-mini"><div class="mini-icon">♨</div><h4>Flame-Retardant Material</h4><p>High-Temperature Flame Retardant</p></div>
+<div class="socket-mini"><div class="mini-icon">🔌</div><h4>Standard Spacing</h4><p>National-standard design</p></div>
+<div class="socket-mini"><div class="mini-icon">🛠</div><h4>Easy Installation</h4><p>Fast Wiring</p></div>
 </div>
 </article>
 <article class="socket-card">
-<h2>五孔插座（10A）</h2>
+<h2>5-Hole Socket (10A)</h2>
 <div class="line"></div>
-<div class="image-wrap"><img alt="五孔插座10A" decoding="async" loading="lazy" src="13.webp"/></div>
+<div class="image-wrap"><img alt="5-Hole Socket 10A" decoding="async" loading="lazy" src="../13.webp"/></div>
 <div class="socket-card-bottom">
-<div class="socket-mini"><div class="mini-icon">🛡</div><h4>安全防护</h4><p>安全用电</p></div>
-<div class="socket-mini"><div class="mini-icon">♨</div><h4>阻燃材料</h4><p>安心可靠</p></div>
-<div class="socket-mini"><div class="mini-icon">🔌</div><h4>标准孔距</h4><p>兼容性强</p></div>
-<div class="socket-mini"><div class="mini-icon">🛠</div><h4>安装便捷</h4><p>轻松安装</p></div>
+<div class="socket-mini"><div class="mini-icon">🛡</div><h4>Safety Protection</h4><p>Safe Power Use</p></div>
+<div class="socket-mini"><div class="mini-icon">♨</div><h4>Flame-Retardant Material</h4><p>Reliable &amp; Secure</p></div>
+<div class="socket-mini"><div class="mini-icon">🔌</div><h4>Standard Spacing</h4><p>Strong Compatibility</p></div>
+<div class="socket-mini"><div class="mini-icon">🛠</div><h4>Easy Installation</h4><p>Easy Installation</p></div>
 </div>
 </article>
 <article class="socket-card">
-<h2>五孔+USB插座（10A）</h2>
+<h2>5-Hole + USB Socket (10A)</h2>
 <div class="line"></div>
-<div class="image-wrap"><img alt="五孔+USB插座10A" decoding="async" loading="lazy" src="14.webp"/></div>
+<div class="image-wrap"><img alt="5-Hole Socket with USB 10A" decoding="async" loading="lazy" src="../14.webp"/></div>
 <div class="socket-card-bottom">
-<div class="socket-mini"><div class="mini-icon">🛡</div><h4>安全防护</h4><p>多重保护</p></div>
-<div class="socket-mini"><div class="mini-icon">🔗</div><h4>双USB接口</h4><p>5V DC 2.4A</p></div>
-<div class="socket-mini"><div class="mini-icon">♨</div><h4>阻燃材料</h4><p>高温阻燃</p></div>
-<div class="socket-mini"><div class="mini-icon">🛠</div><h4>安装便捷</h4><p>快速接线</p></div>
+<div class="socket-mini"><div class="mini-icon">🛡</div><h4>Safety Protection</h4><p>Multiple Protection</p></div>
+<div class="socket-mini"><div class="mini-icon">🔗</div><h4>Dual USB Ports</h4><p>5V DC 2.4A</p></div>
+<div class="socket-mini"><div class="mini-icon">♨</div><h4>Flame-Retardant Material</h4><p>High-Temperature Flame Retardant</p></div>
+<div class="socket-mini"><div class="mini-icon">🛠</div><h4>Easy Installation</h4><p>Fast Wiring</p></div>
 </div>
 </article>
 </main>
 <section class="bottom-features socket-bottom">
-<div class="bottom-item"><div class="bottom-icon">✓</div><div><h3>安全可靠</h3><p>多重防护，使用更安心</p></div></div>
-<div class="bottom-item"><div class="bottom-icon">♧</div><div><h3>节能环保</h3><p>低能耗设计，绿色节能</p></div></div>
-<div class="bottom-item"><div class="bottom-icon">▥</div><div><h3>稳定耐用</h3><p>优质材料，持久耐用</p></div></div>
-<div class="bottom-item"><div class="bottom-icon">🛠</div><div><h3>安装便捷</h3><p>标准86底盒，轻松安装</p></div></div>
-<div class="bottom-item"><div class="bottom-icon">🛡</div><div><h3>品质保证</h3><p>严格质检，品质保障</p></div></div>
+<div class="bottom-item"><div class="bottom-icon">✓</div><div><h3>Safe &amp; Reliable</h3><p>Multiple protections for safer use</p></div></div>
+<div class="bottom-item"><div class="bottom-icon">♧</div><div><h3>Energy Saving</h3><p>Low-energy design, green and efficient</p></div></div>
+<div class="bottom-item"><div class="bottom-icon">▥</div><div><h3>Stable &amp; Durable</h3><p>Quality materials for durability</p></div></div>
+<div class="bottom-item"><div class="bottom-icon">🛠</div><div><h3>Easy Installation</h3><p>Standard 86 back box, easy installation</p></div></div>
+<div class="bottom-item"><div class="bottom-icon">🛡</div><div><h3>Quality Assurance</h3><p>Strict quality inspection and assurance</p></div></div>
 </section>
 </section>
 <section class="series" id="network">
 <div class="hero">
-<h1>网络覆盖系列</h1>
-<p>高速组网，稳定覆盖，满足酒店、公寓及智能空间部署需求</p>
+<h1>Network Coverage Series</h1>
+<p>High-speed networking and stable coverage for hotels, apartments, and smart-space deployments</p>
 </div>
 <main class="panel-products">
 <article class="panel-card">
-<div class="image-wrap"><img alt="吸顶AP" src="19.webp"/></div>
-<h2>吸顶AP</h2>
+<div class="image-wrap"><img alt="Ceiling AP" src="../19.webp"/></div>
+<h2>Ceiling AP</h2>
 <div class="line"></div>
-<p>吸顶设计，支持WiFi6高速无线覆盖，适用于酒店公区与办公场景。</p>
+<p>Ceiling-mounted design with WiFi 6 high-speed coverage for hotel public areas and offices.</p>
 </article>
 <article class="panel-card">
-<div class="image-wrap"><img alt="墙装AP" src="20.webp"/></div>
-<h2>墙装AP</h2>
+<div class="image-wrap"><img alt="Wall-Mounted AP" src="../20.webp"/></div>
+<h2>Wall-Mounted AP</h2>
 <div class="line"></div>
-<p>集成网络接口与无线覆盖能力，POE供电，部署简单，兼顾美观与性能。</p>
+<p>Integrated network interface and wireless coverage with PoE power for easy deployment, aesthetics, and performance.</p>
 </article>
 <article class="panel-card">
-<div class="image-wrap"><img alt="9口 PoE管理机" src="21.webp"/></div>
-<h2>9口 PoE管理机</h2>
+<div class="image-wrap"><img alt="9-Port PoE Managed Switch" src="../21.webp"/></div>
+<h2>9-Port PoE Managed Switch</h2>
 <div class="line"></div>
-<p>支持PoE供电与集中管理，为AP及智能终端提供稳定网络接入。</p>
+<p>Supports PoE power and centralized management for stable network access to APs and smart terminals.</p>
 </article>
 <article class="panel-card">
-<div class="image-wrap"><img alt="5口 PoE管理机" src="22.webp"/></div>
-<h2>5口 PoE管理机</h2>
+<div class="image-wrap"><img alt="5-Port PoE Managed Switch" src="../22.webp"/></div>
+<h2>5-Port PoE Managed Switch</h2>
 <div class="line"></div>
-<p>统一管理无线网络设备，实现集中配置、监控与运维管理。</p>
+<p>Unified wireless device management for centralized configuration, monitoring, and O&amp;M.</p>
 </article>
 </main>
 <section class="bottom-features panel-bottom">
-<div class="bottom-item"><div class="bottom-icon">📶</div><div><h3>WiFi6覆盖</h3><p>高速稳定无线连接</p></div></div>
-<div class="bottom-item"><div class="bottom-icon">⚡</div><div><h3>PoE供电</h3><p>简化施工布线</p></div></div>
-<div class="bottom-item"><div class="bottom-icon">🌐</div><div><h3>统一组网</h3><p>多设备集中管理</p></div></div>
-<div class="bottom-item"><div class="bottom-icon">🛡</div><div><h3>稳定可靠</h3><p>企业级网络架构</p></div></div>
-<div class="bottom-item"><div class="bottom-icon">🏨</div><div><h3>酒店应用</h3><p>适合酒店公寓项目</p></div></div>
+<div class="bottom-item"><div class="bottom-icon">📶</div><div><h3>WiFi 6 Coverage</h3><p>Fast, stable wireless connection</p></div></div>
+<div class="bottom-item"><div class="bottom-icon">⚡</div><div><h3>PoE Power Supply</h3><p>Simplifies installation wiring</p></div></div>
+<div class="bottom-item"><div class="bottom-icon">🌐</div><div><h3>Unified Networking</h3><p>Centralized multi-device management</p></div></div>
+<div class="bottom-item"><div class="bottom-icon">🛡</div><div><h3>Stable &amp; Reliable</h3><p>Enterprise-grade network architecture</p></div></div>
+<div class="bottom-item"><div class="bottom-icon">🏨</div><div><h3>Hotel Applications</h3><p>Suitable for hotel and apartment projects</p></div></div>
 </section>
 </section>
 <section class="series" id="other">
 <div class="hero">
-<h1>其他系列</h1>
-<p>多样化智能配件，满足不同场景需求</p>
+<h1>Other Series</h1>
+<p>Diverse smart accessories for different application scenarios</p>
 </div>
 <main class="other-products">
 <article class="other-card">
-<h2>紧急呼叫面板</h2>
+<h2>Emergency Call Panel</h2>
 <div class="line"></div>
-<div class="image-wrap"><img alt="紧急呼叫面板" decoding="async" loading="lazy" src="9.webp"/></div>
+<div class="image-wrap"><img alt="Emergency Call Panel" decoding="async" loading="lazy" src="../9.webp"/></div>
 <div class="other-card-bottom">
-<div class="other-mini"><div class="mini-icon">🔔</div><h4>紧急呼叫</h4><p>一键呼叫求助</p></div>
-<div class="other-mini"><div class="mini-icon">🛡</div><h4>安全可靠</h4><p>稳定耐用</p></div>
-<div class="other-mini"><div class="mini-icon">✿</div><h4>简约设计</h4><p>美观大方</p></div>
-<div class="other-mini"><div class="mini-icon">♧</div><h4>低功耗</h4><p>节能环保</p></div>
+<div class="other-mini"><div class="mini-icon">🔔</div><h4>Emergency Call</h4><p>One-touch emergency assistance</p></div>
+<div class="other-mini"><div class="mini-icon">🛡</div><h4>Safe &amp; Reliable</h4><p>Stable &amp; Durable</p></div>
+<div class="other-mini"><div class="mini-icon">✿</div><h4>Minimalist Design</h4><p>Elegant and clean design</p></div>
+<div class="other-mini"><div class="mini-icon">♧</div><h4>Low Power</h4><p>Energy Saving</p></div>
 </div>
 </article>
 <article class="other-card">
-<h2>酒店插卡取电开关</h2>
+<h2>Hotel Key Card Power Switch</h2>
 <div class="line"></div>
-<div class="image-wrap"><img alt="酒店插卡取电开关" decoding="async" loading="lazy" src="16.webp"/></div>
+<div class="image-wrap"><img alt="Hotel Key Card Power Switch" decoding="async" loading="lazy" src="../16.webp"/></div>
 <div class="other-card-bottom">
-<div class="other-mini"><div class="mini-icon">💳</div><h4>插卡取电</h4><p>插卡通电</p></div>
-<div class="other-mini"><div class="mini-icon">🛡</div><h4>安全节能</h4><p>节能环保</p></div>
-<div class="other-mini"><div class="mini-icon">◷</div><h4>延时断电</h4><p>延时设计</p></div>
-<div class="other-mini"><div class="mini-icon">♨</div><h4>阻燃材料</h4><p>防火阻燃</p></div>
+<div class="other-mini"><div class="mini-icon">💳</div><h4>Key Card Power Switch</h4><p>Power on by card insertion</p></div>
+<div class="other-mini"><div class="mini-icon">🛡</div><h4>Safe &amp; Energy Saving</h4><p>Energy Saving</p></div>
+<div class="other-mini"><div class="mini-icon">◷</div><h4>Delayed Power-Off</h4><p>Delay-off design</p></div>
+<div class="other-mini"><div class="mini-icon">♨</div><h4>Flame-Retardant Material</h4><p>Flame-retardant protection</p></div>
 </div>
 </article>
 <article class="other-card">
-<h2>弱电信息插座（网口）</h2>
+<h2>Low-Voltage Data Socket (RJ45)</h2>
 <div class="line"></div>
-<div class="image-wrap"><img alt="弱电信息插座" decoding="async" loading="lazy" src="15.webp"/></div>
+<div class="image-wrap"><img alt="Low-Voltage Data Socket" decoding="async" loading="lazy" src="../15.webp"/></div>
 <div class="other-card-bottom">
-<div class="other-mini"><div class="mini-icon">⌘</div><h4>网络接口</h4><p>稳定传输</p></div>
-<div class="other-mini"><div class="mini-icon">📶</div><h4>高速传输</h4><p>性能稳定</p></div>
-<div class="other-mini"><div class="mini-icon">🛡</div><h4>安全防护</h4><p>防尘防护</p></div>
-<div class="other-mini"><div class="mini-icon">🛠</div><h4>安装便捷</h4><p>标准86底盒</p></div>
+<div class="other-mini"><div class="mini-icon">⌘</div><h4>Network Interface</h4><p>Stable transmission</p></div>
+<div class="other-mini"><div class="mini-icon">📶</div><h4>High-Speed Transmission</h4><p>Stable performance</p></div>
+<div class="other-mini"><div class="mini-icon">🛡</div><h4>Safety Protection</h4><p>Dust protection</p></div>
+<div class="other-mini"><div class="mini-icon">🛠</div><h4>Easy Installation</h4><p>Standard 86 back box</p></div>
 </div>
 </article>
 </main>
 <section class="bottom-features other-bottom">
-<div class="bottom-item"><div class="bottom-icon">✓</div><div><h3>安全可靠</h3><p>多重防护，使用更安心</p></div></div>
-<div class="bottom-item"><div class="bottom-icon">♧</div><div><h3>节能环保</h3><p>低能耗设计，绿色节能</p></div></div>
-<div class="bottom-item"><div class="bottom-icon">▥</div><div><h3>稳定耐用</h3><p>优质材料，持久耐用</p></div></div>
-<div class="bottom-item"><div class="bottom-icon">🛠</div><div><h3>安装便捷</h3><p>标准86底盒，轻松安装</p></div></div>
-<div class="bottom-item"><div class="bottom-icon">🛡</div><div><h3>品质保证</h3><p>严格质检，品质保障</p></div></div>
+<div class="bottom-item"><div class="bottom-icon">✓</div><div><h3>Safe &amp; Reliable</h3><p>Multiple protections for safer use</p></div></div>
+<div class="bottom-item"><div class="bottom-icon">♧</div><div><h3>Energy Saving</h3><p>Low-energy design, green and efficient</p></div></div>
+<div class="bottom-item"><div class="bottom-icon">▥</div><div><h3>Stable &amp; Durable</h3><p>Quality materials for durability</p></div></div>
+<div class="bottom-item"><div class="bottom-icon">🛠</div><div><h3>Easy Installation</h3><p>Standard 86 back box, easy installation</p></div></div>
+<div class="bottom-item"><div class="bottom-icon">🛡</div><div><h3>Quality Assurance</h3><p>Strict quality inspection and assurance</p></div></div>
 </section>
 </section>
 <script>

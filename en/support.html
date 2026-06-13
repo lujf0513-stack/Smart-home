@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 
-<html lang="zh-CN">
+<html lang="en">
 <head>
 <meta charset="utf-8"/>
 
-<link rel="icon" type="image/svg+xml" href="assets/favicon.svg?v=4"/>
-<title>支持服务 - 思辰微智能</title>
+<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg?v=4"/>
+<title>Support - SCW Smart</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{
@@ -91,7 +91,7 @@ display:grid;
 grid-template-columns:1.2fr .8fr;
 background:
 linear-gradient(90deg,rgba(2,8,23,.95),rgba(2,8,23,.35)),
-url('assets/image_11_.webp');
+url('../assets/image_11_.webp');
 background-size:cover;
 background-position:center;
 border:1px solid rgba(59,130,246,.16);
@@ -944,6 +944,26 @@ body{
 @media(max-width:768px){.lang-toggle{height:32px !important;min-width:46px;padding:0 11px !important;font-size:12px}}
 
 
+
+/* Static English page fixes */
+html[lang="en"] .nav-links{gap:42px;font-size:17px;}
+html[lang="en"] .contact{padding-left:24px;padding-right:24px;}
+html[lang="en"] .lang-toggle{white-space:nowrap;}
+@media(max-width:768px){html[lang="en"] .nav-links{gap:18px;font-size:15px;}}
+html[lang="en"] .hero h1{font-size:clamp(42px,5vw,62px);letter-spacing:-.03em;}
+html[lang="en"] .hero h2{font-size:24px;}
+html[lang="en"] .tab{font-size:18px;}
+html[lang="en"] .sidebar h3{font-size:23px;}
+html[lang="en"] .menu-item{font-size:15px;}
+html[lang="en"] .cards{grid-template-columns:repeat(3,minmax(0,1fr));}
+html[lang="en"] .card{padding:24px;}
+html[lang="en"] .card h4{font-size:18px;}
+html[lang="en"] .help h3{font-size:32px;}
+html[lang="en"] .wechat h4{font-size:28px;white-space:normal;}
+@media(max-width:1200px){html[lang="en"] .cards{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:768px){html[lang="en"] .cards{grid-template-columns:1fr;}html[lang="en"] .hero h1{font-size:40px;}}
+
+
 /* ===== bilingual WeChat card overflow final fix ===== */
 .bottom-rebuild{
   grid-template-columns:minmax(0,1.18fr) minmax(0,.82fr);
@@ -998,115 +1018,114 @@ html[lang="en"] .wechat-tags span{
   html[lang="zh-CN"] .wechat-copy h4,
   html[lang="en"] .wechat-copy h4{white-space:normal;font-size:28px;}
 }
-
 </style>
 </head>
 <body>
 <div class="container">
 <!-- Site navigation -->
 <nav aria-label="主导航" class="nav">
-<div class="logo"><img alt="" src="assets/logo.svg" style="width:24px;height:24px;display:block;flex:0 0 24px;"/>思辰微智能</div>
+<div class="logo"><img alt="" src="../assets/logo.svg" style="width:24px;height:24px;display:block;flex:0 0 24px;"/>SCW Smart</div>
 <div class="nav-links">
-<a href="index.html">首页</a>
-<a href="products.html">产品中心</a>
-<a href="solutions.html">解决方案</a>
-<a class="active" href="support.html">支持服务</a>
-<a href="about.html">关于我们</a>
+<a href="index.html">Home</a>
+<a href="products.html">Products</a>
+<a href="solutions.html">Solutions</a>
+<a class="active" href="support.html">Support</a>
+<a href="about.html">About Us</a>
 </div>
-<a class="contact" href="contact.html">联系我们</a>
-<a class="lang-toggle" href="en/support.html">EN</a></nav>
+<a class="contact" href="contact.html">Contact Us</a>
+<a class="lang-toggle" href="../support.html">中文</a></nav>
 <!-- Hero / page introduction -->
 <section class="hero">
 <div class="hero-left">
-<h1>技术支持中心</h1>
-<h2>专业文档 · 常见问题 · 公众号文章</h2>
-<p>为您提供全面的技术支持与服务，帮助您更好地使用我们的产品与解决方案。</p>
+<h1>Technical Support Center</h1>
+<h2>Professional Docs · FAQs · WeChat Articles</h2>
+<p>We provide comprehensive technical support and services to help you use our products and solutions better.</p>
 </div>
 <div class="hero-right">
-<img alt="客服支持" src="assets/a_clean_modern_website_ui_screenshot_landing_pa.webp"/>
+<img alt="客服支持" src="../assets/a_clean_modern_website_ui_screenshot_landing_pa.webp"/>
 </div>
 </section>
 <!-- Support content tabs -->
 <section class="tabs">
-<button class="tab active" data-tab="docs" type="button">📄 技术文档</button>
-<button class="tab" data-tab="faq" type="button">❔ 常见问题</button>
-<button class="tab" data-tab="wechat" type="button">💬 公众号文章</button>
+<button class="tab active" data-tab="docs" type="button">📄 Technical Docs</button>
+<button class="tab" data-tab="faq" type="button">❔ FAQs</button>
+<button class="tab" data-tab="wechat" type="button">💬 WeChat Articles</button>
 </section>
 <section class="main">
 <aside class="sidebar">
-<h3>文档分类</h3>
+<h3>Document Categories</h3>
 <div class="menu">
-<div class="menu-item active">🛠 安装指南 <span>›</span></div>
-<div class="menu-item">📷 设备配置 <span>›</span></div>
-<div class="menu-item">⚙ 功能说明 <span>›</span></div>
-<div class="menu-item">⭕ 故障处理 <span>›</span></div>
-<div class="menu-item">▶ 视频教程 <span>›</span></div>
-<div class="menu-item">⬇ 下载中心 <span>›</span></div>
+<div class="menu-item active">🛠 Installation Guide <span>›</span></div>
+<div class="menu-item">📷 Device Configuration <span>›</span></div>
+<div class="menu-item">⚙ Feature Description <span>›</span></div>
+<div class="menu-item">⭕ Troubleshooting <span>›</span></div>
+<div class="menu-item">▶ Video Tutorials <span>›</span></div>
+<div class="menu-item">⬇ Download Center <span>›</span></div>
 </div>
 </aside>
 <div class="right">
-<input class="search" id="supportSearch" placeholder="搜索文档关键词..."/>
+<input class="search" id="supportSearch" placeholder="Search document keywords..."/>
 <div class="tab-panel active" data-panel="docs">
 <div class="cards">
 <div class="card">
 <div class="card-top">
 <div class="icon blue">📘</div>
 <div>
-<h4>网关安装指南</h4>
-<p>详细介绍智能网关安装、联网与系统配置流程</p>
+<h4>Gateway Installation Guide</h4>
+<p>Detailed guide to smart gateway installation, networking, and system configuration</p>
 </div>
 </div>
-<small>更新于 2024-05-20</small>
+<small>Updated on 2024-05-20</small>
 </div>
 <div class="card">
 <div class="card-top">
 <div class="icon green">📶</div>
 <div>
-<h4>设备配网教程</h4>
-<p>一步步教您如何添加设备到系统</p>
+<h4>Device Pairing Tutorial</h4>
+<p>Step-by-step guide to adding devices to the system</p>
 </div>
 </div>
-<small>更新于 2024-05-18</small>
+<small>Updated on 2024-05-18</small>
 </div>
 <div class="card">
 <div class="card-top">
 <div class="icon purple">🎚</div>
 <div>
-<h4>场景设置说明</h4>
-<p>自定义场景与自动化联动配置方法</p>
+<h4>Scene Setup Guide</h4>
+<p>How to configure custom scenes and automation linkage</p>
 </div>
 </div>
-<small>更新于 2024-05-15</small>
+<small>Updated on 2024-05-15</small>
 </div>
 <div class="card">
 <div class="card-top">
 <div class="icon orange">⬆</div>
 <div>
-<h4>固件升级说明</h4>
-<p>设备 OTA 升级操作指南</p>
+<h4>Firmware Upgrade Guide</h4>
+<p>Device OTA upgrade operation guide</p>
 </div>
 </div>
-<small>更新于 2024-05-12</small>
+<small>Updated on 2024-05-12</small>
 </div>
 <div class="card">
 <div class="card-top">
 <div class="icon red">❗</div>
 <div>
-<h4>常见故障处理</h4>
-<p>常见问题与解决方案汇总</p>
+<h4>Common Troubleshooting</h4>
+<p>Summary of common problems and solutions</p>
 </div>
 </div>
-<small>更新于 2024-05-10</small>
+<small>Updated on 2024-05-10</small>
 </div>
 <div class="card">
 <div class="card-top">
 <div class="icon deepblue">▶</div>
 <div>
-<h4>视频操作指南</h4>
-<p>视频演示设备配置与使用方法</p>
+<h4>Video Operation Guide</h4>
+<p>Video demonstration of device configuration and use</p>
 </div>
 </div>
-<small>更新于 2024-05-08</small>
+<small>Updated on 2024-05-08</small>
 </div>
 </div>
 </div>
@@ -1116,61 +1135,61 @@ html[lang="en"] .wechat-tags span{
 <div class="card-top">
 <div class="icon blue">🔌</div>
 <div>
-<h4>设备无法联网怎么办？</h4>
-<p>请确认网关在线、Wi-Fi 信号稳定，并重新执行设备配网流程。</p>
+<h4>What if the device cannot connect?</h4>
+<p>Please confirm the gateway is online, Wi-Fi signal is stable, and repeat device pairing.</p>
 </div>
 </div>
-<small>建议优先检查网络环境</small>
+<small>Check the network environment first</small>
 </div>
 <div class="card">
 <div class="card-top">
 <div class="icon green">📱</div>
 <div>
-<h4>手机无法添加设备？</h4>
-<p>检查蓝牙、定位权限是否开启，设备是否处于待配网状态。</p>
+<h4>Phone cannot add device?</h4>
+<p>Check whether Bluetooth and location permissions are enabled and whether the device is in pairing mode.</p>
 </div>
 </div>
-<small>适用于 App 添加失败</small>
+<small>For app pairing failures</small>
 </div>
 <div class="card">
 <div class="card-top">
 <div class="icon purple">🏨</div>
 <div>
-<h4>酒店场景如何联动？</h4>
-<p>可通过网关、面板、门磁、温控等设备设置自动化场景。</p>
+<h4>How do hotel scenes link together?</h4>
+<p>Automation scenes can be set using gateways, panels, door sensors, thermostats, and other devices.</p>
 </div>
 </div>
-<small>适用于客房智能控制</small>
+<small>For smart guest-room control</small>
 </div>
 <div class="card">
 <div class="card-top">
 <div class="icon orange">⚙</div>
 <div>
-<h4>设备离线如何处理？</h4>
-<p>请检查供电、网关距离、网络状态，必要时重启设备和网关。</p>
+<h4>How to handle offline devices?</h4>
+<p>Check power supply, gateway distance, and network status; restart devices and gateway if needed.</p>
 </div>
 </div>
-<small>适用于设备离线</small>
+<small>For offline devices</small>
 </div>
 <div class="card">
 <div class="card-top">
 <div class="icon red">🔁</div>
 <div>
-<h4>如何恢复出厂设置？</h4>
-<p>长按设备按键进入重置模式，具体时长以产品说明为准。</p>
+<h4>How to restore factory settings?</h4>
+<p>Press and hold the device button to enter reset mode; exact duration depends on the product manual.</p>
 </div>
 </div>
-<small>重置前请确认数据备份</small>
+<small>Confirm data backup before reset</small>
 </div>
 <div class="card">
 <div class="card-top">
 <div class="icon deepblue">💡</div>
 <div>
-<h4>灯光无法响应？</h4>
-<p>检查开关线路、设备绑定状态及场景自动化配置是否正确。</p>
+<h4>Light does not respond?</h4>
+<p>Check switch wiring, device binding status, and scene automation configuration.</p>
 </div>
 </div>
-<small>适用于灯控类产品</small>
+<small>For lighting-control products</small>
 </div>
 </div>
 </div>
@@ -1180,31 +1199,31 @@ html[lang="en"] .wechat-tags span{
 <div class="card-top">
 <div class="icon green">📰</div>
 <div>
-<h4>公众号文章入口</h4>
-<p>可放置微信公众号文章标题与跳转链接，方便客户查看产品教程。</p>
+<h4>WeChat Article Entry</h4>
+<p>Place WeChat article titles and links here for customers to view product tutorials.</p>
 </div>
 </div>
-<small>建议后续替换为真实文章链接</small>
+<small>Replace with real article links later</small>
 </div>
 <div class="card article-card">
 <div class="card-top">
 <div class="icon blue">🏨</div>
 <div>
-<h4>酒店智能控制方案</h4>
-<p>介绍客控系统、智能面板、网关及场景联动的应用方式。</p>
+<h4>Hotel Smart Control Solution</h4>
+<p>Introduces guest-room control systems, smart panels, gateways, and scene linkage applications.</p>
 </div>
 </div>
-<small>公众号文章</small>
+<small>WeChat Article</small>
 </div>
 <div class="card article-card">
 <div class="card-top">
 <div class="icon purple">📘</div>
 <div>
-<h4>产品安装与配置教程</h4>
-<p>整理常用设备安装、配网、调试与维护说明。</p>
+<h4>Product Installation &amp; Configuration Tutorial</h4>
+<p>Covers installation, pairing, debugging, and maintenance for common devices.</p>
 </div>
 </div>
-<small>公众号文章</small>
+<small>WeChat Article</small>
 </div>
 </div>
 </div>
@@ -1216,21 +1235,21 @@ html[lang="en"] .wechat-tags span{
 <div class="support-main">
 <div class="support-icon">🎧</div>
 <div class="support-copy">
-<h3>需要更多帮助?</h3>
-<p>我们的技术支持团队随时为您服务</p>
+<h3>Need More Help?</h3>
+<p>Our technical support team is ready to help</p>
 </div>
 </div>
-<a class="support-btn" href="#">提交工单</a>
+<a class="support-btn" href="#">Submit Ticket</a>
 </div>
 <div class="wechat-card">
-<img alt="微信公众号二维码" class="qr-img" src="assets/WECHAT.webp"/>
+<img alt="微信公众号二维码" class="qr-img" src="../assets/WECHAT.webp"/>
 <div class="wechat-copy">
-<h4>思辰微创客实验室</h4>
-<p>微信扫一扫关注公众号</p>
+<h4>SCW Maker Lab</h4>
+<p>Scan WeChat to follow our official account</p>
 <div class="wechat-tags">
-<span>产品教程</span>
-<span>更新资讯</span>
-<span>技术支持</span>
+<span>Product Tutorials</span>
+<span>Updates</span>
+<span>Technical Support</span>
 </div>
 </div>
 </div>
@@ -1244,9 +1263,9 @@ document.addEventListener('DOMContentLoaded', function () {
   const search = document.getElementById('supportSearch');
 
   const placeholders = {
-    docs: '搜索技术文档关键词...',
-    faq: '搜索常见问题关键词...',
-    wechat: '搜索公众号文章关键词...'
+    docs: 'Search technical docs...',
+    faq: 'Search FAQs...',
+    wechat: 'Search WeChat articles...'
   };
 
   /* Activate one support tab and reset the search field for that content type. */
@@ -1258,7 +1277,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     if (search) {
       search.value = '';
-      search.placeholder = placeholders[key] || '搜索关键词...';
+      search.placeholder = placeholders[key] || 'Search keywords...';
     }
   };
 

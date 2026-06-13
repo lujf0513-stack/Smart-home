@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 
-<html lang="zh-CN">
+<html lang="en">
 <head>
 <meta charset="utf-8"/>
 
-<link rel="icon" type="image/svg+xml" href="assets/favicon.svg?v=4"/>
-<title>联系我们 - 思辰微智能</title>
+<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg?v=4"/>
+<title>Contact Us - SCW Smart</title>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
@@ -554,55 +554,69 @@ body{
 }
 @media(max-width:768px){.lang-toggle{height:32px !important;min-width:46px;padding:0 11px !important;font-size:12px}}
 
+
+
+/* Static English page fixes */
+html[lang="en"] .nav-links{gap:42px;font-size:17px;}
+html[lang="en"] .contact{padding-left:24px;padding-right:24px;}
+html[lang="en"] .lang-toggle{white-space:nowrap;}
+@media(max-width:768px){html[lang="en"] .nav-links{gap:18px;font-size:15px;}}
+html[lang="en"] .copy h1{font-size:clamp(38px,4vw,58px);letter-spacing:-.03em;}
+html[lang="en"] .copy h1 span{letter-spacing:-.01em;white-space:normal;}
+html[lang="en"] .copy p{font-size:18px;line-height:1.72;}
+html[lang="en"] .quick-card h3{font-size:21px;}
+html[lang="en"] .quick-item b{font-size:15px;}
+html[lang="en"] .qr-panel h2{font-size:28px;}
+@media(max-width:760px){html[lang="en"] .copy h1{font-size:36px;}}
 </style>
 </head>
 <body>
 <section class="page">
 <!-- Site navigation -->
 <nav aria-label="主导航" class="nav">
-<div class="logo"><img alt="" src="assets/logo.svg" style="width:24px;height:24px;display:block;flex:0 0 24px;"/>思辰微智能</div>
+<div class="logo"><img alt="" src="../assets/logo.svg" style="width:24px;height:24px;display:block;flex:0 0 24px;"/>SCW Smart</div>
 <div class="nav-links">
-<a href="index.html">首页</a>
-<a href="products.html">产品中心</a>
-<a href="solutions.html">解决方案</a>
-<a href="support.html">支持服务</a>
-<a href="about.html">关于我们</a>
+<a href="index.html">Home</a>
+<a href="products.html">Products</a>
+<a href="solutions.html">Solutions</a>
+<a href="support.html">Support</a>
+<a href="about.html">About Us</a>
 </div>
-<a class="contact active" href="contact.html">联系我们</a>
-<a class="lang-toggle" href="en/contact.html">EN</a></nav>
+<a class="contact active" href="contact.html">Contact Us</a>
+<a class="lang-toggle" href="../contact.html">中文</a></nav>
 <main class="hero">
 <section class="hero-main">
 <div class="copy">
 <div class="eyebrow">CONTACT US</div>
-<h1>联系我们<span>获取智能方案支持</span></h1>
-<p>面向酒店、公寓、办公与智能家居项目，提供产品选型、方案设计、工程对接与技术支持。欢迎通过电话、邮箱或微信与我们沟通需求。</p>
+<h1>Contact Us<span>Get Smart Solution Support</span></h1>
+<p>For hotel, apartment, office, and smart-home projects, we provide product selection, solution design, project coordination, and technical support. Contact us by phone, email, or WeChat to discuss your needs.</p>
 <div class="actions">
-<a class="btn primary" href="tel:+8618036116161">立即电话咨询</a>
-<a class="btn ghost" href="mailto:contact@scw-smart.cn">发送邮件</a>
+<a class="btn primary" href="tel:+8618036116161">Call Now</a>
+<a class="btn ghost" href="mailto:contact@scw-smart.cn">Send Email</a>
 </div>
 </div>
 <div class="quick-card">
-<h3>快速联系</h3>
+<h3>Quick Contact</h3>
 <div class="quick-list">
 <a class="quick-item" href="tel:+8618036116161">
 <div class="quick-icon">☎</div>
 <div>
-<b>电话咨询</b>
+<b>Phone Consultation</b>
 <span>+86 18036116161</span>
 </div>
 </a>
 <a class="quick-item" href="mailto:contact@scw-smart.cn">
 <div class="quick-icon">✉</div>
 <div>
-<b>邮箱联系</b>
+<b>Email Contact</b>
 <span>contact@scw-smart.cn</span>
 </div>
 </a>
 <div class="quick-item">
 <div class="quick-icon">💬</div>
 <div>
-<b>微信沟通</b>
-<span>扫码添加，沟通项目需求</span>
+<b>WeChat Communication</b>
+<span>Scan to add us and discuss project needs</span>
 </div>
 </div>
 </div>
@@ -610,14 +624,14 @@ body{
 </section>
 <aside class="qr-panel">
 <div class="qr-box">
-<img alt="微信二维码" src="assets/wechat-contact.webp"/>
+<img alt="微信二维码" src="../assets/wechat-contact.webp"/>
 </div>
-<h2>微信扫码咨询</h2>
-<p>添加微信，适合项目需求沟通、产品选型与技术支持。</p>
+<h2>Consult via WeChat</h2>
+<p>Add us on WeChat for project consultation, product selection, and technical support.</p>
 <div class="qr-tags">
-<span>项目合作</span>
-<span>产品选型</span>
-<span>技术支持</span>
+<span>Project Cooperation</span>
+<span>Product Selection</span>
+<span>Technical Support</span>
 </div>
 </aside>
 </main>

@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 
-<html lang="zh-CN">
+<html lang="en">
 <head>
 <meta charset="utf-8"/>
 
-<link rel="icon" type="image/svg+xml" href="assets/favicon.svg?v=4"/>
-<title>SCW Smart Life</title>
+<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg?v=4"/>
+<title>SCW Smart - Home</title>
 <style>
 *{
   box-sizing:border-box;
@@ -802,78 +802,90 @@ body{
 }
 @media(max-width:768px){.lang-toggle{height:32px !important;min-width:46px;padding:0 11px !important;font-size:12px}}
 
+
+
+/* English homepage layout fixes */
+html[lang="en"] .nav-links{gap:42px;font-size:17px;}
+html[lang="en"] .copy h1{font-size:clamp(42px,4.4vw,68px);letter-spacing:-.035em;}
+html[lang="en"] .copy h1 span{padding-left:0;letter-spacing:-.02em;white-space:normal;}
+html[lang="en"] .copy p{font-size:19px;line-height:1.72;}
+html[lang="en"] .feature h3{font-size:18px;}
+html[lang="en"] .feature small{font-size:13px;}
+html[lang="en"] .name-badge{font-size:13px;padding:10px 16px;}
+html[lang="en"] .bottom-item h3{font-size:17px;}
+html[lang="en"] .bottom-item p{font-size:13px;}
+@media(max-width:1100px){html[lang="en"] .copy h1{font-size:clamp(38px,8vw,58px);}}
+@media(max-width:768px){html[lang="en"] .nav-links{gap:18px;font-size:15px;}html[lang="en"] .copy p{font-size:16px;}}
 </style>
 <!-- 图片加载优化：优先加载首屏关键图片 -->
-<link as="image" href="1.webp" rel="preload"/>
-<link as="image" href="2.webp" rel="preload"/>
-<link as="image" href="3.webp" rel="preload"/>
-<link as="image" href="4.webp" rel="preload"/>
-<link as="image" href="5.webp" rel="preload"/>
-<link as="image" href="6.webp" rel="preload"/>
-<link as="image" href="7.webp" rel="preload"/>
-<link as="image" href="8.webp" rel="preload"/>
-<link as="image" href="9.webp" rel="preload"/>
-<link as="image" href="10.webp" rel="preload"/>
-<link as="image" href="11.webp" rel="preload"/>
-<link as="image" href="12.webp" rel="preload"/>
-<link as="image" href="13.webp" rel="preload"/>
-<link as="image" href="14.webp" rel="preload"/>
-<link as="image" href="15.webp" rel="preload"/>
-<link as="image" href="16.webp" rel="preload"/>
-<link as="image" href="17.webp" rel="preload"/>
+<link as="image" href="../1.webp" rel="preload"/>
+<link as="image" href="../2.webp" rel="preload"/>
+<link as="image" href="../3.webp" rel="preload"/>
+<link as="image" href="../4.webp" rel="preload"/>
+<link as="image" href="../5.webp" rel="preload"/>
+<link as="image" href="../6.webp" rel="preload"/>
+<link as="image" href="../7.webp" rel="preload"/>
+<link as="image" href="../8.webp" rel="preload"/>
+<link as="image" href="../9.webp" rel="preload"/>
+<link as="image" href="../10.webp" rel="preload"/>
+<link as="image" href="../11.webp" rel="preload"/>
+<link as="image" href="../12.webp" rel="preload"/>
+<link as="image" href="../13.webp" rel="preload"/>
+<link as="image" href="../14.webp" rel="preload"/>
+<link as="image" href="../15.webp" rel="preload"/>
+<link as="image" href="../16.webp" rel="preload"/>
+<link as="image" href="../17.webp" rel="preload"/>
 <meta content="public, max-age=604800" http-equiv="Cache-Control"/>
 </head>
 <body>
 <!-- Hero / page introduction -->
 <section class="hero">
 <!-- Site navigation -->
-<nav aria-label="主导航" class="nav">
-<div class="logo"><img alt="" src="assets/logo.svg" style="width:24px;height:24px;display:block;flex:0 0 24px;"/>思辰微智能</div>
+<nav aria-label="Main navigation" class="nav">
+<div class="logo"><img alt="" src="../assets/logo.svg" style="width:24px;height:24px;display:block;flex:0 0 24px;"/>SCW Smart</div>
 <div class="nav-links">
-<a class="active" href="index.html">首页</a>
-<a href="products.html">产品中心</a>
-<a href="solutions.html">解决方案</a>
-<a href="support.html">支持服务</a>
-<a href="about.html">关于我们</a>
+<a class="active" href="index.html">Home</a>
+<a href="products.html">Products</a>
+<a href="solutions.html">Solutions</a>
+<a href="support.html">Support</a>
+<a href="about.html">About Us</a>
 </div>
-<a class="contact" href="contact.html">联系我们</a>
-<a class="lang-toggle" href="en/index.html">EN</a></nav>
+<a class="contact" href="contact.html">Contact Us</a>
+<a class="lang-toggle" href="../index.html">中文</a></nav>
 <div class="layout">
 <!-- 左侧 -->
 <div class="copy">
 <h1>
-        让生活更简单
-        <span>使酒店更智能</span>
+        Make Life Simpler
+        <span>Make Hotels Smarter</span>
 </h1>
 <p>
-        以智能面板、温控、场景联动为核心，
-        打造安全稳定、简约大气、易安装、
-        经久耐用的智慧空间体验。
+        Centered on smart panels, thermostats, and scene automation, we create safe, stable, elegant, easy-to-install, and durable smart-space experiences.
       </p>
 <div class="buttons">
-<a class="btn primary" href="solutions.html">探索解决方案 →</a>
-<a class="btn ghost" href="products.html">查看产品矩阵</a>
+<a class="btn primary" href="solutions.html">Explore Solutions →</a>
+<a class="btn ghost" href="products.html">View Products</a>
 </div>
 <div class="features">
 <div class="feature">
 <div class="ico">⌘</div>
-<h3>多协议兼容</h3>
-<small>100+设备互联互通</small>
+<h3>Multi-Protocol Compatible</h3>
+<small>100+ Devices Interconnected</small>
 </div>
 <div class="feature">
 <div class="ico">AI</div>
-<h3>AI 智能联动</h3>
-<small>主动感知 智慧决策</small>
+<h3>AI Smart Automation</h3>
+<small>Proactive Sensing, Smart Decisions</small>
 </div>
 <div class="feature">
-<div class="ico">盾</div>
-<h3>全方位守护</h3>
-<small>安防监测 安心无忧</small>
+<div class="ico">🛡</div>
+<h3>Comprehensive Protection</h3>
+<small>Security Monitoring, Worry-Free</small>
 </div>
 <div class="feature">
-<div class="ico">叶</div>
-<h3>节能环保</h3>
-<small>智能调节 绿色生活</small>
+<div class="ico">🌿</div>
+<h3>Energy Saving</h3>
+<small>Smart Adjustment, Greener Living</small>
 </div>
 </div>
 </div>
@@ -881,76 +893,76 @@ body{
 <div class="showcase" id="products">
 <div class="panel">
 <div class="status">
-<div class="product-title">产品展示</div>
+<div class="product-title">Product Showcase</div>
 </div>
 <div class="carousel">
 <div class="card main">
-<img decoding="async" fetchpriority="high" loading="eager" src="1.webp"/>
-<div class="name-badge">一键开关/场景</div>
+<img decoding="async" fetchpriority="high" loading="eager" src="../1.webp"/>
+<div class="name-badge">1-Key Switch / Scene</div>
 </div>
 <div class="card">
-<img decoding="async" fetchpriority="high" loading="eager" src="2.webp"/>
-<div class="name-badge">二键开关/场景</div>
+<img decoding="async" fetchpriority="high" loading="eager" src="../2.webp"/>
+<div class="name-badge">2-Key Switch / Scene</div>
 </div>
 <div class="card">
-<img decoding="async" fetchpriority="high" loading="eager" src="3.webp"/>
-<div class="name-badge">三键开关/场景</div>
+<img decoding="async" fetchpriority="high" loading="eager" src="../3.webp"/>
+<div class="name-badge">3-Key Switch / Scene</div>
 </div>
 <div class="card">
-<img decoding="async" fetchpriority="high" loading="eager" src="4.webp"/>
-<div class="name-badge">四键开关/场景</div>
+<img decoding="async" fetchpriority="high" loading="eager" src="../4.webp"/>
+<div class="name-badge">4-Key Switch / Scene</div>
 </div>
 <div class="card">
-<img decoding="async" fetchpriority="high" loading="eager" src="5.webp"/>
-<div class="name-badge">旋钮调光器（经典款）</div>
+<img decoding="async" fetchpriority="high" loading="eager" src="../5.webp"/>
+<div class="name-badge">Rotary Dimmer (Classic)</div>
 </div>
 <div class="card">
-<img decoding="async" loading="lazy" src="6.webp"/>
-<div class="name-badge">旋钮温控器（经典款）</div>
+<img decoding="async" loading="lazy" src="../6.webp"/>
+<div class="name-badge">Rotary Thermostat (Classic)</div>
 </div>
 <div class="card">
-<img decoding="async" loading="lazy" src="7.webp"/>
-<div class="name-badge">旋钮温控器（彩屏款）</div>
+<img decoding="async" loading="lazy" src="../7.webp"/>
+<div class="name-badge">Rotary Thermostat (Color Screen)</div>
 </div>
 <div class="card">
-<img decoding="async" loading="lazy" src="8.webp"/>
-<div class="name-badge">触控温控器（黑晶款）</div>
+<img decoding="async" loading="lazy" src="../8.webp"/>
+<div class="name-badge">Touch Thermostat (Black Crystal)</div>
 </div>
 <div class="card">
-<img decoding="async" loading="lazy" src="9.webp"/>
-<div class="name-badge">紧急呼叫面板</div>
+<img decoding="async" loading="lazy" src="../9.webp"/>
+<div class="name-badge">Emergency Call Panel</div>
 </div>
 <div class="card">
-<img decoding="async" loading="lazy" src="10.webp"/>
-<div class="name-badge">墙壁电话</div>
+<img decoding="async" loading="lazy" src="../10.webp"/>
+<div class="name-badge">Wall Phone</div>
 </div>
 <div class="card">
-<img decoding="async" loading="lazy" src="11.webp"/>
-<div class="name-badge">离线语音</div>
+<img decoding="async" loading="lazy" src="../11.webp"/>
+<div class="name-badge">Offline Voice Panel</div>
 </div>
 <div class="card">
-<img decoding="async" loading="lazy" src="12.webp"/>
-<div class="name-badge">3孔插座（16A）</div>
+<img decoding="async" loading="lazy" src="../12.webp"/>
+<div class="name-badge">3-Pin Socket (16A)</div>
 </div>
 <div class="card">
-<img decoding="async" loading="lazy" src="13.webp"/>
-<div class="name-badge">5孔插座（10A）</div>
+<img decoding="async" loading="lazy" src="../13.webp"/>
+<div class="name-badge">5-Hole Socket (10A)</div>
 </div>
 <div class="card">
-<img decoding="async" loading="lazy" src="14.webp"/>
-<div class="name-badge">5孔+USB插座（10A）</div>
+<img decoding="async" loading="lazy" src="../14.webp"/>
+<div class="name-badge">5-Hole + USB Socket (10A)</div>
 </div>
 <div class="card">
-<img decoding="async" loading="lazy" src="15.webp"/>
-<div class="name-badge">无线AP</div>
+<img decoding="async" loading="lazy" src="../15.webp"/>
+<div class="name-badge">Wireless AP</div>
 </div>
 <div class="card">
-<img decoding="async" loading="lazy" src="16.webp"/>
-<div class="name-badge">插卡取电</div>
+<img decoding="async" loading="lazy" src="../16.webp"/>
+<div class="name-badge">Key Card Power Switch</div>
 </div>
 <div class="card">
-<img decoding="async" loading="lazy" src="17.webp"/>
-<div class="name-badge">网关中控屏</div>
+<img decoding="async" loading="lazy" src="../17.webp"/>
+<div class="name-badge">Gateway Control Screen</div>
 </div>
 </div>
 <div class="arrow left">‹</div>
@@ -962,29 +974,29 @@ body{
 <div class="bottom-item">
 <div class="icon">⚡</div>
 <div>
-<h3>快速部署</h3>
-<p>标准化安装 更省施工时间</p>
+<h3>Fast Deployment</h3>
+<p>Standardized installation saves time</p>
 </div>
 </div>
 <div class="bottom-item">
 <div class="icon">☁</div>
 <div>
-<h3>云端管理</h3>
-<p>远程运维 实时状态监控</p>
+<h3>Cloud Management</h3>
+<p>Remote O&amp;M with real-time status</p>
 </div>
 </div>
 <div class="bottom-item">
 <div class="icon">⌂</div>
 <div>
-<h3>智慧场景</h3>
-<p>酒店 公寓 办公全覆盖</p>
+<h3>Smart Scenes</h3>
+<p>Covers hotels, apartments, and offices</p>
 </div>
 </div>
 <div class="bottom-item">
 <div class="icon">🛡</div>
 <div>
-<h3>稳定可靠</h3>
-<p>工业级方案 长期稳定运行</p>
+<h3>Stable &amp; Reliable</h3>
+<p>Industrial-grade solutions for long-term operation</p>
 </div>
 </div>
 </div>
@@ -1124,7 +1136,7 @@ if ('serviceWorker' in navigator) {
 </script>
 <!-- Site footer -->
 <footer style="background:#020817;border-top:1px solid rgba(255,255,255,.08);padding:20px 10px;text-align:center;color:#b6c7df;font-size:14px;">
-<div style="margin-top:8px;">© 2026 苏州思辰微智能科技有限公司 版权所有</div>
+<div style="margin-top:8px;">© 2026 Suzhou SCW Smart Technology Co., Ltd. All rights reserved.</div>
 </footer>
 
 </body>
