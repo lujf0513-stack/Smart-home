@@ -86,21 +86,6 @@ a{
   color:#e0faff;
   font-weight:800;
 }
-
-.logo-mark{
-  width:24px;
-  height:24px;
-  flex:0 0 24px;
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  color:#dff7ff;
-}
-.logo-mark svg{
-  width:100%;
-  height:100%;
-  display:block;
-}
 .nav-links{
   display:flex;
   gap:60px;
@@ -707,21 +692,6 @@ body{
   font-weight:800 !important;
   white-space:nowrap !important;
 }
-
-.logo-mark{
-  width:24px;
-  height:24px;
-  flex:0 0 24px;
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  color:#dff7ff;
-}
-.logo-mark svg{
-  width:100%;
-  height:100%;
-  display:block;
-}
 .nav-links{
   display:flex !important;
   align-items:center !important;
@@ -778,21 +748,6 @@ body{
     flex-direction:column !important;
     border-radius:24px !important;
   }
-
-  .logo-mark{
-  width:24px;
-  height:24px;
-  flex:0 0 24px;
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  color:#dff7ff;
-}
-.logo-mark svg{
-  width:100%;
-  height:100%;
-  display:block;
-}
 .nav-links{
     gap:22px !important;
     flex-wrap:wrap !important;
@@ -847,20 +802,6 @@ body{
 
 
 /* English homepage layout fixes */
-html[lang="en"] .logo-mark{
-  width:24px;
-  height:24px;
-  flex:0 0 24px;
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  color:#dff7ff;
-}
-.logo-mark svg{
-  width:100%;
-  height:100%;
-  display:block;
-}
 .nav-links{gap:42px;font-size:17px;}
 html[lang="en"] .copy h1{font-size:clamp(42px,4.4vw,68px);letter-spacing:-.035em;}
 html[lang="en"] .copy h1 span{padding-left:0;letter-spacing:-.02em;white-space:normal;}
@@ -871,21 +812,24 @@ html[lang="en"] .name-badge{font-size:13px;padding:10px 16px;}
 html[lang="en"] .bottom-item h3{font-size:17px;}
 html[lang="en"] .bottom-item p{font-size:13px;}
 @media(max-width:1100px){html[lang="en"] .copy h1{font-size:clamp(38px,8vw,58px);}}
-@media(max-width:768px){html[lang="en"] .logo-mark{
-  width:24px;
-  height:24px;
-  flex:0 0 24px;
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  color:#dff7ff;
+@media(max-width:768px){
+.nav-links{gap:18px;font-size:15px;}html[lang="en"] .copy p{font-size:16px;}}
+
+/* Inline house logo used in the navigation pill. */
+.logo-mark{
+  width:24px !important;
+  height:24px !important;
+  flex:0 0 24px !important;
+  display:inline-flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  color:#dff7ff !important;
 }
 .logo-mark svg{
-  width:100%;
-  height:100%;
-  display:block;
+  width:100% !important;
+  height:100% !important;
+  display:block !important;
 }
-.nav-links{gap:18px;font-size:15px;}html[lang="en"] .copy p{font-size:16px;}}
 </style>
 <!-- 图片加载优化：优先加载首屏关键图片 -->
 <link as="image" href="../1.webp" rel="preload"/>

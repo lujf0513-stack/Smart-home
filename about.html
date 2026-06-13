@@ -45,20 +45,6 @@ a{text-decoration:none;color:inherit}
   font-weight:800;
   white-space:nowrap;
 }
-.logo-mark{
-  width:24px;
-  height:24px;
-  flex:0 0 24px;
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  color:#dff7ff;
-}
-.logo-mark svg{
-  width:100%;
-  height:100%;
-  display:block;
-}
 .nav-links{
   display:flex;
   gap:72px;
@@ -139,20 +125,7 @@ a{text-decoration:none;color:inherit}
 .time-item:before{content:"";position:absolute;left:-26px;top:7px;width:10px;height:10px;border-radius:50%;background:#22d3ee;box-shadow:0 0 14px rgba(34,211,238,.8)}
 .time-item b{color:#fff;font-size:18px}
 @media(max-width:1200px){.about-hero,.content-grid{grid-template-columns:1fr}.visual-card{min-height:320px}.stats{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:768px){.nav{height:auto;flex-direction:column;gap:18px;padding:18px 0}.logo-mark{
-  width:24px;
-  height:24px;
-  flex:0 0 24px;
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  color:#dff7ff;
-}
-.logo-mark svg{
-  width:100%;
-  height:100%;
-  display:block;
-}
+@media(max-width:768px){.nav{height:auto;flex-direction:column;gap:18px;padding:18px 0}
 .nav-links{gap:22px;flex-wrap:wrap;justify-content:center}.page-title h1{font-size:40px}.page-title p{font-size:18px}.about-hero{padding:18px}.values{grid-template-columns:1fr}.intro-card h2{font-size:30px}.stats{grid-template-columns:1fr}.stat{border-right:0;border-bottom:1px solid rgba(125,211,252,.14)}}
 
 /* 数据展示模块：按参考图重新绘制 */
@@ -359,21 +332,6 @@ body{
   font-weight:800 !important;
   white-space:nowrap !important;
 }
-
-.logo-mark{
-  width:24px;
-  height:24px;
-  flex:0 0 24px;
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  color:#dff7ff;
-}
-.logo-mark svg{
-  width:100%;
-  height:100%;
-  display:block;
-}
 .nav-links{
   display:flex !important;
   align-items:center !important;
@@ -430,21 +388,6 @@ body{
     flex-direction:column !important;
     border-radius:24px !important;
   }
-
-  .logo-mark{
-  width:24px;
-  height:24px;
-  flex:0 0 24px;
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  color:#dff7ff;
-}
-.logo-mark svg{
-  width:100%;
-  height:100%;
-  display:block;
-}
 .nav-links{
     gap:22px !important;
     flex-wrap:wrap !important;
@@ -496,6 +439,22 @@ body{
 }
 @media(max-width:768px){.lang-toggle{height:32px !important;min-width:46px;padding:0 11px !important;font-size:12px}}
 
+
+/* Inline house logo used in the navigation pill. */
+.logo-mark{
+  width:24px !important;
+  height:24px !important;
+  flex:0 0 24px !important;
+  display:inline-flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  color:#dff7ff !important;
+}
+.logo-mark svg{
+  width:100% !important;
+  height:100% !important;
+  display:block !important;
+}
 </style>
 </head>
 <body>
